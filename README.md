@@ -1,9 +1,14 @@
-Student:
-- String:nom
-- <int>preference
+# Java classes
 
+Student:
+- String:name
+- <int>:preference
 
 School:
 - String:name
-- <int>preference
-- <Student>ranking
+- <int>:preference
+- <Student>:ranking
+- int:capacity
+
+
+
