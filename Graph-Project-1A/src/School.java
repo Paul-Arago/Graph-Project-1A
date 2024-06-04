@@ -8,6 +8,7 @@ public class School {
     private String name;
     private Map<Student, Integer> preferences;
     private int capacity;
+    private Balcony balcony;
 
     public School(String name, int capacity) {
         this.name = name;
