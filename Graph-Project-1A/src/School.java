@@ -1,24 +1,26 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class School {
     private List<Student> students;
     private String name;
-    private List<Integer> preferences;
+    private Map<Student, Integer> preferences;
     private int capacity;
 
-    public School(String name, List<Integer> preferences, int capacity) {
+    public School(String name, int capacity) {
         this.name = name;
-        this.preferences = preferences;
+        this.preferences = new HashMap<Student, Integer>();
         this.students = new ArrayList<Student>();
-        this.capacity = 5; // TODO : What way to decide capacity
+        this.capacity = capacity; // TODO : What way to decide capacity
     }
 
     public String getName() {
         return name;
     }
 
-    public List<Integer> getPreferences() {
+    public Map<Student, Integer> getPreferencesMap() {
         return preferences;
     }
 

@@ -1,11 +1,20 @@
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Student {
     private String name;
-    private List<Integer> preferencesList;
+    private Map<School,Integer> preferencesMap;
 
-    public Student(String name, List<Integer> preferencesList) {
+    public Student(String name) {
         this.name = name;
-        this.preferencesList = preferencesList;
+        this.preferencesMap = new HashMap<School,Integer>();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Map<School, Integer> getPreferencesMap() {
+        return preferencesMap;
     }
 }
