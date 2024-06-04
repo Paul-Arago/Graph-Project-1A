@@ -23,9 +23,7 @@ public class Court<R extends ResponderInterface<S>, S extends SeekerInterface<R>
     public void moveSeekersToBalconies() {
         for (S seeker : seekers) {
             R firstPick = seeker.getFirstPreference();
+            firstPick.getBalcony().addSeeker(seeker);
+        }
     }
-        
-
-
-
 }

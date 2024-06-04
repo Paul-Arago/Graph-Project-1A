@@ -36,5 +36,13 @@ public class School {
     public void addStudent(Student student) {
         students.add(student);
     }
+
+    public Balcony getBalcony() {
+        return balcony;
+    }
+
+    public void setBalcony(Balcony balcony) {
+        this.balcony = balcony;
+    }
 }
 

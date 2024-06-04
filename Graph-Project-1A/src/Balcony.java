@@ -9,4 +9,8 @@ public class Balcony<R, S> {
         this.responder = responder;
     }
 
+    public void addSeeker(S seeker) {
+        seekers.add(seeker);
+    }
+
 }
