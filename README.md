@@ -20,6 +20,7 @@ class School {
 }
 
 class Court {
+    <Balcony> balcony
     <School> school
     <Student> students
     Enumeration seekers
@@ -27,8 +28,10 @@ class Court {
 }
 
 class Balcony {
+    Court court
     <School> schools
     <Student> students
+    void moveSeekersToCourt(Seeker seeker)
     void responderChooses(Seeker seeker)
 }
 
