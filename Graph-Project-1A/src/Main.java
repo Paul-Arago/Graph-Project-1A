@@ -14,14 +14,21 @@ public class Main {
             }
         }
 
+        List<Student> studentList;
+        List<School> schoolList;
         //Parsing CSV file
         try{
             ParserCSV parser = new ParserCSV();
             parser.parse();
-            List<Student> studentList = parser.getStudentsList();
-            List<School> schoolList = parser.getSchoolsList();
+            studentList = parser.getStudentsList();
+            schoolList = parser.getSchoolsList();
         }catch(ParsingException e){
-            System.out.println(e.getMessage())  ;
+            System.out.println(e.getMessage());
+            System.exit(1);
         }
+
+        //Creating court
+
+        Court court = new Court();
     }
 }
