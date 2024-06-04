@@ -5,22 +5,33 @@
 class Student {
     String name
     Map<School, int> preference 
-    Boolean isAssigned
+    Boolean isAvailable
+    School school
+    School choose(Balcony balcony)
 }
 
 class School {
     String name
-    Map<Student, int> ranking
+    Map<Student, int> students
     int capacity
-    Court court
-    Student chooseStudent(Court court)
+    Boolean isAvailable
+    Balcony balcony
+    Student choose(Balcony balcony)
 }
 
 class Court {
+    <School> school
+    <Student> students
+    void Bidding()
+}
+
+class Balcony {
     School school
     <Student> students
     Boolean schoolDoesBidding
+    void moveStudentToBalcony(Student student)
 }
+
 @enduml
 ```
 
@@ -40,6 +51,8 @@ If it does, the student with the highest preference is added to the school.
 ## Pseudo code
 
 ```
+
+
 
 ```
 
