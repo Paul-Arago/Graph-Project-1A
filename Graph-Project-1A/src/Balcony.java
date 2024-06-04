@@ -5,9 +5,8 @@ public class Balcony<R, S> {
     private final R responder;
     private List<S> seekers;
 
-    public Balcony(R responder, List<S> seekers) {
+    public Balcony(R responder) {
         this.responder = responder;
-        this.seekers = seekers;
     }
 
 }
