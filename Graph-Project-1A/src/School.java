@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class School {
+public class School implements ResponderInterface<Student>, SeekerInterface<Student> {
     private List<Student> students;
     private String name;
     private Map<Student, Integer> preferences;

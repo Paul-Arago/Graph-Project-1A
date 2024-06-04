@@ -22,6 +22,11 @@ public class Main {
             parser.parse();
             studentList = parser.getStudentsList();
             schoolList = parser.getSchoolsList();
+            if(biddingChoice.equals("1")) {
+                Court<School, Student> court = new Court<School, Student>(schoolList, studentList);
+            }else{
+                Court<Student, School> court2 = new Court<Student, School>(studentList, schoolList);
+            }
         }catch(ParsingException e){
             System.out.println(e.getMessage());
             System.exit(1);
@@ -29,6 +34,6 @@ public class Main {
 
         //Creating court
 
-        Court court = new Court();
+
     }
 }
