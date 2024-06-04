@@ -22,14 +22,14 @@ class School {
 class Court {
     <School> school
     <Student> students
-    void Bidding()
+    Enumeration seekers
+    void moveSeekersToBalcony(Seeker seeker)
 }
 
 class Balcony {
-    School school
+    <School> schools
     <Student> students
-    Boolean schoolDoesBidding
-    void moveStudentToBalcony(Student student)
+    void responderChooses(Seeker seeker)
 }
 
 @enduml
@@ -39,13 +39,22 @@ class Balcony {
 
 ## Logic
 
-### The schools do the bidding
+The seekers is the party that is looking for a match.
+The responders are the party that is being sought after.
 
-### The students do the bidding
+At the very beginning all of the seekers are placed in the court.
 
-The students go to the school they prefer the most.
-When a student goes to a school, the school checks if it has capacity.
-If it does, the student with the highest preference is added to the school.
+From here day 1 starts.
+
+The seekers are moved to the balcony based on their preferences.
+
+The responders are choose a seeker based on their preferences.
+
+The seekers are moved back to the court.
+
+From here day 2 starts.
+
+...
 
 
 ## Pseudo code
