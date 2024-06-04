@@ -18,7 +18,14 @@ public class Student {
     public Map<School, Integer> getPreferencesMap() {
         return preferencesMap;
     }
-    
+
+    public School getFirstPreference() {
+        return preferencesMap.entrySet().stream()
+        .max(Map.Entry.comparingByValue())
+        .map(Map.Entry::getKey)
+        .orElse(null);
+    }
+
     public Balcony getBalcony() {
         return balcony;
     }
