@@ -1,5 +1,7 @@
 # Java classes
 
+## First architecture
+
 ```plantuml
 @startuml
 class Student {
@@ -37,6 +39,116 @@ class Balcony {
 
 @enduml
 ```
+
+## 2nd architecture
+
+```plantuml
+@startuml MariageAlgorithmClassDiagram
+
+class "Balcony" {
+    - respondent : Respondent {readOnly}
+    - seekers : List<Seeker>
+    + Balcony(respondent : Respondent)
+    + addSeeker(seeker : Seeker) : void
+    + removeAllSeekers() : void
+}
+
+class "Court" {
+    - balconies : HashMap<Respondent, Balcony>
+    - respondents : List<Respondent>
+    - seekers : List<Seeker>
+    + Court(respondents : List<Respondent>, seekers : List<Seeker>)
+    + createBalconies() : void
+}
+
+interface "Seeker" {
+    + getFirstPreference() : String
+    + getCapacity() : int
+    + unite(respondent : Respondent) : void
+}
+
+class "StudentSeeker" {
+    - student : Student
+    - capacity : int
+    - preferences : List<Respondent>
+    + StudentSeeker(student : Student)
+    + getFirstPreference() : String
+}
+
+class "SchoolSeeker" {
+    - school : School
+    - capacity : int
+    - preferences : List<Respondent>
+    + SchoolSeeker(school : School)
+    + getFirstPreference() : String
+}
+
+interface "Respondent" {
+    + setBalcony(balcony : Balcony) : void
+    + getBalcony() : Balcony
+    + getPreference(interestedSeekers : List<Seeker>) : String
+    + getCapacity() : int
+    + unite(seeker : Seeker) : void
+}
+
+class "SchoolRespondent" {
+    - school : School
+    - capacity : int
+    + SchoolRespondent(school : School)
+    + getPreference(interestedSeekers : List<Seeker>) : String
+}
+
+class "StudentRespondent" {
+    - student : Student
+    - capacity : int
+    + StudentRespondent(student : Student)
+    + getPreference(interestedSeekers : List<Seeker>) : String
+}
+
+class "Student" {
+    - name : String
+    - school : School
+    - preferences : HashMap<School, Integer>
+}
+
+class "School" {
+    - name : String
+    - students : List<Student>
+    - capacity : int
+    - preferences : HashMap<Student, Integer>
+}
+
+class "Matchmaker" {
+    - court : Court
+    - round : int
+    + Matchmaker(court : Court)
+    + startProcess() : void
+    + moveSeekerToBalcony(seeker : Seeker, balcony : Balcony) : void
+    + moveSeekerToCourt(seeker : Seeker) : void
+    + unite(seeker : Seeker, respondent : Respondent) : void
+}
+
+Balcony --> Seeker
+Balcony --> Respondent
+Court --o Balcony
+Court --> Respondent
+Court --> Seeker
+Seeker <..> Respondent
+StudentSeeker --|> Seeker
+StudentSeeker --* Student
+SchoolSeeker --|> Seeker
+SchoolSeeker --* School
+SchoolRespondent --|> Respondent
+SchoolRespondent --* School
+StudentRespondent --|> Respondent
+StudentRespondent --* Student
+Matchmaker --o Court
+Matchmaker --> Balcony
+Matchmaker --> Seeker
+Matchmaker --> Respondent
+@enduml
+```
+
 
 # Algorithm
 
