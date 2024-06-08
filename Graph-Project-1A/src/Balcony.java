@@ -12,5 +12,6 @@ public class Balcony<R, S> {
     public void addSeeker(S seeker) {
         seekers.add(seeker);
     }
+        
 
 }
