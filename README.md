@@ -46,63 +46,63 @@ class Balcony {
 @startuml MariageAlgorithmClassDiagram
 
 class "Balcony" {
-    - respondent : Respondent {readOnly}
-    - seekers : List<Seeker>
-    + Balcony(respondent : Respondent)
-    + addSeeker(seeker : Seeker) : void
-    + removeAllSeekers() : void
+    - courtedOne : CourtedOne {readOnly}
+    - suitors : List<Suitor>
+    + Balcony(courtedOne : CourtedOne)
+    + addSuitor(suitor : Suitor) : void
+    + removeAllSuitors() : void
 }
 
 class "Court" {
-    - balconies : HashMap<Respondent, Balcony>
-    - respondents : List<Respondent>
-    - seekers : List<Seeker>
-    + Court(respondents : List<Respondent>, seekers : List<Seeker>)
+    - balconies : HashMap<CourtedOne, Balcony>
+    - courtedOnes : List<CourtedOne>
+    - suitors : List<Suitor>
+    + Court(courtedOnes : List<CourtedOne>, suitors : List<Suitor>)
     + createBalconies() : void
 }
 
-interface "Seeker" {
-    + getFirstPreference() : Respondent
+interface "Suitor" {
+    + getFirstPreference() : CourtedOne
     + getCapacity() : int
-    + unite(respondent : Respondent) : void
+    + unite(courtedOne : CourtedOne) : void
 }
 
-class "StudentSeeker" {
+class "StudentSuitor" {
     - student : Student
     - capacity : int
-    - preferences : List<Respondent>
-    + StudentSeeker(student : Student)
-    + getFirstPreference() : Respondent
+    - preferences : List<CourtedOne>
+    + StudentSuitor(student : Student)
+    + getFirstPreference() : CourtedOne
 }
 
-class "SchoolSeeker" {
+class "SchoolSuitor" {
     - school : School
     - capacity : int
-    - preferences : List<Respondent>
-    + SchoolSeeker(school : School)
-    + getFirstPreference() : Respondent
+    - preferences : List<CourtedOne>
+    + SchoolSuitor(school : School)
+    + getFirstPreference() : CourtedOne
 }
 
-interface "Respondent" {
+interface "CourtedOne" {
     + setBalcony(balcony : Balcony) : void
     + getBalcony() : Balcony
-    + getPreference(interestedSeekers : List<Seeker>) : Seeker
+    + getPreference(interestedSuitors : List<Suitor>) : Suitor
     + getCapacity() : int
-    + unite(seeker : Seeker) : void
+    + unite(suitor : Suitor) : void
 }
 
-class "SchoolRespondent" {
+class "SchoolCourtedOne" {
     - school : School
     - capacity : int
-    + SchoolRespondent(school : School)
-    + getPreference(interestedSeekers : List<Seeker>) : Seeker
+    + SchoolCourtedOne(school : School)
+    + getPreference(interestedSuitors : List<Suitor>) : Suitor
 }
 
-class "StudentRespondent" {
+class "StudentCourtedOne" {
     - student : Student
     - capacity : int
-    + StudentRespondent(student : Student)
-    + getPreference(interestedSeekers : List<Seeker>) : Seeker
+    + StudentCourtedOne(student : Student)
+    + getPreference(interestedSuitors : List<Suitor>) : Suitor
 }
 
 class "Student" {
@@ -123,29 +123,29 @@ class "Matchmaker" {
     - round : int
     + Matchmaker(court : Court)
     + startProcess() : void
-    + moveSeekerToBalcony(seeker : Seeker, balcony : Balcony) : void
-    + moveSeekerToCourt(seeker : Seeker) : void
-    + unite(seeker : Seeker, respondent : Respondent) : void
+    + moveSuitorToBalcony(suitor : Suitor, balcony : Balcony) : void
+    + moveSuitorToCourt(suitor : Suitor) : void
+    + unite(suitor : Suitor, courtedOne : CourtedOne) : void
 }
 
-Balcony --> Seeker
-Balcony --> Respondent
+Balcony --> Suitor
+Balcony --> CourtedOne
 Court --o Balcony
-Court --> Respondent
-Court --> Seeker
-Seeker <..> Respondent
-StudentSeeker --|> Seeker
-StudentSeeker --* Student
-SchoolSeeker --|> Seeker
-SchoolSeeker --* School
-SchoolRespondent --|> Respondent
-SchoolRespondent --* School
-StudentRespondent --|> Respondent
-StudentRespondent --* Student
+Court --> CourtedOne
+Court --> Suitor
+Suitor <..> CourtedOne
+StudentSuitor --|> Suitor
+StudentSuitor --* Student
+SchoolSuitor --|> Suitor
+SchoolSuitor --* School
+SchoolCourtedOne --|> CourtedOne
+SchoolCourtedOne --* School
+StudentCourtedOne --|> CourtedOne
+StudentCourtedOne --* Student
 Matchmaker --o Court
 Matchmaker --> Balcony
-Matchmaker --> Seeker
-Matchmaker --> Respondent
+Matchmaker --> Suitor
+Matchmaker --> CourtedOne
 @enduml
 ```
 
