@@ -62,7 +62,7 @@ class "Court" {
 }
 
 interface "Seeker" {
-    + getFirstPreference() : String
+    + getFirstPreference() : Respondent
     + getCapacity() : int
     + unite(respondent : Respondent) : void
 }
@@ -72,7 +72,7 @@ class "StudentSeeker" {
     - capacity : int
     - preferences : List<Respondent>
     + StudentSeeker(student : Student)
-    + getFirstPreference() : String
+    + getFirstPreference() : Respondent
 }
 
 class "SchoolSeeker" {
@@ -80,13 +80,13 @@ class "SchoolSeeker" {
     - capacity : int
     - preferences : List<Respondent>
     + SchoolSeeker(school : School)
-    + getFirstPreference() : String
+    + getFirstPreference() : Respondent
 }
 
 interface "Respondent" {
     + setBalcony(balcony : Balcony) : void
     + getBalcony() : Balcony
-    + getPreference(interestedSeekers : List<Seeker>) : String
+    + getPreference(interestedSeekers : List<Seeker>) : Seeker
     + getCapacity() : int
     + unite(seeker : Seeker) : void
 }
@@ -95,14 +95,14 @@ class "SchoolRespondent" {
     - school : School
     - capacity : int
     + SchoolRespondent(school : School)
-    + getPreference(interestedSeekers : List<Seeker>) : String
+    + getPreference(interestedSeekers : List<Seeker>) : Seeker
 }
 
 class "StudentRespondent" {
     - student : Student
     - capacity : int
     + StudentRespondent(student : Student)
-    + getPreference(interestedSeekers : List<Seeker>) : String
+    + getPreference(interestedSeekers : List<Seeker>) : Seeker
 }
 
 class "Student" {
@@ -148,7 +148,6 @@ Matchmaker --> Seeker
 Matchmaker --> Respondent
 @enduml
 ```
-
 
 # Algorithm
 
