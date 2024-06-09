@@ -1,4 +1,3 @@
-public enum Participants {
-    SCHOOL,
-    STUDENT
+public interface Participants {
+    Boolean isAtCapacity();
 }

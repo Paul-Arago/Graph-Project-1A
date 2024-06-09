@@ -1,29 +1,45 @@
 import java.util.List;
 
-public class Court<R extends ResponderInterface<S>, S extends SeekerInterface<R>> {
-    private List<Balcony<R, S>> balconies;
-    private List<R> responders;
-    private List<S> seekers;
+public class Court {
 
-    public Court(List<R> responders, List<S> seekers) {
-        this.responders = responders;
-        this.seekers = seekers;
+    // List of all balconies in the court.
+    private List<Balcony> balconies;
 
-        createBalconies();
+    // List of all suitors in the court.
+    private List<Suitor> suitors;
+
+    // List of all courted ones in the court.
+    private List<CourtedOne> courtedOnes;
+
+    /**
+     * Constructor for the Court class.
+     * 
+     * @param suitors List of all suitors in the court.
+     * @param courtedOnes List of all courted ones in the court.
+     */
+    public Court(List<Suitor> suitors, List<CourtedOne> courtedOnes) {
+        this.suitors = suitors;
+        this.courtedOnes = courtedOnes;
     }
 
-    private void createBalconies() {
-        for (R responder : responders) {
-            Balcony<R, S> balcony = new Balcony<R, S>(responder);
-            responder.setBalcony(balcony);
-            balconies.add(balcony);
-        }
+    /**
+     * This method sets up the balconies in the court.
+     */
+    public void setupBalconies() {
+        
     }
 
-    public void moveSeekersToBalconies() {
-        for (S seeker : seekers) {
-            R firstPick = seeker.getFirstPreference();
-            firstPick.getBalcony().addSeeker(seeker);
-        }
+    public List<CourtedOne> getCourtedOnes() {
+        return courtedOnes;
     }
+
+    public List<Suitor> getSuitors() {
+        return suitors;
+    }
+
+    public void addBalcony(Balcony balcony) {
+        balconies.add(balcony);
+    }
+
+
 }
