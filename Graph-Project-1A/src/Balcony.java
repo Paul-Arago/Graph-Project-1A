@@ -23,10 +23,18 @@ public class Balcony {
      * @param suitor The suitor to be added to the balcony.
      */
     public void addSuitor(Suitor suitor) {
-    
+        suitors.add(suitor);
     }
 
     public void removeAllSuitors() {
-    
+        suitors.clear();
+    }
+
+    public CourtedOne getCourtedOne() {
+        return courtedOne;
+    }
+
+    public List<Suitor> getSuitors() {
+        return suitors;
     }
 }

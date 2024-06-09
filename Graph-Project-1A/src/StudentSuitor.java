@@ -34,4 +34,13 @@ public class StudentSuitor implements Suitor {
         return null;
     }
 
+    public Student getStudent() {
+        return student;
+    }
+
+    @Override
+    public Object getWrappedObject() {
+        return student;
+    }
+
 }

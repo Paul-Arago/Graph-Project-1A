@@ -5,4 +5,5 @@ public interface Suitor extends Participants{
     Map<CourtedOne, Integer> getPreferences();
     int getCapacity();
     void unite(CourtedOne courtedOne);
+    Object getWrappedObject();
 }

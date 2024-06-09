@@ -25,6 +25,10 @@ public class School {
         return preferences;
     }
 
+    public int getPreference(Student student) {
+        return preferences.get(student);
+    }
+
     public List<Student> getStudents() {
         return students;
     }
@@ -44,5 +48,7 @@ public class School {
     public void setBalcony(Balcony balcony) {
         this.balcony = balcony;
     }
+
+    p
 }
 

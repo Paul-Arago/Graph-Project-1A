@@ -23,15 +23,26 @@ public class Coordinator {
         // Start the rounds.
         System.err.println("Starting rounds...");
         
+
+        // Maybe the while loop should call a method that updates the isFinished variable.
         updateIsFinished();
         while (!isFinished) {
             System.out.println("Round: " + round );
 
             // Move suitors to preferred balconies.
-            System.err.println("Moving suitors to preferred balconies...");
+            System.out.println("Moving suitors to preferred balconies...");
+            moveSuitorsToPreferredBalconies();
 
+            // Make courted ones choose suitors, and unite them (maybe unite them in a separate method?)
+            System.out.println("Making courted ones choose suitors, and uniting them...");
+            courtedOnesChooseSuitor();
+
+            // Move suitors back to the court.
+            System.out.println("Moving suitors back to the court...");
+            moveSuitorsToCourt();
             
-
+            // Update the isFinished variable.
+            System.out.println();
             updateIsFinished();
         }
 
@@ -40,7 +51,9 @@ public class Coordinator {
 
     private void setupBalconies() {
         for (CourtedOne courtedOne : court.getCourtedOnes()) {
-            court.addBalcony(new Balcony(courtedOne));
+            Balcony balcony = new Balcony(courtedOne);
+            courtedOne.setBalcony(balcony);
+            court.addBalcony(balcony);
         }
     }
 
@@ -70,8 +83,25 @@ public class Coordinator {
                     }
                     
                 });
+        }
+    }
 
+    private void courtedOnesChooseSuitor() {
+        for (Balcony balcony : court.getBalconies()) {
+            CourtedOne courtedOne = balcony.getCourtedOne();
+            Suitor preferredSuitor = courtedOne.getPreferredSuitor(balcony.getSuitors());
+            unite(preferredSuitor, courtedOne);
+        }
+    }
 
+    private void unite(Suitor suitor, CourtedOne courtedOne) {
+        courtedOne.unite(suitor);
+        suitor.unite(courtedOne);
+    }
+
+    private void moveSuitorsToCourt() {
+        for (Balcony balcony : court.getBalconies()) {
+            balcony.removeAllSuitors();
         }
     }
 
