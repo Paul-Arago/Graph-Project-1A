@@ -1,17 +1,32 @@
 import java.util.List;
 
-public class Balcony<R, S> {
-    private Court court;
-    private final R responder;
-    private List<S> seekers;
+public class Balcony {
 
-    public Balcony(R responder) {
-        this.responder = responder;
+    // The courted one at the balcony.
+    private CourtedOne courtedOne;
+
+    // List of all suitors at the balcony.
+    private List<Suitor> suitors;
+
+    /**
+     * Constructor for the Balcony class.
+     * 
+     * @param courtedOne The courted one at the balcony.
+     */
+    public Balcony(CourtedOne courtedOne) {
+        this.courtedOne = courtedOne;
     }
 
-    public void addSeeker(S seeker) {
-        seekers.add(seeker);
+    /**
+     * This method adds a suitor to the balcony.
+     * 
+     * @param suitor The suitor to be added to the balcony.
+     */
+    public void addSuitor(Suitor suitor) {
+    
     }
-        
 
+    public void removeAllSuitors() {
+    
+    }
 }
