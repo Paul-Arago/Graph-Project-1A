@@ -21,8 +21,20 @@ public class SchoolCourtedOne implements CourtedOne {
     }
 
     @Override
-    public Suitor getPreference(List<Suitor> interestedSuitors) {
-        return null;
+    public Suitor getPreferredSuitor(List<Suitor> interestedSuitors) {
+        Suitor preferredSuitor = null;
+
+        for (Suitor suitor : interestedSuitors) {
+            if (preferredSuitor == null) {
+                preferredSuitor = suitor;
+            } else {
+                if (school.getPreference((Student) suitor.getWrappedObject()) > school.getPreference((Student) preferredSuitor.getWrappedObject())) {
+                    preferredSuitor = suitor;
+                }
+            }
+        }
+        
+        return preferredSuitor;
     }
 
     @Override
@@ -32,12 +44,16 @@ public class SchoolCourtedOne implements CourtedOne {
 
     @Override
     public void unite(Suitor suitor) {
-        
+        school.addStudent((Student) suitor);
     }
 
     @Override
     public Boolean isAtCapacity() {
-        return null;
+        if (school.getStudents().size() == capacity) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     

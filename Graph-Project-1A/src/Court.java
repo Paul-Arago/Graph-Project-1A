@@ -22,13 +22,6 @@ public class Court {
         this.courtedOnes = courtedOnes;
     }
 
-    /**
-     * This method sets up the balconies in the court.
-     */
-    public void setupBalconies() {
-        
-    }
-
     public List<CourtedOne> getCourtedOnes() {
         return courtedOnes;
     }
@@ -41,5 +34,8 @@ public class Court {
         balconies.add(balcony);
     }
 
+    public List<Balcony> getBalconies() {
+        return balconies;
+    }
 
 }
