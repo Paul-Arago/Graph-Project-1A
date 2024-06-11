@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Student implements SeekerInterface<School>, ResponderInterface<School> {
+public class Student {
     private String name;
     private Map<School,Integer> preferencesMap;
     private Balcony balcony;
