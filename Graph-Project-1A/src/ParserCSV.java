@@ -4,6 +4,9 @@ import java.util.List;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 
 public class ParserCSV {
     private List<Student> studentsList;
@@ -19,7 +22,8 @@ public class ParserCSV {
         String splitBy = ",";
         try
         {
-            BufferedReader br = new BufferedReader(new FileReader("src/Input.csv"));
+            Path path = Paths.get("src", "Input.csv");
+            BufferedReader br = new BufferedReader(new FileReader(path.toFile()));
 
             //Create school list with first line of the file
             if((line = br.readLine()) != null){

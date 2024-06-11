@@ -37,8 +37,14 @@ public class Main {
                     System.out.println(entry.getKey());
                 }
             }
+
+            // Show all Students and their preferences
+            showStudents(students);
+
+
             
-            coordinator.start();
+            coordinator.start();    
+
         }catch(ParsingException e){
             System.out.println(e.getMessage());
             System.exit(1);
@@ -77,5 +83,16 @@ public class Main {
             courtedOnes.add(new SchoolCourtedOne(school));
         }
         return courtedOnes;
+    }
+
+    private static void showStudents(List<Student> students){
+        for(Student student : students){
+            System.out.println(student);
+        
+            for(Map.Entry<School, Integer> entry : student.getPreferencesMap().entrySet()){
+                System.out.print("- ");
+                System.out.println(entry.getKey());
+            }
+        }
     }
 }
