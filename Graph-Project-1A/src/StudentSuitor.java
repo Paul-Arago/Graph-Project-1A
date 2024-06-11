@@ -1,12 +1,15 @@
+import java.util.HashMap;
 import java.util.Map;
 
 public class StudentSuitor implements Suitor {
     private Student student;
     private int capacity;
+    private Map<CourtedOne, Integer> preferences;
 
     public StudentSuitor(Student student) {
         this.student = student;
         this.capacity = 1;
+        this.createSuitorMap();
     }
 
     @Override
@@ -21,17 +24,26 @@ public class StudentSuitor implements Suitor {
 
     @Override
     public void unite(CourtedOne courtedOne) {
-
+        student.setSchool((School) courtedOne);
     }
 
     @Override
     public Boolean isAtCapacity() {
-        return null;
+        return student.getSchool() != null;
+    }
+    private void createSuitorMap(){
+        preferences = new HashMap<>();
+
+        Map<School, Integer> mapStudentPreferences = student.getPreferencesMap();
+
+        for(Map.Entry<School, Integer> entry : mapStudentPreferences.entrySet()){
+            preferences.put(entry.getKey().getCourtedOne(), entry.getValue()); //new SchoolCourtedOne(entry.getKey())
+        }
     }
 
     @Override
     public Map<CourtedOne, Integer> getPreferences() {
-        return null;
+        return this.preferences;
     }
 
     public Student getStudent() {

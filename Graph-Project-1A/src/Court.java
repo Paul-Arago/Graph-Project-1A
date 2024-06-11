@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Court {
@@ -20,6 +21,7 @@ public class Court {
     public Court(List<Suitor> suitors, List<CourtedOne> courtedOnes) {
         this.suitors = suitors;
         this.courtedOnes = courtedOnes;
+        this.balconies = new ArrayList<>();
     }
 
     public List<CourtedOne> getCourtedOnes() {

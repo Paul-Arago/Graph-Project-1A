@@ -58,10 +58,10 @@ public class Coordinator {
     }
 
     private <T extends Participants> boolean updateAreAtCapacity(List<T> participants) {
-    boolean areAtCapacity = true;
+        boolean areAtCapacity = true;
 
         for (T participant : participants) {
-            if (!participant.isAtCapacity()) {
+            if (participant != null && !participant.isAtCapacity()) {
                 areAtCapacity = false;
                 break;
             }
@@ -78,10 +78,9 @@ public class Coordinator {
                 .sorted(Map.Entry.<CourtedOne, Integer>comparingByValue().reversed())
                 .forEachOrdered(entry -> {
                    if (!entry.getKey().isAtCapacity()) {
-                        entry.getKey().getBalcony().addSuitor(suitor);
-                        return;
-                    }
-                    
+                       entry.getKey().getBalcony().addSuitor(suitor);
+                       return;
+                   }
                 });
         }
     }

@@ -5,6 +5,7 @@ public class Student {
     private String name;
     private Map<School,Integer> preferencesMap;
     private Balcony balcony;
+    private School school;
 
     public Student(String name) {
         this.name = name;
@@ -30,8 +31,16 @@ public class Student {
         return balcony;
     }
 
+    public void setSchool(School school) {
+        this.school = school;
+    }
+
     public void setBalcony(Balcony balcony) {
         this.balcony = balcony;
+    }
+
+    public School getSchool(){
+        return school;
     }
 
 }
