@@ -20,6 +20,7 @@ public class ParserCSV {
     public void parse() throws ParsingException{
         String line = "";
         String splitBy = ",";
+        String splitPreferencesBy = ";";
         try
         {
             Path path = Paths.get("src", "Input.csv");
@@ -27,27 +28,32 @@ public class ParserCSV {
 
             //Create school list with first line of the file
             if((line = br.readLine()) != null){
-                List<String> res = new ArrayList<>(Arrays.stream(line.split(splitBy)).toList());
-                if(res.size() > 0 && res.get(0).isEmpty()){
-                    res.remove(0);
+                List<String> firstLine = new ArrayList<>(Arrays.stream(line.split(splitBy)).toList());
+                System.out.println(firstLine);
+                if(firstLine.size() > 0 && firstLine.get(0).isEmpty()){
+                    firstLine.remove(0);
                 }else{
                     throw new ParsingException("Bad format.\nEnsure that the CSV file is correctly formatted.");
                 }
-                for(String s : res){
+                for(String s : firstLine){
                     School school = new School(s, 5);
                     schoolsList.add(school);
                 }
             }
+            
 
             //Creation of student and preferences retrieving (for schools AND students)
             while ((line = br.readLine()) != null)
             {
                 //Split preferences and add them to school or student
-                String[] res = line.split(splitBy);
-                int resLength = res.length;
-                Student student = new Student(res[0]);
-                for(int i = 1; i < resLength; i++){
-                    String[] preferences = res[i].replaceAll(" ", "").split("–");
+                String[] splittedLine = line.split(splitBy);
+                Student student = new Student(splittedLine[0]);
+                for(int i = 1; i < splittedLine.length; i++){
+                    
+                    String[] preferences = splittedLine[i].replaceAll(" ", "").split(splitPreferencesBy); // why not just remove the spaces in the file?
+                    for (String s : preferences) {
+                        System.out.println(s);
+                    }
                     if(preferences.length == 2){
                         int schoolPreference = Integer.parseInt(preferences[0].trim());
                         int studentPreference = Integer.parseInt(preferences[1].trim());
@@ -55,6 +61,7 @@ public class ParserCSV {
                         schoolsList.get(i-1).addStudent(student);
                         schoolsList.get(i-1).getPreferencesMap().put(student, schoolPreference);
                     }else{
+            
                         throw new ParsingException("Bad value format.\nCheck that value are in this format : " +
                                 "\"value - value\"");
                     }
