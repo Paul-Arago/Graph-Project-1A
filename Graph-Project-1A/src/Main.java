@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -14,26 +16,66 @@ public class Main {
             }
         }
 
-        List<Student> studentList;
-        List<School> schoolList;
         //Parsing CSV file
         try{
             ParserCSV parser = new ParserCSV();
             parser.parse();
-            studentList = parser.getStudentsList();
-            schoolList = parser.getSchoolsList();
+            List<Student> students = parser.getStudentsList();
+            List<School> schools = parser.getSchoolsList();
+            Court court;
             if(biddingChoice.equals("1")) {
-                Court<School, Student> court = new Court<School, Student>(schoolList, studentList);
+                court = new Court(getSuitorsListByStudent(students), getCourtedOneListBySchool(schools));
             }else{
-                Court<Student, School> court2 = new Court<Student, School>(studentList, schoolList);
+                court = new Court(getSuitorsListBySchool(schools), getCourtedOneListByStudent(students));
             }
+
+            Coordinator coordinator = new Coordinator(court);
+            
+            for(Student student : students) {
+                System.out.println(student);
+                for(Map.Entry<School, Integer> entry : student.getPreferencesMap().entrySet()){
+                    System.out.println(entry.getKey());
+                }
+            }
+            
+            coordinator.start();
         }catch(ParsingException e){
             System.out.println(e.getMessage());
             System.exit(1);
         }
 
-        //Creating court
 
+    }
 
+    private static List<Suitor> getSuitorsListByStudent(List<Student> students){
+        List<Suitor> suitors = new ArrayList<>();
+        for(Student student : students){
+            suitors.add(new StudentSuitor(student));
+        }
+        return suitors;
+    }
+
+    private static List<Suitor> getSuitorsListBySchool(List<School> schools){
+        List<Suitor> suitors = new ArrayList<>();
+        for(School school : schools){
+            //suitors.add(new SchoolSuitor(school));
+        }
+        return suitors;
+    }
+
+    private static List<CourtedOne> getCourtedOneListByStudent(List<Student> students){
+        List<CourtedOne> courtedOnes = new ArrayList<>();
+        for(Student student : students){
+            //courtedOnes.add(new StudentCourtedOne(student));
+        }
+        return courtedOnes;
+    }
+
+    private static List<CourtedOne> getCourtedOneListBySchool(List<School> schools){
+        List<CourtedOne> courtedOnes = new ArrayList<>();
+        for(School school : schools){
+            courtedOnes.add(new SchoolCourtedOne(school));
+        }
+        return courtedOnes;
     }
 }

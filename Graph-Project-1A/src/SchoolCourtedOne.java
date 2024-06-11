@@ -8,6 +8,7 @@ public class SchoolCourtedOne implements CourtedOne {
     public SchoolCourtedOne(School school) {
         this.school = school;
         this.capacity = school.getCapacity();
+        this.school.setCourtedOne(this);
     }
 
     @Override
@@ -49,11 +50,7 @@ public class SchoolCourtedOne implements CourtedOne {
 
     @Override
     public Boolean isAtCapacity() {
-        if (school.getStudents().size() == capacity) {
-            return true;
-        } else {
-            return false;
-        }
+        return school.getStudents().size() == capacity;
     }
 
     
