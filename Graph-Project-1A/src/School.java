@@ -49,6 +49,6 @@ public class School {
         this.balcony = balcony;
     }
 
-    p
+    
 }
 
