@@ -4,13 +4,16 @@ import java.util.Map;
 public class Coordinator {
     private Court court;
     private int round;
-    private boolean isFinished = false;
-    private boolean suitorsAreAtCapacity = false;
-    private boolean courtedOnesAreAtCapacity = false;
+    private boolean isFinished;
+    private boolean suitorsAreAtCapacity;
+    private boolean courtedOnesAreAtCapacity;
 
     public Coordinator(Court court) {
         this.court = court;
         this.round = 0;
+        isFinished = false;
+        suitorsAreAtCapacity = false;
+        courtedOnesAreAtCapacity = false;
     }
 
     public void start() {
@@ -78,6 +81,7 @@ public class Coordinator {
                 .sorted(Map.Entry.<CourtedOne, Integer>comparingByValue().reversed())
                 .forEachOrdered(entry -> {
                    if (!entry.getKey().isAtCapacity()) {
+                        System.out.println("Suitor " + suitor + " is moving to " + entry.getKey());
                        entry.getKey().getBalcony().addSuitor(suitor);
                        return;
                    }

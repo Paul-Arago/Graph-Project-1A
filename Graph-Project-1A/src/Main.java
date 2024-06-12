@@ -5,42 +5,74 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //User choice for who is bidding
-        Scanner scanner = new Scanner(System.in);
-        String biddingChoice = "";
-        while(!biddingChoice.equals("1") && !biddingChoice.equals("2")) {
-            System.out.print("Type 1 for school bidding or 2 for student bidding : ");
-            biddingChoice = scanner.nextLine();
-            if (!biddingChoice.equals("1") && !biddingChoice.equals("2")) {
-                System.out.print("Bad entry.\n");
+
+        // Variable to store the user's choice for bidding
+        String biddingChoice;
+
+        /**
+         * If one argument is passed, the bidding will be done automatically.
+         * Otherwise, the user will be asked to choose who is bidding.
+         */
+        if (args.length == 1 && argumentIsValid(args[0])) {
+            System.out.println("The argument passed is: " + args[0]);
+            biddingChoice = args[0];
+        } else {
+            System.out.println("Either no argument was passed, more than one argument was passed, or the argument passed was invalid.");
+            System.out.println("The bidding will be done manually.");
+            
+            //User choice for who is bidding
+            Scanner scanner = new Scanner(System.in);
+            biddingChoice = "";
+            while(!biddingChoice.equals("1") && !biddingChoice.equals("2")) {
+                System.out.print("Type 1 for school bidding or 2 for student bidding : ");
+                biddingChoice = scanner.nextLine();
+                if (!biddingChoice.equals("1") && !biddingChoice.equals("2")) {
+                    System.out.print("Bad entry.\n");
+                }
             }
+            scanner.close();
         }
 
-        //Parsing CSV file
+
+        // Parsing CSV file
         try{
             ParserCSV parser = new ParserCSV();
             parser.parse();
             List<Student> students = parser.getStudentsList();
             List<School> schools = parser.getSchoolsList();
+            List<Suitor> suitors = new ArrayList<>();
+            List<CourtedOne> courtedOnes = new ArrayList<>();
             Court court;
-            if(biddingChoice.equals("1")) {
-                court = new Court(getSuitorsListByStudent(students), getCourtedOneListBySchool(schools));
-            }else{
-                court = new Court(getSuitorsListBySchool(schools), getCourtedOneListByStudent(students));
-            }
-
-            Coordinator coordinator = new Coordinator(court);
             
-            for(Student student : students) {
-                System.out.println(student);
-                for(Map.Entry<School, Integer> entry : student.getPreferencesMap().entrySet()){
-                    System.out.println(entry.getKey());
-                }
+            /**
+             * If the user chose 1, the suitors will be the students and the courted ones will be the schools.
+             * Otherwise, the suitors will be the schools and the courted ones will be the students.
+             */
+            if(biddingChoice.equals("1")) {
+                courtedOnes = getCourtedOneListBySchool(schools);
+                suitors = getSuitorsListByStudent(students);
+            }else{
+                courtedOnes = getCourtedOneListByStudent(students);
+                suitors = getSuitorsListBySchool(schools);
             }
+            
+            // Create a Court
+            court = new Court(suitors, courtedOnes);
+            
+            // Create a Coordinator
+            Coordinator coordinator = new Coordinator(court);
 
             // Show all Students and their preferences
-            showStudents(students);
+            //showStudents(students);
 
+            // Show all Schools and their preferences
+            //showSchools(schools);
+
+            // Show all Suitors
+            //showSuitors(suitors);
+
+            // Show all CourtedOnes
+            //showCourtedOnes(courtedOnes);
 
             
             coordinator.start();    
@@ -51,6 +83,19 @@ public class Main {
         }
 
 
+    }
+
+    private static void showCourtedOnes(List<CourtedOne> courtedOnes) {
+    }
+
+    private static void showSuitors(List<Suitor> suitors) {
+        for(Suitor suitor : suitors){
+            System.out.println(suitor);
+            for(Map.Entry<CourtedOne, Integer> entry : suitor.getPreferences().entrySet()){
+                System.out.print("  - ");
+                System.out.println(entry.getKey());
+            }
+        }
     }
 
     private static List<Suitor> getSuitorsListByStudent(List<Student> students){
@@ -90,9 +135,25 @@ public class Main {
             System.out.println(student);
         
             for(Map.Entry<School, Integer> entry : student.getPreferencesMap().entrySet()){
-                System.out.print("- ");
+                System.out.print("  - ");
                 System.out.println(entry.getKey());
             }
         }
+    }
+
+
+    private static void showSchools(List<School> schools){
+
+        for(School school : schools){
+            System.out.println(school);
+            for(Map.Entry<Student, Integer> entry : school.getPreferencesMap().entrySet()){
+                System.out.print("  - ");
+                System.out.println(entry.getKey());
+            }
+        }
+    }
+
+    private static boolean argumentIsValid(String argument) {
+        return argument.equals("1") || argument.equals("2");
     }
 }

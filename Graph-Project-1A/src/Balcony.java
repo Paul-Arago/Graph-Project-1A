@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Balcony {
@@ -15,6 +16,7 @@ public class Balcony {
      */
     public Balcony(CourtedOne courtedOne) {
         this.courtedOne = courtedOne;
+        suitors = new ArrayList<>();
     }
 
     /**
@@ -23,7 +25,7 @@ public class Balcony {
      * @param suitor The suitor to be added to the balcony.
      */
     public void addSuitor(Suitor suitor) {
-        suitors.add(suitor);
+        this.suitors.add(suitor);
     }
 
     public void removeAllSuitors() {

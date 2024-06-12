@@ -29,7 +29,6 @@ public class ParserCSV {
             //Create school list with first line of the file
             if((line = br.readLine()) != null){
                 List<String> firstLine = new ArrayList<>(Arrays.stream(line.split(splitBy)).toList());
-                System.out.println(firstLine);
                 if(firstLine.size() > 0 && firstLine.get(0).isEmpty()){
                     firstLine.remove(0);
                 }else{
@@ -51,9 +50,6 @@ public class ParserCSV {
                 for(int i = 1; i < splittedLine.length; i++){
                     
                     String[] preferences = splittedLine[i].replaceAll(" ", "").split(splitPreferencesBy); // why not just remove the spaces in the file?
-                    for (String s : preferences) {
-                        System.out.println(s);
-                    }
                     if(preferences.length == 2){
                         int schoolPreference = Integer.parseInt(preferences[0].trim());
                         int studentPreference = Integer.parseInt(preferences[1].trim());
