@@ -6,5 +6,5 @@ public interface CourtedOne extends Participants{
     Suitor getPreferredSuitor(List<Suitor> interestedSuitors);
     int getCapacity();
     void unite(Suitor suitor);
-
+    Object getWrappedObject();
 }

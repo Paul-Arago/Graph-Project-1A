@@ -45,13 +45,15 @@ public class SchoolCourtedOne implements CourtedOne {
 
     @Override
     public void unite(Suitor suitor) {
-        school.addStudent((Student) suitor);
+        school.addStudent((Student) suitor.getWrappedObject());
     }
 
     @Override
     public Boolean isAtCapacity() {
-        return school.getStudents().size() == capacity;
+        return school.getStudents().size() >= capacity;
     }
 
-    
+    public Object getWrappedObject() {
+        return school;
+    }
 }

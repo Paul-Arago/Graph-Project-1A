@@ -24,7 +24,7 @@ public class StudentSuitor implements Suitor {
 
     @Override
     public void unite(CourtedOne courtedOne) {
-        student.setSchool((School) courtedOne);
+        student.setSchool((School) courtedOne.getWrappedObject());
     }
 
     @Override

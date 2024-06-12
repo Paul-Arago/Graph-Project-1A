@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -19,12 +20,12 @@ public class Coordinator {
     public void start() {
         System.out.println("Starting process...");
 
-        // Setup the balconies in the court.
-        System.err.println("Setting up balconies...");
+        // Set up the balconies in the court.
+        System.out.println("Setting up balconies...");
         setupBalconies();
 
         // Start the rounds.
-        System.err.println("Starting rounds...");
+        System.out.println("Starting rounds...");
         
 
         // Maybe the while loop should call a method that updates the isFinished variable.
@@ -47,9 +48,28 @@ public class Coordinator {
             // Update the isFinished variable.
             System.out.println();
             updateIsFinished();
+
+            // Print the total number of Suitors, and then the number of remaining Suitors.
+            remainingSuitors();
+
+            // Print the total number of CourtedOne, and then the number of remaining CourtedOne.
+            remainingCourtedOnes();
+
+            // Increment the round.
+            round++;
         }
 
         System.out.println("Process completed.");
+    }
+
+    public void remainingSuitors() {
+        System.out.println("Total number of Suitors: " + court.getSuitors().size());
+        System.out.println("Number of remaining Suitors: " + court.getSuitors().stream().filter(suitor -> !suitor.isAtCapacity()).count());
+    }
+
+    public void remainingCourtedOnes() {
+        System.out.println("Total number of CourtedOne: " + court.getCourtedOnes().size());
+        System.out.println("Number of remaining CourtedOne: " + court.getCourtedOnes().stream().filter(courtedOne -> !courtedOne.isAtCapacity()).count());
     }
 
     private void setupBalconies() {
@@ -62,7 +82,6 @@ public class Coordinator {
 
     private <T extends Participants> boolean updateAreAtCapacity(List<T> participants) {
         boolean areAtCapacity = true;
-
         for (T participant : participants) {
             if (participant != null && !participant.isAtCapacity()) {
                 areAtCapacity = false;
@@ -77,15 +96,18 @@ public class Coordinator {
         for (Suitor suitor : court.getSuitors()) {
             Map<CourtedOne, Integer> preferences = suitor.getPreferences();
 
-            preferences.entrySet().stream()
-                .sorted(Map.Entry.<CourtedOne, Integer>comparingByValue().reversed())
-                .forEachOrdered(entry -> {
-                   if (!entry.getKey().isAtCapacity()) {
-                        System.out.println("Suitor " + suitor + " is moving to " + entry.getKey());
-                       entry.getKey().getBalcony().addSuitor(suitor);
-                       return;
-                   }
-                });
+            // Convert the entries to a list and sort it in descending order of values
+            List<Map.Entry<CourtedOne, Integer>> sortedPreferences = new ArrayList<>(preferences.entrySet());
+            sortedPreferences.sort(Map.Entry.<CourtedOne, Integer>comparingByValue().reversed());
+
+            
+            // Iterate over the sorted preferences
+            for (Map.Entry<CourtedOne, Integer> entry : sortedPreferences) {
+                if (!entry.getKey().isAtCapacity()) {
+                    entry.getKey().getBalcony().addSuitor(suitor);
+                    break; // Exit the current loop and move on to the next suitor
+                }
+            }
         }
     }
 
