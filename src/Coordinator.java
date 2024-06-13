@@ -6,15 +6,11 @@ public class Coordinator {
     private Court court;
     private int round;
     private boolean isFinished;
-    private boolean suitorsAreAtCapacity;
-    private boolean courtedOnesAreAtCapacity;
 
     public Coordinator(Court court) {
         this.court = court;
         this.round = 0;
         isFinished = false;
-        suitorsAreAtCapacity = false;
-        courtedOnesAreAtCapacity = false;
     }
 
     public void start() {
@@ -45,6 +41,10 @@ public class Coordinator {
             System.out.println("Moving suitors back to the court...");
             moveSuitorsToCourt();
             
+            // Move the courted ones who have reached their capacity from their balconies to the court.
+            //System.out.println("Moving courted ones who have reached their capacity from their balconies to the court..."); 
+            //moveAtCapacityCourtedOnesToCourt();
+
             // Update the isFinished variable.
             System.out.println();
             updateIsFinished();
@@ -62,14 +62,24 @@ public class Coordinator {
         System.out.println("Process completed.");
     }
 
+    public void moveAtCapacityCourtedOnesToCourt() {
+        for (Balcony balcony : court.getBalconies()) {
+            if (balcony.getCourtedOne().isAtCapacity()) {
+                balcony.setCourtedOne(null);
+            }
+        }
+    }
+
     public void remainingSuitors() {
         System.out.println("Total number of Suitors: " + court.getSuitors().size());
         System.out.println("Number of remaining Suitors: " + court.getSuitors().stream().filter(suitor -> !suitor.isAtCapacity()).count());
+        System.out.println("Number of Suitors at capacity: " + court.getSuitors().stream().filter(suitor -> suitor.isAtCapacity()).count());
     }
 
     public void remainingCourtedOnes() {
         System.out.println("Total number of CourtedOne: " + court.getCourtedOnes().size());
         System.out.println("Number of remaining CourtedOne: " + court.getCourtedOnes().stream().filter(courtedOne -> !courtedOne.isAtCapacity()).count());
+        System.out.println("Number of CourtedOne at capacity: " + court.getCourtedOnes().stream().filter(courtedOne -> courtedOne.isAtCapacity()).count());
     }
 
     private void setupBalconies() {

@@ -39,4 +39,12 @@ public class Balcony {
     public List<Suitor> getSuitors() {
         return suitors;
     }
+
+    public void setCourtedOne(CourtedOne courtedOne) {
+        this.courtedOne = courtedOne;
+    }
+
+    public boolean hasCourtedOne() {
+        return courtedOne != null;
+    }
 }
