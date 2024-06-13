@@ -53,6 +53,10 @@ public class School {
         students.remove(student);
     }
 
+    public void removeAllStudents() {
+        students.clear();
+    }
+
     
 }
 

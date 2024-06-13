@@ -15,6 +15,7 @@ public interface Participant<S extends Participant,O extends Participant> {
     Object getWrappedObject();
     void unite(O participant);
     void disunite(O participant);
+    void disunite();
     Boolean isUnited();
     Integer getCapacity();
 }

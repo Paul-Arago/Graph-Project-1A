@@ -29,8 +29,8 @@ public class StudentSuitor implements Suitor {
 
     @Override
     public CourtedOne getFirstPreference() {
-        Map.Entry<CourtedOne, Integer> maxEntry = Collections.min(preferences.entrySet(), Map.Entry.comparingByValue());
-        return maxEntry.getKey();
+        Map.Entry<CourtedOne, Integer> minEntry = Collections.min(preferences.entrySet(), Map.Entry.comparingByValue());
+        return minEntry.getKey();
     }
 
     @Override
@@ -46,7 +46,14 @@ public class StudentSuitor implements Suitor {
 
     @Override
     public void disunite(CourtedOne courtedOne) {
+        student.setSchool(null);
+        isUnited = false;
+    }
 
+    @Override
+    public void disunite() {
+        student.setSchool(null);
+        isUnited = false;
     }
 
     @Override

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -6,11 +7,22 @@ public class Coordinator {
     private Court court;
     private int round;
     private boolean isFinished;
+    private String balconyState;
+    
+    /**
+     * The string representation of all of the suitors preferences.
+     * This is used to determine if the process is finished.
+     * If the string representation of the suitors preferences is the same two rounds in a row, the process is finished.
+     */
+    String suitorsPreferenceString;
+
+
 
     public Coordinator(Court court) {
         this.court = court;
         this.round = 0;
         isFinished = false;
+        this.balconyState = "";
     }
 
     public void start() {
@@ -32,6 +44,7 @@ public class Coordinator {
             // Move suitors to preferred balconies.
             System.out.println("Moving suitors to preferred balconies...");
             moveSuitorsToPreferredBalconies();
+            getBalconyState();
 
             // Make courted ones choose suitors.
             System.out.println("Making courted ones choose suitors and uniting them temporarily...");
@@ -55,11 +68,26 @@ public class Coordinator {
             // Print the total number of CourtedOne, and then the number of remaining CourtedOne.
             remainingCourtedOnes();
 
+            // Print a the suitors preferences.
+            System.out.println("Suitors preferences: " + suitorsPreferenceString);
+
+
+
             // Increment the round.
             round++;
         }
 
         System.out.println("Process completed.");
+    }
+
+    private void getBalconyState() {
+        String newBalconyState = "";
+        for (Balcony balcony : court.getBalconies()) {
+            newBalconyState += balcony.getCourtedOne().getWrappedObject().toString() + ": " + balcony.getSuitors().toString() + "\n";
+        }
+        if (newBalconyState.equals(balconyState)) {
+        }
+        balconyState = newBalconyState;
     }
 
     private void moveRejectedSuitorsToCourt() {
@@ -116,15 +144,8 @@ public class Coordinator {
 
     private void moveSuitorsToPreferredBalconies() {
         for (Suitor suitor : court.getSuitors()) {
-            Map<CourtedOne, Integer> preferences = suitor.getPreferences();
-
-            // Convert the entries to a list and sort it in descending order of values
-            List<Map.Entry<CourtedOne, Integer>> sortedPreferences = new ArrayList<>(preferences.entrySet());
-            sortedPreferences.sort(Map.Entry.<CourtedOne, Integer>comparingByValue());
-
-            // Iterate over the sorted preferences
-            for (Map.Entry<CourtedOne, Integer> entry : sortedPreferences) {
-                entry.getKey().getBalcony().addSuitor(suitor);
+            if (!suitor.getPreferences().isEmpty()){
+                suitor.getFirstPreference().getBalcony().addSuitor(suitor);
             }
         }
     }
@@ -134,7 +155,11 @@ public class Coordinator {
             if (!balcony.getSuitors().isEmpty()){
                 CourtedOne courtedOne = balcony.getCourtedOne();
                 List<Suitor> preferredSuitors = courtedOne.getPreferredSuitors(balcony.getSuitors());
-                unite(preferredSuitors, courtedOne);
+                disuniteAllBalcony(balcony);
+
+                if (preferredSuitors != null) {
+                    unite(preferredSuitors, courtedOne);
+                }
             }
         }
     }
@@ -147,6 +172,13 @@ public class Coordinator {
         }
     }
 
+    private void disuniteAllBalcony (Balcony balcony) {
+        balcony.getCourtedOne().disunite();
+        for (Suitor suitor : balcony.getSuitors()) {
+            suitor.disunite();
+        }
+    }
+
     private void moveSuitorsToCourt() {
         for (Balcony balcony : court.getBalconies()) {
             balcony.removeAllSuitors();
@@ -154,9 +186,17 @@ public class Coordinator {
     }
 
     /**
-     * The only termination condition is when the unions last for two rounds in a row.
+     * The only termination condition is when every suitor has the same preferences two rounds in a row.
      */
     private void updateIsFinished() {
-        
+        String newSuitorsPreferenceString = "";
+        for (Suitor suitor : court.getSuitors()) {
+            newSuitorsPreferenceString += suitor.getPreferences().toString();
+        }
+
+        if (newSuitorsPreferenceString.equals(suitorsPreferenceString)) {
+            isFinished = true;
+        }
+        suitorsPreferenceString = newSuitorsPreferenceString;
     }
 }

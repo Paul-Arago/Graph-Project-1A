@@ -129,7 +129,11 @@ public class Main {
 
         for (Student student : students) {
             System.out.println(student.getName());
-            System.out.println("  - " + student.getSchool().getName());
+            if (student.getSchool() != null) {
+                System.out.println("  - " + student.getSchool().getName());
+            } else {
+                System.out.println("  - ");
+            }
         }
     }
     

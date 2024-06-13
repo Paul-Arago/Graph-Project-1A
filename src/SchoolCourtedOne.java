@@ -53,9 +53,9 @@ public class SchoolCourtedOne implements CourtedOne {
         
         List<Suitor> preferredSuitors = new ArrayList<>();
 
-        for (Suitor suitor : unitedSuitors) {
-            if (!interestedSuitors.contains(suitor)) {
-                interestedSuitors.add(suitor);
+        for (Suitor unitedSuitor : unitedSuitors) {
+            if (!interestedSuitors.contains(unitedSuitor)) {
+                interestedSuitors.add(unitedSuitor);
             }
         }
 
@@ -97,6 +97,12 @@ public class SchoolCourtedOne implements CourtedOne {
     public void disunite(Suitor suitor) {
         unitedSuitors.remove(suitor);
         school.removeStudent((Student) suitor.getWrappedObject());
+    }
+
+    @Override
+    public void disunite() {
+        unitedSuitors.clear();
+        school.removeAllStudents(); 
     }
 
     @Override
