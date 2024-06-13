@@ -104,18 +104,20 @@ public class Coordinator {
 
     private void moveSuitorsToPreferredBalconies() {
         for (Suitor suitor : court.getSuitors()) {
-            Map<CourtedOne, Integer> preferences = suitor.getPreferences();
+            if (!suitor.isAtCapacity()){
+                Map<CourtedOne, Integer> preferences = suitor.getPreferences();
 
-            // Convert the entries to a list and sort it in descending order of values
-            List<Map.Entry<CourtedOne, Integer>> sortedPreferences = new ArrayList<>(preferences.entrySet());
-            sortedPreferences.sort(Map.Entry.<CourtedOne, Integer>comparingByValue().reversed());
+                // Convert the entries to a list and sort it in descending order of values
+                List<Map.Entry<CourtedOne, Integer>> sortedPreferences = new ArrayList<>(preferences.entrySet());
+                sortedPreferences.sort(Map.Entry.<CourtedOne, Integer>comparingByValue().reversed());
 
-            
-            // Iterate over the sorted preferences
-            for (Map.Entry<CourtedOne, Integer> entry : sortedPreferences) {
-                if (!entry.getKey().isAtCapacity()) {
-                    entry.getKey().getBalcony().addSuitor(suitor);
-                    break; // Exit the current loop and move on to the next suitor
+
+                // Iterate over the sorted preferences
+                for (Map.Entry<CourtedOne, Integer> entry : sortedPreferences) {
+                    if (!entry.getKey().isAtCapacity()) {
+                        entry.getKey().getBalcony().addSuitor(suitor);
+                        break; // Exit the current loop and move on to the next suitor
+                    }
                 }
             }
         }
@@ -123,9 +125,12 @@ public class Coordinator {
 
     private void courtedOnesChooseSuitor() {
         for (Balcony balcony : court.getBalconies()) {
-            CourtedOne courtedOne = balcony.getCourtedOne();
-            Suitor preferredSuitor = courtedOne.getPreferredSuitor(balcony.getSuitors());
-            unite(preferredSuitor, courtedOne);
+
+            if (!balcony.getCourtedOne().isAtCapacity() && !balcony.getSuitors().isEmpty()){
+                CourtedOne courtedOne = balcony.getCourtedOne();
+                Suitor preferredSuitor = courtedOne.getPreferredSuitor(balcony.getSuitors());
+                unite(preferredSuitor, courtedOne);
+            }
         }
     }
 
@@ -142,7 +147,7 @@ public class Coordinator {
 
     private void updateIsFinished() {
         isFinished = updateAreAtCapacity(court.getSuitors()) 
-                  && updateAreAtCapacity(court.getCourtedOnes());
+                  || updateAreAtCapacity(court.getCourtedOnes());
     }
 
 

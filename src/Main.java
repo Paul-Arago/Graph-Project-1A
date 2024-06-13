@@ -74,8 +74,13 @@ public class Main {
             // Show all CourtedOnes
             //showCourtedOnes(courtedOnes);
 
-            
-            coordinator.start();    
+            // Start the algorithm
+            coordinator.start();
+
+            // Get the results
+            // getResults(suitors, courtedOnes);
+            getResultsSchoolsStudents(schools, students);
+
 
         }catch(ParsingException e){
             System.out.println(e.getMessage());
@@ -84,6 +89,36 @@ public class Main {
 
 
     }
+
+    private static void getResults(List<Suitor> suitors,List<CourtedOne> courtedOnes) {
+        for (Suitor suitor : suitors) {
+        }
+    }
+    
+    private static void getResultsSchoolsStudents(List<School> schools, List<Student> students) {
+        
+        System.out.println("----------------------------------------");
+        System.out.println(" ----------------Results---------------- ");
+        System.out.println("----------------------------------------");
+
+        System.out.println("----------------Schools----------------");
+        
+        for (School school : schools) {
+            System.out.println(school.getName());
+            for (Student student : school.getStudents()) {
+                System.out.println("  - " + student.getName());
+            }
+        }
+
+        System.out.println("----------------Students----------------");
+
+        for (Student student : students) {
+            System.out.println(student.getName());
+            System.out.println("  - " + student.getSchool().getName());
+        }
+    }
+    
+
 
     private static void showCourtedOnes(List<CourtedOne> courtedOnes) {
     }

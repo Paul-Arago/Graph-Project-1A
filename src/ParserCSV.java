@@ -23,7 +23,7 @@ public class ParserCSV {
         String splitPreferencesBy = ";";
         try
         {
-            Path path = Paths.get("src", "Input.csv");
+            Path path = Paths.get("src", "InputV2.csv");
             BufferedReader br = new BufferedReader(new FileReader(path.toFile()));
 
             //Create school list with first line of the file
@@ -35,7 +35,7 @@ public class ParserCSV {
                     throw new ParsingException("Bad format.\nEnsure that the CSV file is correctly formatted.");
                 }
                 for(String s : firstLine){
-                    School school = new School(s, 5);
+                    School school = new School(s, 2);
                     schoolsList.add(school);
                 }
             }
@@ -54,7 +54,7 @@ public class ParserCSV {
                         int schoolPreference = Integer.parseInt(preferences[0].trim());
                         int studentPreference = Integer.parseInt(preferences[1].trim());
                         student.getPreferencesMap().put(schoolsList.get(i-1), studentPreference);
-                        schoolsList.get(i-1).addStudent(student);
+                        //schoolsList.get(i-1).addStudent(student);
                         schoolsList.get(i-1).getPreferencesMap().put(student, schoolPreference);
                     }else{
             
