@@ -6,4 +6,8 @@ public interface Suitor extends Participants{
     int getCapacity();
     void unite(CourtedOne courtedOne);
     Object getWrappedObject();
+
+    boolean isUnited();
+
+    void removePreference(CourtedOne courtedOne);
 }

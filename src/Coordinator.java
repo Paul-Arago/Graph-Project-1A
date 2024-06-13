@@ -33,17 +33,17 @@ public class Coordinator {
             System.out.println("Moving suitors to preferred balconies...");
             moveSuitorsToPreferredBalconies();
 
-            // Make courted ones choose suitors, and unite them (maybe unite them in a separate method?)
-            System.out.println("Making courted ones choose suitors, and uniting them...");
+            // Make courted ones choose suitors.
+            System.out.println("Making courted ones choose suitors and uniting them temporarily...");
             courtedOnesChooseSuitor();
 
-            // Move suitors back to the court.
+            // Remove the courted one if the suitor was not chosen.
+            System.out.println("Removing the courted one of the suitors preferences if the suitor was not chosen...");
+            removeCourtedOneFromRejectedSuitorsPreferences();
+
+            // Move rejected suitors back to the court.
             System.out.println("Moving suitors back to the court...");
-            moveSuitorsToCourt();
-            
-            // Move the courted ones who have reached their capacity from their balconies to the court.
-            //System.out.println("Moving courted ones who have reached their capacity from their balconies to the court..."); 
-            //moveAtCapacityCourtedOnesToCourt();
+            moveRejectedSuitorsToCourt();
 
             // Update the isFinished variable.
             System.out.println();
@@ -60,6 +60,26 @@ public class Coordinator {
         }
 
         System.out.println("Process completed.");
+    }
+
+    private void moveRejectedSuitorsToCourt() {
+        for (Balcony balcony : court.getBalconies()) {
+            for (Suitor suitor : balcony.getSuitors()) {
+                if (!suitor.isUnited()) {
+                    balcony.removeSuitor(suitor);
+                }
+            }
+        }
+    }
+
+    private void removeCourtedOneFromRejectedSuitorsPreferences() {
+        for (Balcony balcony : court.getBalconies()) {
+            for (Suitor suitor : balcony.getSuitors()) {
+                if (!suitor.isUnited()) {
+                    suitor.removePreference(balcony.getCourtedOne());
+                }
+            }
+        }
     }
 
     public void moveAtCapacityCourtedOnesToCourt() {
@@ -146,10 +166,12 @@ public class Coordinator {
     }
 
     private void updateIsFinished() {
-        isFinished = updateAreAtCapacity(court.getSuitors()) 
-                  || updateAreAtCapacity(court.getCourtedOnes());
+        for(Suitor suitor : court.getSuitors()) {
+            if(!suitor.getPreferences().isEmpty()) {
+                isFinished = false;
+                return;
+            }
+        }
+        isFinished = true;
     }
-
-
-
 }

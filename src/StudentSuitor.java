@@ -4,6 +4,7 @@ import java.util.Map;
 public class StudentSuitor implements Suitor {
     private Student student;
     private int capacity;
+    private CourtedOne courtedOne;
     private Map<CourtedOne, Integer> preferences;
 
     public StudentSuitor(Student student) {
@@ -53,6 +54,17 @@ public class StudentSuitor implements Suitor {
     @Override
     public Object getWrappedObject() {
         return student;
+    }
+
+    @Override
+    public boolean isUnited() {
+        return (courtedOne != null);
+    }
+
+    @Override
+    public void removePreference(CourtedOne courtedOne) {
+        getStudent().getPreferencesMap().remove((School) courtedOne.getWrappedObject());
+        preferences.remove(courtedOne);
     }
 
 }

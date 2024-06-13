@@ -47,4 +47,8 @@ public class Balcony {
     public boolean hasCourtedOne() {
         return courtedOne != null;
     }
+
+    public void removeSuitor(Suitor suitor) {
+        suitors.remove(suitor);
+    }
 }
