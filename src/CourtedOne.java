@@ -1,10 +1,12 @@
 import java.util.List;
+import java.util.Map;
 
-public interface CourtedOne extends Participants{
+public interface CourtedOne extends Participant<CourtedOne, Suitor> {
+    void setupPreferences(List<Suitor> suitors);
+    Map<Suitor, Integer> getPreferences();
+    void unite(Suitor suitor);
+    void disunite(Suitor suitor);
     void setBalcony(Balcony balcony);
     Balcony getBalcony();
-    Suitor getPreferredSuitor(List<Suitor> interestedSuitors);
-    int getCapacity();
-    void unite(Suitor suitor);
-    Object getWrappedObject();
+    List<Suitor> getPreferredSuitors(List<Suitor> interestedSuitors);
 }

@@ -1,13 +1,12 @@
 import java.util.Map;
+import java.util.List;
 
-public interface Suitor extends Participants{
-    CourtedOne getFirstPreference();
+public interface Suitor extends Participant<Suitor, CourtedOne> {
+    void setupPreferences(List<CourtedOne> courtedOnes);
     Map<CourtedOne, Integer> getPreferences();
-    int getCapacity();
     void unite(CourtedOne courtedOne);
-    Object getWrappedObject();
-
-    boolean isUnited();
-
+    void disunite(CourtedOne courtedOne);
+    CourtedOne getFirstPreference();
     void removePreference(CourtedOne courtedOne);
+    void seperate();
 }

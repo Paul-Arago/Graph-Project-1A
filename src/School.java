@@ -9,7 +9,6 @@ public class School {
     private Map<Student, Integer> preferences;
     private int capacity;
     private Balcony balcony;
-    private SchoolCourtedOne courtedOne; // Temporary solution
 
     public School(String name, int capacity) {
         this.name = name;
@@ -22,15 +21,7 @@ public class School {
         return name;
     }
 
-    public void setCourtedOne(SchoolCourtedOne courtedOne) {
-        this.courtedOne = courtedOne;
-    }
-
-    public CourtedOne getCourtedOne() {
-        return courtedOne;
-    }
-
-    public Map<Student, Integer> getPreferencesMap() {
+    public Map<Student, Integer> getPreferences() {
         return preferences;
     }
 
@@ -56,6 +47,10 @@ public class School {
 
     public void setBalcony(Balcony balcony) {
         this.balcony = balcony;
+    }
+
+    public void removeStudent(Student student) {
+        students.remove(student);
     }
 
     

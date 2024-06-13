@@ -53,9 +53,9 @@ public class ParserCSV {
                     if(preferences.length == 2){
                         int schoolPreference = Integer.parseInt(preferences[0].trim());
                         int studentPreference = Integer.parseInt(preferences[1].trim());
-                        student.getPreferencesMap().put(schoolsList.get(i-1), studentPreference);
+                        student.getPreferences().put(schoolsList.get(i-1), studentPreference);
                         //schoolsList.get(i-1).addStudent(student);
-                        schoolsList.get(i-1).getPreferencesMap().put(student, schoolPreference);
+                        schoolsList.get(i-1).getPreferences().put(student, schoolPreference);
                     }else{
             
                         throw new ParsingException("Bad value format.\nCheck that value are in this format : " +

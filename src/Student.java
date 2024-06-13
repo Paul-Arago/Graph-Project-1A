@@ -3,25 +3,25 @@ import java.util.Map;
 
 public class Student {
     private String name;
-    private Map<School,Integer> preferencesMap;
+    private Map<School,Integer> preferences;
     private Balcony balcony;
     private School school;
 
     public Student(String name) {
         this.name = name;
-        this.preferencesMap = new HashMap<School,Integer>();
+        this.preferences = new HashMap<School,Integer>();
     }
 
     public String getName() {
         return name;
     }
 
-    public Map<School, Integer> getPreferencesMap() {
-        return preferencesMap;
+    public Map<School, Integer> getPreferences() {
+        return preferences;
     }
 
     public School getFirstPreference() {
-        return preferencesMap.entrySet().stream()
+        return preferences.entrySet().stream()
         .max(Map.Entry.comparingByValue())
         .map(Map.Entry::getKey)
         .orElse(null);

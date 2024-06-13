@@ -1,45 +1,58 @@
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class StudentSuitor implements Suitor {
     private Student student;
-    private int capacity;
-    private CourtedOne courtedOne;
+    private Integer capacity;
     private Map<CourtedOne, Integer> preferences;
+    private Boolean isUnited;
 
     public StudentSuitor(Student student) {
         this.student = student;
         this.capacity = 1;
-        this.createSuitorMap();
+        this.isUnited = false;
+        this.preferences = new HashMap<>();
+    }
+
+    @Override
+    public void setupPreferences(List<CourtedOne> courtedOnes) {
+        for (Map.Entry<School, Integer> entry : student.getPreferences().entrySet()) {
+            for (CourtedOne courtedOne : courtedOnes) {
+                if (entry.getKey().equals((School) courtedOne.getWrappedObject())) {
+                    preferences.put(courtedOne, entry.getValue());
+                }
+            }
+        }
     }
 
     @Override
     public CourtedOne getFirstPreference() {
-        return null;
+        Map.Entry<CourtedOne, Integer> maxEntry = Collections.min(preferences.entrySet(), Map.Entry.comparingByValue());
+        return maxEntry.getKey();
     }
 
     @Override
-    public int getCapacity() {
+    public Integer getCapacity() {
         return capacity;
     }
 
     @Override
     public void unite(CourtedOne courtedOne) {
         student.setSchool((School) courtedOne.getWrappedObject());
+        isUnited = true;
     }
 
     @Override
-    public Boolean isAtCapacity() {
-        return student.getSchool() != null;
+    public void disunite(CourtedOne courtedOne) {
+
     }
-    private void createSuitorMap(){
-        preferences = new HashMap<>();
 
-        Map<School, Integer> mapStudentPreferences = student.getPreferencesMap();
-
-        for(Map.Entry<School, Integer> entry : mapStudentPreferences.entrySet()){
-            preferences.put(entry.getKey().getCourtedOne(), entry.getValue()); //new SchoolCourtedOne(entry.getKey())
-        }
+    @Override
+    public void seperate() {
+        student.setSchool(null);
+        isUnited = false;
     }
 
     @Override
@@ -57,13 +70,13 @@ public class StudentSuitor implements Suitor {
     }
 
     @Override
-    public boolean isUnited() {
-        return (courtedOne != null);
+    public Boolean isUnited() {
+        return isUnited;
     }
 
     @Override
     public void removePreference(CourtedOne courtedOne) {
-        getStudent().getPreferencesMap().remove((School) courtedOne.getWrappedObject());
+        student.getPreferences().remove((School) courtedOne.getWrappedObject());
         preferences.remove(courtedOne);
     }
 

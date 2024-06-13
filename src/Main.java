@@ -56,6 +56,19 @@ public class Main {
                 suitors = getSuitorsListBySchool(schools);
             }
             
+            // Set up the preferences for each suitor
+            for(Suitor suitor : suitors){
+                suitor.setupPreferences(courtedOnes);
+            }
+
+            // Set up the preferences for each courted one
+            for(CourtedOne courtedOne : courtedOnes){
+                courtedOne.setupPreferences(suitors);
+            }
+
+
+
+
             // Create a Court
             court = new Court(suitors, courtedOnes);
             
@@ -73,6 +86,8 @@ public class Main {
 
             // Show all CourtedOnes
             //showCourtedOnes(courtedOnes);
+
+            // Participant preferences verification
 
             // Start the algorithm
             coordinator.start();
@@ -169,7 +184,7 @@ public class Main {
         for(Student student : students){
             System.out.println(student);
         
-            for(Map.Entry<School, Integer> entry : student.getPreferencesMap().entrySet()){
+            for(Map.Entry<School, Integer> entry : student.getPreferences().entrySet()){
                 System.out.print("  - ");
                 System.out.println(entry.getKey());
             }
@@ -181,7 +196,7 @@ public class Main {
 
         for(School school : schools){
             System.out.println(school);
-            for(Map.Entry<Student, Integer> entry : school.getPreferencesMap().entrySet()){
+            for(Map.Entry<Student, Integer> entry : school.getPreferences().entrySet()){
                 System.out.print("  - ");
                 System.out.println(entry.getKey());
             }
