@@ -127,7 +127,7 @@ class "Court" {
     + addBalcony(balcony : Balcony) : void
 }
 
-interface "Participant<S extends Participant,O extends Participant>" {
+interface Participant<S extends Participant,O extends Participant> {
     + setupPreferences(participants : List<O>) : void
     + getPreference() : Map<O, Integer>
     + getWrappedObject() : Object
