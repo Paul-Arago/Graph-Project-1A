@@ -21,22 +21,24 @@ public class ParserCSV {
         String line = "";
         String splitBy = ",";
         String splitPreferencesBy = ";";
+        String splitCapacitiesBy = ";";
+
         try
         {
-            Path path = Paths.get("src", "InputV2.csv");
+            Path path = Paths.get("src", "Input.csv");
             BufferedReader br = new BufferedReader(new FileReader(path.toFile()));
 
             //Create school list with first line of the file
             if((line = br.readLine()) != null){
-                List<String> firstLine = new ArrayList<>(Arrays.stream(line.split(splitBy)).toList());
-                if(firstLine.size() > 0 && firstLine.get(0).isEmpty()){
-                    firstLine.remove(0);
+                List<String> schoolsAndCapacities = new ArrayList<>(Arrays.stream(line.split(splitBy)).toList());
+                if(schoolsAndCapacities.size() > 0 && schoolsAndCapacities.get(0).isEmpty()){
+                    schoolsAndCapacities.remove(0);
                 }else{
                     throw new ParsingException("Bad format.\nEnsure that the CSV file is correctly formatted.");
                 }
-                for(String s : firstLine){
-                    School school = new School(s, 2);
-                    schoolsList.add(school);
+                for(String schoolAndCapacity : schoolsAndCapacities){
+                    String[] splittedSchoolAndCapacity = schoolAndCapacity.split(splitCapacitiesBy);
+                    schoolsList.add(new School(splittedSchoolAndCapacity[0], Integer.parseInt(splittedSchoolAndCapacity[1])));
                 }
             }
             

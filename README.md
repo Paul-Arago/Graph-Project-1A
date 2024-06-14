@@ -1,3 +1,43 @@
+# Getting Started
+
+## Prerequisites
+
+This project was developed using openjdk 22.0.1. To install it, follow the instructions on the [OpenJDK website](https://www.oracle.com/java/technologies/downloads/).
+
+Only basic `Java.util`, `Java.io` and `Java.nio` libraries were used in this project. No additional libraries are required to run this project.
+
+## Installation
+
+To install this project, clone the repository using the following command:
+
+```bash
+git clone https://github.com/Paul-Arago/Graph-Project-1A.git
+```
+
+## Configuration
+
+This project uses a csv file to store the students and schools preferences. The highest the preference, the more the student or school wants to be with the other and vice versa.
+
+The CSV file must be formatted as follows:
+
+```csv
+,School1;capacitySchool1,School2;capacitySchool2, ...
+Student1,preferenceSchool1ForStudent1;preferenceStudent1ForSchool1,preferenceSchool2ForStudent1;preferenceStudent1ForSchool2, ...
+Student2,preferenceSchool1ForStudent2;preferenceStudent2ForSchool1,preferenceSchool2ForStudent2;preferenceStudent2ForSchool2, ...
+```
+
+The following image helps to better understand the format of the file:
+
+![CSV file format](resources/csv_format.png)
+
+## Usage
+
+
+
+## Troubleshooting
+
+
+
 # Instructions
 
 - Implement a student admission program using the stable marriage algorithm
@@ -14,7 +54,8 @@
 	- Every school does its own ranking
 - Evaluation (30% of final grade)
 	- demo during the last session june 14
-	- report + code by june 23
+	- report + code by june 
+
 
 # Java classes
 
