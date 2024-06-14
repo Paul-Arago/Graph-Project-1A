@@ -16,7 +16,6 @@ public class SchoolCourtedOne implements CourtedOne {
         this.capacity = school.getCapacity();
         this.preferences = new HashMap<>();
         this.unitedSuitors = new ArrayList<>();
-
     }
 
     @Override

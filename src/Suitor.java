@@ -7,6 +7,13 @@ public interface Suitor extends Participant<Suitor, CourtedOne> {
     void unite(CourtedOne courtedOne);
     void disunite(CourtedOne courtedOne);
     CourtedOne getFirstPreference();
+
+    /**
+     * Get the first n first preferences
+     * @param n
+     * @return
+     */
+    List<CourtedOne> getFirstPreferences(Integer n);
     void removePreference(CourtedOne courtedOne);
     void seperate();
 }

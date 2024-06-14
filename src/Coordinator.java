@@ -18,7 +18,7 @@ public class Coordinator {
 
     public Coordinator(Court court) {
         this.court = court;
-        this.round = 0;
+        this.round = 1;
         isFinished = false;
         this.balconyState = "";
     }
@@ -32,9 +32,7 @@ public class Coordinator {
 
         // Start the rounds.
         System.out.println("Starting rounds...");
-        
 
-        // Maybe the while loop should call a method that updates the isFinished variable.
         while (!isFinished()) {
             System.out.println("----------------------------------");
             System.out.println("Round: " + round );
@@ -49,7 +47,7 @@ public class Coordinator {
             courtedOnesChooseSuitors();
 
             // Remove the courted one if the suitor was not chosen.
-            System.out.println("Removing the courted one of the suitors preferences if the suitor was not chosen...");
+            System.out.println("Removing the courted one of the suitors preferences if the suitor was rejected...");
             updateSuitorsPreferences();
 
             // Move rejected suitors back to the court.
@@ -138,7 +136,10 @@ public class Coordinator {
     private void moveSuitorsToPreferredBalconies() {
         for (Suitor suitor : court.getSuitors()) {
             if (!suitor.getPreferences().isEmpty()){
-                suitor.getFirstPreference().getBalcony().addSuitor(suitor);
+                List<CourtedOne> firstPreferences = suitor.getFirstPreferences(suitor.getCapacity());
+                for (CourtedOne preference : firstPreferences) {
+                    preference.getBalcony().addSuitor(suitor);
+                }
             }
         }
     }

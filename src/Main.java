@@ -66,28 +66,11 @@ public class Main {
                 courtedOne.setupPreferences(suitors);
             }
 
-
-
-
             // Create a Court
             court = new Court(suitors, courtedOnes);
             
             // Create a Coordinator
             Coordinator coordinator = new Coordinator(court);
-
-            // Show all Students and their preferences
-            //showStudents(students);
-
-            // Show all Schools and their preferences
-            //showSchools(schools);
-
-            // Show all Suitors
-            //showSuitors(suitors);
-
-            // Show all CourtedOnes
-            //showCourtedOnes(courtedOnes);
-
-            // Participant preferences verification
 
             // Start the algorithm
             coordinator.start();
@@ -111,10 +94,9 @@ public class Main {
     }
     
     private static void getResultsSchoolsStudents(List<School> schools, List<Student> students) {
-        
-        System.out.println("----------------------------------------");
-        System.out.println(" ----------------Results---------------- ");
-        System.out.println("----------------------------------------");
+
+        System.out.println();
+        System.out.println(" --------------------------------Results-------------------------------- ");
 
         System.out.println("----------------Schools----------------");
         

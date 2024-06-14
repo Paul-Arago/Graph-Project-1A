@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -31,6 +32,17 @@ public class StudentSuitor implements Suitor {
     public CourtedOne getFirstPreference() {
         Map.Entry<CourtedOne, Integer> minEntry = Collections.min(preferences.entrySet(), Map.Entry.comparingByValue());
         return minEntry.getKey();
+    }
+
+    @Override
+    public  List<CourtedOne> getFirstPreferences(Integer n) {
+        List<CourtedOne> firstPreferences = new ArrayList<>();
+        List<Map.Entry<CourtedOne, Integer>> entries = new ArrayList<>(preferences.entrySet());
+        entries.sort(Map.Entry.comparingByValue());
+        for (int i = 0; i < n; i++) {
+            firstPreferences.add(entries.get(i).getKey());
+        }
+        return firstPreferences;
     }
 
     @Override
