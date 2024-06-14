@@ -10,13 +10,11 @@ public class Coordinator {
     private String balconyState;
     
     /**
-     * The string representation of all of the suitors preferences.
+     * The string representation of all the suitors preferences.
      * This is used to determine if the process is finished.
      * If the string representation of the suitors preferences is the same two rounds in a row, the process is finished.
      */
     String suitorsPreferenceString;
-
-
 
     public Coordinator(Court court) {
         this.court = court;
@@ -37,17 +35,17 @@ public class Coordinator {
         
 
         // Maybe the while loop should call a method that updates the isFinished variable.
-        updateIsFinished();
-        while (!isFinished) {
+        while (!isFinished()) {
+            System.out.println("----------------------------------");
             System.out.println("Round: " + round );
 
             // Move suitors to preferred balconies.
             System.out.println("Moving suitors to preferred balconies...");
             moveSuitorsToPreferredBalconies();
-            getBalconyState();
+            //getBalconyState();
 
             // Make courted ones choose suitors.
-            System.out.println("Making courted ones choose suitors and uniting them temporarily...");
+            System.out.println("Making courted ones choose suitors and uniting them (temporarily)...");
             courtedOnesChooseSuitors();
 
             // Remove the courted one if the suitor was not chosen.
@@ -55,12 +53,9 @@ public class Coordinator {
             updateSuitorsPreferences();
 
             // Move rejected suitors back to the court.
-            System.out.println("Moving suitors back to the court...");
+            System.out.println("Moving all suitors back to the court...");
             moveSuitorsToCourt();
 
-            // Update the isFinished variable.
-            System.out.println();
-            updateIsFinished();
 
             // Print the total number of Suitors, and then the number of remaining Suitors.
             remainingSuitors();
@@ -68,10 +63,8 @@ public class Coordinator {
             // Print the total number of CourtedOne, and then the number of remaining CourtedOne.
             remainingCourtedOnes();
 
-            // Print a the suitors preferences.
-            System.out.println("Suitors preferences: " + suitorsPreferenceString);
-
-
+            // Print the suitors preferences.
+            //System.out.println("Suitors preferences: " + suitorsPreferenceString);
 
             // Increment the round.
             round++;
@@ -188,15 +181,16 @@ public class Coordinator {
     /**
      * The only termination condition is when every suitor has the same preferences two rounds in a row.
      */
-    private void updateIsFinished() {
-        String newSuitorsPreferenceString = "";
+    private Boolean isFinished() {
+        StringBuilder newSuitorsPreferenceString = new StringBuilder();
         for (Suitor suitor : court.getSuitors()) {
-            newSuitorsPreferenceString += suitor.getPreferences().toString();
+            newSuitorsPreferenceString.append(suitor.getPreferences().toString());
         }
 
-        if (newSuitorsPreferenceString.equals(suitorsPreferenceString)) {
+        if (newSuitorsPreferenceString.toString().equals(suitorsPreferenceString)) {
             isFinished = true;
         }
-        suitorsPreferenceString = newSuitorsPreferenceString;
+        suitorsPreferenceString = newSuitorsPreferenceString.toString();
+        return isFinished;
     }
 }
