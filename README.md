@@ -1,3 +1,21 @@
+# Instructions
+
+- Implement a student admission program using the stable marriage algorithm
+- Input:
+	- student and school preferences from a file in the format used in TD, or something else, the students and the schools must be given as an input file and the user decides the bidding
+	- User selects who does the bidding (serenating)
+	- schools can accept mutiple students, students go to one school
+		- schools have capacities
+- output:
+	- student to school assignement
+	- number of rounds needed to converge
+- specifications:
+	- Should be able to handle more students than capacity of schools
+	- Every school does its own ranking
+- Evaluation (30% of final grade)
+	- demo during the last session june 14
+	- report + code by june 23
+
 # Java classes
 
 ## First architecture
