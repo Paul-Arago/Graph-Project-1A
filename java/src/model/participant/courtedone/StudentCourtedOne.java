@@ -1,11 +1,9 @@
-package model.courtedone;
+package model.participant.courtedone;
 
 import model.Balcony;
-import model.Court;
 import model.School;
 import model.Student;
-import model.suitor.Suitor;
-
+import model.participant.suitor.Suitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,25 +11,25 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.HashMap;
 
-public class SchoolCourtedOne implements CourtedOne {
-    private School school;
+public class StudentCourtedOne implements CourtedOne {
+    private Student student;
     private Integer capacity;
     private Balcony balcony;
     private  Map<Suitor, Integer> preferences;
     private List<Suitor> unitedSuitors;
 
-    public SchoolCourtedOne(School school) {
-        this.school = school;
-        this.capacity = school.getCapacity();
+    public StudentCourtedOne(Student student) {
+        this.student = student;
+        this.capacity = 1;
         this.preferences = new HashMap<>();
         this.unitedSuitors = new ArrayList<>();
     }
 
     @Override
     public void setupPreferences(List<Suitor> suitors) {
-        for (Entry<Student, Integer> entry : school.getPreferences().entrySet()) {
+        for (Entry<School, Integer> entry : student.getPreferences().entrySet()) {
             for (Suitor suitor : suitors) {
-                if (entry.getKey().equals((Student) suitor.getWrappedObject())) {
+                if (entry.getKey().equals((School) suitor.getWrappedObject())) {
                     preferences.put(suitor, entry.getValue());
                 }
             }
@@ -79,8 +77,10 @@ public class SchoolCourtedOne implements CourtedOne {
                 preferredSuitors.add(entry.getKey());
             }
         }
-    
+
+
         return preferredSuitors;
+
     }
 
     @Override
@@ -90,37 +90,30 @@ public class SchoolCourtedOne implements CourtedOne {
 
     @Override
     public Map<Suitor, Integer> getPreferences() {
-        return Map.of();
+        return preferences;
     }
 
     @Override
     public void unite(Suitor suitor) {
         unitedSuitors.add(suitor);
-        school.addStudent((Student) suitor.getWrappedObject());
+        student.setSchool((School) suitor.getWrappedObject());
     }
 
     @Override
     public void disunite(Suitor suitor) {
         unitedSuitors.remove(suitor);
-        school.removeStudent((Student) suitor.getWrappedObject());
+        student.setSchool(null);
     }
 
     @Override
     public void disunite() {
         unitedSuitors.clear();
-        school.removeAllStudents(); 
-    }
-
-    /**
-     * I think that this is useless
-     */
-    @Override
-    public Boolean isUnited() {
-        return null;
+        student.setSchool(null);
     }
 
     @Override
     public Object getWrappedObject() {
-        return school;
+        return student;
     }
+        
 }

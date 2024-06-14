@@ -42,6 +42,12 @@ To run the program, with the bidding choice decided through the command line, us
 java Main [biddingChoice]
 ```
 
+example:
+
+```bash
+java Main 1
+```
+
 If a bidding choice is not provided, the program will prompt the user to enter a choice.
 
 Note that wether or not the user uses an IDE, the root directory must be `src` in order for the `parser.Parser` class to find the resources file.
@@ -67,152 +73,156 @@ Note that wether or not the user uses an IDE, the root directory must be `src` i
 
 # Java classes
 
-## First architecture
-
-```plantuml
-@startuml
-class model.Student {
-    String name
-    Map<model.School, int> preference 
-    Boolean isAvailable
-    model.School school
-    model.School choose(model.Balcony balcony)
-}
-
-class model.School {
-    String name
-    Map<model.Student, int> students
-    int capacity
-    Boolean isAvailable
-    model.Balcony balcony
-    model.Student choose(model.Balcony balcony)
-}
-
-class model.Court {
-    <model.Balcony> balcony
-    <model.School> school
-    <model.Student> students
-    Enumeration seekers
-    void moveSeekersToBalcony(Seeker seeker)
-}
-
-class model.Balcony {
-    model.Court court
-    <model.School> schools
-    <model.Student> students
-    void moveSeekersToCourt(Seeker seeker)
-    void responderChooses(Seeker seeker)
-}
-
-@enduml
-```
-
-## 2nd architecture
-
 ```plantuml
 @startuml MariageAlgorithmClassDiagram
 
-class "model.Balcony" {
-    - courtedOne : model.courtedone.CourtedOne {readOnly}
-    - suitors : List<model.suitor.Suitor>
-    + model.Balcony(courtedOne : model.courtedone.CourtedOne)
-    + addSuitor(suitor : model.suitor.Suitor) : void
+class "Student" {
+    - name : String
+    - preferences : HashMap<School, Integer>
+    - school : School*
+    + Student(name : String)
+}
+
+class "School" {
+    - name : String
+    - students : List<Student>
+    - capacity : Integer
+    - preferences : HashMap<Student, Integer>
+    + School(name : String, capacity : Integer)
+    + addStudent(student : Student) : void
+    + removeStudent(student : Student) : void
+    + removeAllStudents() : void
+}
+
+class "Coordinator" {
+    - court : Court
+    - round : Integer
+    - suitorsPreferenceString : String
+    - hasConverged : Boolean
+    + Coordinator(court : Court)
+    + start() : void
+    + setupBalconies() : void
+    + moveSuitorsToPreferredBalconies() : void
+    + courtedOnesChooseSuitors() : void
+    + disuniteAllBalcony(balcony : Balcony) : void
+    + unite(suitors : List<Suitor>, courtedOnes : List<CourtedOne>) : void
+    + updateSuitorsPreferences() : void
+    + moveSuitorsToCourt() : void
+    + hasConverged() : Boolean
+}
+
+class "Balcony" {
+    - courtedOne : CourtedOne {readOnly}
+    - suitors : List<Suitor>
+    + Balcony(courtedOne : CourtedOne)
+    + addSuitor(suitor : Suitor) : void
     + removeAllSuitors() : void
 }
 
-class "model.Court" {
-    - balconies : HashMap<model.courtedone.CourtedOne, model.Balcony>
-    - courtedOnes : List<model.courtedone.CourtedOne>
-    - suitors : List<model.suitor.Suitor>
-    + model.Court(courtedOnes : List<model.courtedone.CourtedOne>, suitors : List<model.suitor.Suitor>)
-    + createBalconies() : void
+class "Court" {
+    - balconies : HashMap<CourtedOne, Balcony>
+    - courtedOnes : List<CourtedOne>
+    - suitors : List<Suitor>
+    + Court(courtedOnes : List<CourtedOne>, suitors : List<Suitor>)
+    + addBalcony(balcony : Balcony) : void
 }
 
-interface "model.suitor.Suitor" {
-    + getFirstPreference() : model.courtedone.CourtedOne
-    + getCapacity() : int
-    + unite(courtedOne : model.courtedone.CourtedOne) : void
+interface "Participant<S extends Participant,O extends Participant>" {
+    + setupPreferences(participants : List<O>) : void
+    + getPreference() : Map<O, Integer>
+    + getWrappedObject() : Object
+    + unite(participant : O) : void
+    + disunite(participant : O) : void
+    + disunite() : void
+    + getCapacity() : Integer
 }
 
-class "model.suitor.StudentSuitor" {
-    - student : model.Student
-    - capacity : int
-    - preferences : List<model.courtedone.CourtedOne>
-    + model.suitor.StudentSuitor(student : model.Student)
-    + getFirstPreference() : model.courtedone.CourtedOne
+interface "Suitor" {
+    + setupPreferences(preferences : List<CourtedOne>) : void
+    + getPreference() : Map<CourtedOne, Integer>
+    + unite(courtedOne : CourtedOne) : void
+    + isUnite() : Boolean
+    + isUnitedTo(courtedOne : CourtedOne) : Boolean
+    + disunite(courtedOne : CourtedOne) : void
+    + getFirstPreferences(n Integer) : List<CourtedOne>
+    + removePreference(courtedOne : CourtedOne) : void
 }
 
-class "model.suitor.SchoolSuitor" {
-    - school : model.School
-    - capacity : int
-    - preferences : List<model.courtedone.CourtedOne>
-    + model.suitor.SchoolSuitor(school : model.School)
-    + getFirstPreference() : model.courtedone.CourtedOne
+interface "CourtedOne" {
+    + setupPreferences(suitors : List<Suitor>) : void
+    + getPreferences() : Map<Suitor, Integer>
+    + unite(suitor : Suitor) : void
+    + disunite(suitor : Suitor) : void
+    + setBalcony(balcony : Balcony) : void
+    + getBalcony() : Balcony
+    + getPreferredSuitors(interestedSuitors : List<Suitor>) : List<Suitor>
 }
 
-interface "model.courtedone.CourtedOne" {
-    + setBalcony(balcony : model.Balcony) : void
-    + getBalcony() : model.Balcony
-    + getPreference(interestedSuitors : List<model.suitor.Suitor>) : model.suitor.Suitor
-    + getCapacity() : int
-    + unite(suitor : model.suitor.Suitor) : void
+class "StudentSuitor" {
+    - student : Student
+    - capacity : Integer
+    - preferences : Map<CourtedOne, Integer>
+    + StudentSuitor(student : Student)
 }
 
-class "model.courtedone.SchoolCourtedOne" {
-    - school : model.School
-    - capacity : int
-    + model.courtedone.SchoolCourtedOne(school : model.School)
-    + getPreference(interestedSuitors : List<model.suitor.Suitor>) : model.suitor.Suitor
+class "SchoolSuitor" {
+    - school : School
+    - capacity : Integer
+    - preferences : Map<CourtedOne, Integer>
+    + SchoolSuitor(school : School)    
 }
 
-class "model.courtedone.StudentCourtedOne" {
-    - student : model.Student
-    - capacity : int
-    + model.courtedone.StudentCourtedOne(student : model.Student)
-    + getPreference(interestedSuitors : List<model.suitor.Suitor>) : model.suitor.Suitor
+class "SchoolCourtedOne" {
+    - school : School
+    - capacity : Integer
+    - balcony : Balcony
+    - preferences : Map<Suitor, Integer>
+    - unitedSuitors : List<Suitor>
+    + SchoolCourtedOne(school : School)
 }
 
-class "model.Student" {
-    - name : String
-    - school : model.School
-    - preferences : HashMap<model.School, Integer>
+class "StudentCourtedOne" {
+    - student : Student
+    - capacity : Integer
+    - balcony : Balcony
+    - preferences : Map<Suitor, Integer>
+    - unitedSuitors : List<Suitor>
+    + StudentCourtedOne(student : Student)   
 }
 
-class "model.School" {
-    - name : String
-    - students : List<model.Student>
-    - capacity : int
-    - preferences : HashMap<model.Student, Integer>
+class "Parser" {
+    - studentsList : List<Student>
+    - schoolsList : List<School>
+    + Parser(resources : String)
+    + parse() throws ParsingException : void
 }
 
-class "Matchmaker" {
-    - court : model.Court
-    - round : int
-    + Matchmaker(court : model.Court)
-    + startProcess() : void
-    + moveSuitorToBalcony(suitor : model.suitor.Suitor, balcony : model.Balcony) : void
-    + moveSuitorToCourt(suitor : model.suitor.Suitor) : void
-    + unite(suitor : model.suitor.Suitor, courtedOne : model.courtedone.CourtedOne) : void
+class "ParsingException" {
+    + ParsingException(message : String)
 }
 
-model.Balcony --> model.suitor.Suitor
-model.Balcony --> model.courtedone.CourtedOne
-model.Court --o model.Balcony
-model.Court --> model.courtedone.CourtedOne
-model.Court --> model.suitor.Suitor
-model.suitor.Suitor <..> model.courtedone.CourtedOne
-model.suitor.StudentSuitor --|> model.suitor.Suitor
-model.suitor.StudentSuitor --* model.Student
-model.suitor.SchoolSuitor --|> model.suitor.Suitor
-model.suitor.SchoolSuitor --* model.School
-model.courtedone.SchoolCourtedOne --|> model.courtedone.CourtedOne
-model.courtedone.SchoolCourtedOne --* model.School
-model.courtedone.StudentCourtedOne --|> model.courtedone.CourtedOne
-model.courtedone.StudentCourtedOne --* model.Student
-Matchmaker --o model.Court
-Matchmaker --> model.Balcony
-Matchmaker --> model.suitor.Suitor
-Matchmaker --> model.courtedone.CourtedOne
+
+
+Balcony --> Suitor
+Balcony --> CourtedOne
+Court --o Balcony
+Court --> CourtedOne
+Court --> Suitor
+Participant --|> Suitor
+Participant --|> CourtedOne
+Suitor <..> CourtedOne
+StudentSuitor --|> Suitor
+StudentSuitor --* Student
+SchoolSuitor --|> Suitor
+SchoolSuitor --* School
+SchoolCourtedOne --|> CourtedOne
+SchoolCourtedOne --* School
+StudentCourtedOne --|> CourtedOne
+StudentCourtedOne --* Student
+Coordinator --o Court
+Coordinator --> Balcony
+Coordinator --> Suitor
+Coordinator --> CourtedOne
 @enduml
 ```
 

@@ -1,23 +1,17 @@
 package algorithm;
 
-
-
-
 import model.Balcony;
 import model.Court;
-import model.Participant;
-import model.courtedone.CourtedOne;
-import model.suitor.Suitor;
+import model.participant.courtedone.CourtedOne;
+import model.participant.suitor.Suitor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Coordinator {
     private Court court;
     private int round;
-    private boolean isFinished;
-    private String balconyState;
-    
+    private boolean hasConverged;
+
     /**
      * The string representation of all the suitors preferences.
      * This is used to determine if the process is finished.
@@ -28,8 +22,7 @@ public class Coordinator {
     public Coordinator(Court court) {
         this.court = court;
         this.round = 1;
-        isFinished = false;
-        this.balconyState = "";
+        hasConverged = false;
     }
 
     public void start() {
@@ -42,14 +35,13 @@ public class Coordinator {
         // Start the rounds.
         System.out.println("Starting rounds...");
 
-        while (!isFinished()) {
+        while (!hasConverged()) {
             System.out.println("----------------------------------");
             System.out.println("Round: " + round );
 
             // Move suitors to preferred balconies.
             System.out.println("Moving suitors to preferred balconies...");
             moveSuitorsToPreferredBalconies();
-            //getBalconyState();
 
             // Make courted ones choose suitors.
             System.out.println("Making courted ones choose suitors and uniting them (temporarily)...");
@@ -63,15 +55,11 @@ public class Coordinator {
             System.out.println("Moving all suitors back to the court...");
             moveSuitorsToCourt();
 
-
             // Print the total number of Suitors, and then the number of remaining Suitors.
             remainingSuitors();
 
             // Print the total number of model.courtedone.CourtedOne, and then the number of remaining model.courtedone.CourtedOne.
             remainingCourtedOnes();
-
-            // Print the suitors preferences.
-            //System.out.println("Suitors preferences: " + suitorsPreferenceString);
 
             // Increment the round.
             round++;
@@ -80,38 +68,6 @@ public class Coordinator {
         System.out.println("Process completed.");
     }
 
-    private void getBalconyState() {
-        String newBalconyState = "";
-        for (Balcony balcony : court.getBalconies()) {
-            newBalconyState += balcony.getCourtedOne().getWrappedObject().toString() + ": " + balcony.getSuitors().toString() + "\n";
-        }
-        if (newBalconyState.equals(balconyState)) {
-        }
-        balconyState = newBalconyState;
-    }
-
-    private void moveRejectedSuitorsToCourt() {
-        for (Balcony balcony : court.getBalconies()) {
-            List<Suitor> suitorsToRemove = new ArrayList<>();
-            for (Suitor suitor : balcony.getSuitors()) {
-                if (!suitor.isUnited()) {
-                    suitorsToRemove.add(suitor);
-                }
-            }
-            balcony.getSuitors().removeAll(suitorsToRemove);
-        }
-
-    }
-
-    private void updateSuitorsPreferences() {
-        for (Balcony balcony : court.getBalconies()) {
-            for (Suitor suitor : balcony.getSuitors()) {
-                if (!suitor.isUnitedTo(balcony.getCourtedOne())) {
-                    suitor.removePreference(balcony.getCourtedOne());
-                }
-            }
-        }
-    }
 
     public void remainingSuitors() {
         System.out.println("Total number of Suitors: " + court.getSuitors().size());
@@ -128,18 +84,6 @@ public class Coordinator {
             courtedOne.setBalcony(balcony);
             court.addBalcony(balcony);
         }
-    }
-
-    private <T extends Participant> boolean updateAreAtCapacity(List<T> participants) {
-        boolean areAtCapacity = true;
-        for (T participant : participants) {
-            if (participant != null) {
-                areAtCapacity = false;
-                break;
-            }
-        }
-
-    return areAtCapacity;
     }
 
     private void moveSuitorsToPreferredBalconies() {
@@ -182,6 +126,17 @@ public class Coordinator {
         }
     }
 
+
+    private void updateSuitorsPreferences() {
+        for (Balcony balcony : court.getBalconies()) {
+            for (Suitor suitor : balcony.getSuitors()) {
+                if (!suitor.isUnitedTo(balcony.getCourtedOne())) {
+                    suitor.removePreference(balcony.getCourtedOne());
+                }
+            }
+        }
+    }
+
     private void moveSuitorsToCourt() {
         for (Balcony balcony : court.getBalconies()) {
             balcony.removeAllSuitors();
@@ -191,16 +146,16 @@ public class Coordinator {
     /**
      * The only termination condition is when every suitor has the same preferences two rounds in a row.
      */
-    private Boolean isFinished() {
+    private Boolean hasConverged() {
         StringBuilder newSuitorsPreferenceString = new StringBuilder();
         for (Suitor suitor : court.getSuitors()) {
             newSuitorsPreferenceString.append(suitor.getPreferences().toString());
         }
 
         if (newSuitorsPreferenceString.toString().equals(suitorsPreferenceString)) {
-            isFinished = true;
+            hasConverged = true;
         }
         suitorsPreferenceString = newSuitorsPreferenceString.toString();
-        return isFinished;
+        return hasConverged;
     }
 }

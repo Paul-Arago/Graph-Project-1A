@@ -2,12 +2,12 @@ import algorithm.Coordinator;
 import model.Court;
 import model.School;
 import model.Student;
-import model.courtedone.CourtedOne;
-import model.courtedone.SchoolCourtedOne;
-import model.courtedone.StudentCourtedOne;
-import model.suitor.SchoolSuitor;
-import model.suitor.StudentSuitor;
-import model.suitor.Suitor;
+import model.participant.courtedone.CourtedOne;
+import model.participant.courtedone.SchoolCourtedOne;
+import model.participant.courtedone.StudentCourtedOne;
+import model.participant.suitor.SchoolSuitor;
+import model.participant.suitor.StudentSuitor;
+import model.participant.suitor.Suitor;
 import parser.Parser;
 import parser.ParsingException;
 

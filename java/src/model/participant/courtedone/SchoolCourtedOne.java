@@ -1,9 +1,10 @@
-package model.courtedone;
+package model.participant.courtedone;
 
 import model.Balcony;
 import model.School;
 import model.Student;
-import model.suitor.Suitor;
+import model.participant.suitor.Suitor;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,25 +12,25 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.HashMap;
 
-public class StudentCourtedOne implements CourtedOne {
-    private Student student;
+public class SchoolCourtedOne implements CourtedOne {
+    private School school;
     private Integer capacity;
     private Balcony balcony;
     private  Map<Suitor, Integer> preferences;
     private List<Suitor> unitedSuitors;
 
-    public StudentCourtedOne(Student student) {
-        this.student = student;
-        this.capacity = 1;
+    public SchoolCourtedOne(School school) {
+        this.school = school;
+        this.capacity = school.getCapacity();
         this.preferences = new HashMap<>();
         this.unitedSuitors = new ArrayList<>();
     }
 
     @Override
     public void setupPreferences(List<Suitor> suitors) {
-        for (Entry<School, Integer> entry : student.getPreferences().entrySet()) {
+        for (Entry<Student, Integer> entry : school.getPreferences().entrySet()) {
             for (Suitor suitor : suitors) {
-                if (entry.getKey().equals((School) suitor.getWrappedObject())) {
+                if (entry.getKey().equals((Student) suitor.getWrappedObject())) {
                     preferences.put(suitor, entry.getValue());
                 }
             }
@@ -77,10 +78,8 @@ public class StudentCourtedOne implements CourtedOne {
                 preferredSuitors.add(entry.getKey());
             }
         }
-
-
+    
         return preferredSuitors;
-
     }
 
     @Override
@@ -90,35 +89,29 @@ public class StudentCourtedOne implements CourtedOne {
 
     @Override
     public Map<Suitor, Integer> getPreferences() {
-        return preferences;
+        return Map.of();
     }
 
     @Override
     public void unite(Suitor suitor) {
         unitedSuitors.add(suitor);
-        student.setSchool((School) suitor.getWrappedObject());
+        school.addStudent((Student) suitor.getWrappedObject());
     }
 
     @Override
     public void disunite(Suitor suitor) {
         unitedSuitors.remove(suitor);
-        student.setSchool(null);
+        school.removeStudent((Student) suitor.getWrappedObject());
     }
 
     @Override
     public void disunite() {
         unitedSuitors.clear();
-        student.setSchool(null);
-    }
-
-    @Override
-    public Boolean isUnited() {
-        return !unitedSuitors.isEmpty();
+        school.removeAllStudents(); 
     }
 
     @Override
     public Object getWrappedObject() {
-        return student;
+        return school;
     }
-        
 }

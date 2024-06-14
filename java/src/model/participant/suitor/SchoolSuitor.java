@@ -1,11 +1,10 @@
-package model.suitor;
+package model.participant.suitor;
 
 import model.School;
 import model.Student;
-import model.courtedone.CourtedOne;
+import model.participant.courtedone.CourtedOne;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,12 +13,10 @@ public class SchoolSuitor implements Suitor {
     private School school;
     private Integer capacity;
     private Map<CourtedOne, Integer> preferences;
-    private Boolean isUnited;
 
     public SchoolSuitor(School school) {
         this.school = school;
         this.capacity = school.getCapacity();
-        this.isUnited = false;
         this.preferences = new HashMap<>();
     }
 
@@ -32,12 +29,6 @@ public class SchoolSuitor implements Suitor {
                 }
             }
         }
-    }
-
-    @Override
-    public CourtedOne getFirstPreference() {
-        Map.Entry<CourtedOne, Integer> minEntry = Collections.min(preferences.entrySet(), Map.Entry.comparingByValue());
-        return minEntry.getKey();
     }
 
     @Override
@@ -59,44 +50,26 @@ public class SchoolSuitor implements Suitor {
     @Override
     public void unite(CourtedOne courtedOne) {
         school.addStudent((Student) courtedOne.getWrappedObject());
-        isUnited = true;
     }
 
     @Override
     public void disunite(CourtedOne courtedOne) {
         school.removeStudent((Student) courtedOne.getWrappedObject());
-        isUnited = false;
     }
 
     @Override
     public void disunite() {
         school.removeAllStudents();
-        isUnited = false;
-    }
-
-    @Override
-    public void seperate() {
-        school.removeAllStudents();
-        isUnited = false;
     }
 
     @Override
     public Map<CourtedOne, Integer> getPreferences() {
         return preferences;
     }
-
-    public School getSchool() {
-        return school;
-    }
-
+    
     @Override
     public Object getWrappedObject() {
         return school;
-    }
-
-    @Override
-    public Boolean isUnited() {
-        return isUnited;
     }
 
     @Override

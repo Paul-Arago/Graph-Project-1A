@@ -1,7 +1,7 @@
 package model;
 
-import model.courtedone.CourtedOne;
-import model.suitor.Suitor;
+import model.participant.courtedone.CourtedOne;
+import model.participant.suitor.Suitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 public class Balcony {
 
     // The courted one at the balcony.
-    private CourtedOne courtedOne;
+    final private CourtedOne courtedOne;
 
     // List of all suitors at the balcony.
     private List<Suitor> suitors;
@@ -45,15 +45,4 @@ public class Balcony {
         return suitors;
     }
 
-    public void setCourtedOne(CourtedOne courtedOne) {
-        this.courtedOne = courtedOne;
-    }
-
-    public boolean hasCourtedOne() {
-        return courtedOne != null;
-    }
-
-    public void removeSuitor(Suitor suitor) {
-        suitors.remove(suitor);
-    }
 }

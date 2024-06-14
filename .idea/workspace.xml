@@ -1,32 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ea6d2406-7b49-4ec6-af51-ba3590a251f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/java/src/resources/Input.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Main_arg_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graph-Project-1A.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Graph-Project-1A.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Balcony.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/Balcony.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Coordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/algorithm/Coordinator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Court.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/Court.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CourtedOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/courtedone/CourtedOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Input.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ParserCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ParsingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/parser/ParsingException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/Participant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/School.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchoolCourtedOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/courtedone/SchoolCourtedOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchoolSuitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/suitor/SchoolSuitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Steps.csv" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/resources/Steps.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StudentCourtedOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/courtedone/StudentCourtedOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StudentSuitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/suitor/StudentSuitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Suitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/suitor/Suitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/algorithm/Coordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/algorithm/Coordinator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/model/Balcony.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/Balcony.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/model/Court.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/Court.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/model/Participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/Participant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/model/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/School.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/model/courtedone/CourtedOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/courtedone/CourtedOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/model/courtedone/SchoolCourtedOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/courtedone/SchoolCourtedOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/model/courtedone/StudentCourtedOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/courtedone/StudentCourtedOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/model/suitor/SchoolSuitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/suitor/SchoolSuitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/model/suitor/StudentSuitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/suitor/StudentSuitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/model/suitor/Suitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/suitor/Suitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,29 +41,49 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main arg=1.executor": "Run",
+    "Application.Main arg=2.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/ruddy/git/Graph-Project-1A/java/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main arg=1">
     <configuration name="Main arg=1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Graph-Project-1A" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;1&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="1" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/java/src" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main arg=2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Graph-Project-1A" />
+      <option name="PROGRAM_PARAMETERS" value="2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/java/src" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main arg=1" />
+      <item itemvalue="Application.Main arg=2" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -87,7 +101,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718372043384</updated>
-      <workItem from="1718372045256" duration="122000" />
+      <workItem from="1718372045256" duration="4711000" />
     </task>
     <servers />
   </component>
