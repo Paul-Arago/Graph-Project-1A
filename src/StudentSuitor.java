@@ -98,5 +98,4 @@ public class StudentSuitor implements Suitor {
         student.getPreferences().remove((School) courtedOne.getWrappedObject());
         preferences.remove(courtedOne);
     }
-
 }

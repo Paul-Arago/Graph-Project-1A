@@ -79,8 +79,6 @@ public class SchoolCourtedOne implements CourtedOne {
         return capacity;
     }
 
-
-
     @Override
     public Map<Suitor, Integer> getPreferences() {
         return Map.of();
@@ -104,11 +102,15 @@ public class SchoolCourtedOne implements CourtedOne {
         school.removeAllStudents(); 
     }
 
+    /**
+     * I think that this is useless
+     */
     @Override
     public Boolean isUnited() {
         return null;
     }
 
+    @Override
     public Object getWrappedObject() {
         return school;
     }

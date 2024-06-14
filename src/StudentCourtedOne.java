@@ -28,4 +28,77 @@ public class StudentCourtedOne implements CourtedOne {
             }
         }
     }
+
+    @Override
+    public void setBalcony(Balcony balcony) {
+        this.balcony = balcony;
+    }
+
+    @Override
+    public Balcony getBalcony() {
+        return balcony;
+    }
+
+    /**
+     * This method will take the nth first students present among the interested suitors,
+     * then compare them with the students already in the school.
+     * If one (or more) of students who are already present then that student will be sent
+     *
+     * @param interestedSuitors
+     * @return
+     */
+    @Override
+    public  List<Suitor> getPreferredSuitors(List<Suitor> interestedSuitors) {
+        
+        List<Suitor> preferredSuitors = new ArrayList<>();
+
+        for (Suitor unitedSuitor : unitedSuitors) {
+            if (!interestedSuitors.contains(unitedSuitor)) {
+                interestedSuitors.add(unitedSuitor);
+            }
+
+
+        }
+        return preferredSuitors;
+
+    }
+
+    @Override
+    public Integer getCapacity() {
+        return capacity;
+    }
+
+    @Override
+    public Map<Suitor, Integer> getPreferences() {
+        return preferences;
+    }
+
+    @Override
+    public void unite(Suitor suitor) {
+        unitedSuitors.add(suitor);
+        student.setSchool((School) suitor.getWrappedObject());
+    }
+
+    @Override
+    public void disunite(Suitor suitor) {
+        unitedSuitors.remove(suitor);
+        student.setSchool(null);
+    }
+
+    @Override
+    public void disunite() {
+        unitedSuitors.clear();
+        student.setSchool(null);
+    }
+
+    @Override
+    public Boolean isUnited() {
+        return !unitedSuitors.isEmpty();
+    }
+
+    @Override
+    public Object getWrappedObject() {
+        return student;
+    }
+        
 }
