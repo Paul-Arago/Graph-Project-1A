@@ -97,7 +97,7 @@ public class Coordinator {
     private void updateSuitorsPreferences() {
         for (Balcony balcony : court.getBalconies()) {
             for (Suitor suitor : balcony.getSuitors()) {
-                if (!suitor.isUnited()) {
+                if (!suitor.isUnitedTo(balcony.getCourtedOne())) {
                     suitor.removePreference(balcony.getCourtedOne());
                 }
             }
@@ -169,7 +169,7 @@ public class Coordinator {
     private void disuniteAllBalcony (Balcony balcony) {
         balcony.getCourtedOne().disunite();
         for (Suitor suitor : balcony.getSuitors()) {
-            suitor.disunite();
+            suitor.disunite(balcony.getCourtedOne());
         }
     }
 

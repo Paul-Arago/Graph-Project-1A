@@ -5,6 +5,7 @@ public interface Suitor extends Participant<Suitor, CourtedOne> {
     void setupPreferences(List<CourtedOne> courtedOnes);
     Map<CourtedOne, Integer> getPreferences();
     void unite(CourtedOne courtedOne);
+    Boolean isUnitedTo(CourtedOne courtedone);
     void disunite(CourtedOne courtedOne);
     CourtedOne getFirstPreference();
 

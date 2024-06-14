@@ -94,6 +94,11 @@ public class SchoolSuitor implements Suitor {
     }
 
     @Override
+    public Boolean isUnitedTo(CourtedOne courtedOne) {
+        return school.getStudents().contains((Student) courtedOne.getWrappedObject());
+    }
+
+    @Override
     public void removePreference(CourtedOne courtedOne) {
         school.getPreferences().remove((Student) courtedOne.getWrappedObject());
         preferences.remove(courtedOne);

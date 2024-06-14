@@ -57,6 +57,15 @@ public class StudentSuitor implements Suitor {
     }
 
     @Override
+    public Boolean isUnitedTo(CourtedOne courtedOne) {
+        if (student.getSchool() !=null) {
+            return student.getSchool().equals((School) courtedOne.getWrappedObject());
+        } else {
+            return false;
+        }
+    }
+
+    @Override
     public void disunite(CourtedOne courtedOne) {
         student.setSchool(null);
         isUnited = false;

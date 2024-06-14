@@ -56,9 +56,22 @@ public class StudentCourtedOne implements CourtedOne {
             if (!interestedSuitors.contains(unitedSuitor)) {
                 interestedSuitors.add(unitedSuitor);
             }
-
-
         }
+
+        Map<Suitor, Integer> localPreferences = new HashMap<>(preferences); // Copy the preferences to a local map
+        localPreferences.keySet().retainAll(interestedSuitors); // Keep only the interested suitors
+        List<Entry<Suitor, Integer>> sortedPreferences = new ArrayList<>(localPreferences.entrySet());
+        sortedPreferences.sort(Entry.comparingByValue()); // Sort the preferences by value
+
+        for (Entry<Suitor, Integer> entry : sortedPreferences) {
+            if (preferredSuitors.size() == capacity) {
+                break;
+            } else {
+                preferredSuitors.add(entry.getKey());
+            }
+        }
+
+
         return preferredSuitors;
 
     }

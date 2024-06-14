@@ -48,10 +48,10 @@ public class Main {
              * If the user chose 1, the suitors will be the students and the courted ones will be the schools.
              * Otherwise, the suitors will be the schools and the courted ones will be the students.
              */
-            if(biddingChoice.equals("1")) {
+            if (biddingChoice.equals("1")) {
                 courtedOnes = getCourtedOneListBySchool(schools);
                 suitors = getSuitorsListByStudent(students);
-            }else{
+            }else if (biddingChoice.equals("2")){
                 courtedOnes = getCourtedOneListByStudent(students);
                 suitors = getSuitorsListBySchool(schools);
             }
@@ -145,7 +145,7 @@ public class Main {
     private static List<Suitor> getSuitorsListBySchool(List<School> schools){
         List<Suitor> suitors = new ArrayList<>();
         for(School school : schools){
-            //suitors.add(new SchoolSuitor(school));
+            suitors.add(new SchoolSuitor(school));
         }
         return suitors;
     }
@@ -153,7 +153,7 @@ public class Main {
     private static List<CourtedOne> getCourtedOneListByStudent(List<Student> students){
         List<CourtedOne> courtedOnes = new ArrayList<>();
         for(Student student : students){
-            //courtedOnes.add(new StudentCourtedOne(student));
+            courtedOnes.add(new StudentCourtedOne(student));
         }
         return courtedOnes;
     }
