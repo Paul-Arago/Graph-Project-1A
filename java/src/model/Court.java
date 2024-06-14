@@ -1,3 +1,8 @@
+package model;
+
+import model.courtedone.CourtedOne;
+import model.suitor.Suitor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +18,7 @@ public class Court {
     private List<CourtedOne> courtedOnes;
 
     /**
-     * Constructor for the Court class.
+     * Constructor for the model.Court class.
      * 
      * @param suitors List of all suitors in the court.
      * @param courtedOnes List of all courted ones in the court.

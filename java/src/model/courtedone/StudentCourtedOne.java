@@ -1,3 +1,10 @@
+package model.courtedone;
+
+import model.Balcony;
+import model.School;
+import model.Student;
+import model.suitor.Suitor;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

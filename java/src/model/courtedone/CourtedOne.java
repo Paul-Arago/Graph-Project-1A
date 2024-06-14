@@ -1,3 +1,9 @@
+package model.courtedone;
+
+import model.Balcony;
+import model.Participant;
+import model.suitor.Suitor;
+
 import java.util.List;
 import java.util.Map;
 

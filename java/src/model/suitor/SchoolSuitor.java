@@ -1,3 +1,9 @@
+package model.suitor;
+
+import model.School;
+import model.Student;
+import model.courtedone.CourtedOne;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;

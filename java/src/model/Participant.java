@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Map;
 import java.util.List;
 
@@ -5,9 +7,9 @@ import java.util.List;
  * This interface represents a participant in a matching process.
  *
  * @param <S> This represents the class implementing the interface (S = Self).
- *           For instance, if Suitor implements Participant, S = Suitor.
+ *           For instance, if model.suitor.Suitor implements model.Participant, S = model.suitor.Suitor.
  * @param <O> This represents the opposed class the class implementing the interface (O = Opposite).
- *           For instance, if Suitor implements Participant, O = CourtedOne.
+ *           For instance, if model.suitor.Suitor implements model.Participant, O = model.courtedone.CourtedOne.
  */
 public interface Participant<S extends Participant,O extends Participant> {
     void setupPreferences(List<O> participants);

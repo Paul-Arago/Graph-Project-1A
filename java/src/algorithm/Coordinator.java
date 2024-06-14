@@ -1,7 +1,16 @@
+package algorithm;
+
+
+
+
+import model.Balcony;
+import model.Court;
+import model.Participant;
+import model.courtedone.CourtedOne;
+import model.suitor.Suitor;
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 public class Coordinator {
     private Court court;
@@ -58,7 +67,7 @@ public class Coordinator {
             // Print the total number of Suitors, and then the number of remaining Suitors.
             remainingSuitors();
 
-            // Print the total number of CourtedOne, and then the number of remaining CourtedOne.
+            // Print the total number of model.courtedone.CourtedOne, and then the number of remaining model.courtedone.CourtedOne.
             remainingCourtedOnes();
 
             // Print the suitors preferences.
@@ -110,7 +119,7 @@ public class Coordinator {
     }
 
     public void remainingCourtedOnes() {
-        System.out.println("Total number of CourtedOne: " + court.getCourtedOnes().size());
+        System.out.println("Total number of model.courtedone.CourtedOne: " + court.getCourtedOnes().size());
     }
 
     private void setupBalconies() {

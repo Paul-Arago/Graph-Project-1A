@@ -1,3 +1,8 @@
+package model;
+
+import model.courtedone.CourtedOne;
+import model.suitor.Suitor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +15,7 @@ public class Balcony {
     private List<Suitor> suitors;
 
     /**
-     * Constructor for the Balcony class.
+     * Constructor for the model.Balcony class.
      * 
      * @param courtedOne The courted one at the balcony.
      */

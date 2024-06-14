@@ -1,3 +1,8 @@
+package model.suitor;
+
+import model.Participant;
+import model.courtedone.CourtedOne;
+
 import java.util.Map;
 import java.util.List;
 

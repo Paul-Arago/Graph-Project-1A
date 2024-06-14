@@ -1,3 +1,16 @@
+import algorithm.Coordinator;
+import model.Court;
+import model.School;
+import model.Student;
+import model.courtedone.CourtedOne;
+import model.courtedone.SchoolCourtedOne;
+import model.courtedone.StudentCourtedOne;
+import model.suitor.SchoolSuitor;
+import model.suitor.StudentSuitor;
+import model.suitor.Suitor;
+import parser.Parser;
+import parser.ParsingException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -36,7 +49,7 @@ public class Main {
 
         // Parsing CSV file
         try{
-            ParserCSV parser = new ParserCSV();
+            Parser parser = new Parser();
             parser.parse();
             List<Student> students = parser.getStudentsList();
             List<School> schools = parser.getSchoolsList();
@@ -66,10 +79,10 @@ public class Main {
                 courtedOne.setupPreferences(suitors);
             }
 
-            // Create a Court
+            // Create a model.Court
             court = new Court(suitors, courtedOnes);
             
-            // Create a Coordinator
+            // Create a algorithm.Coordinator
             Coordinator coordinator = new Coordinator(court);
 
             // Start the algorithm
