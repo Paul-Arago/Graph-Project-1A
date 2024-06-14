@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea6d2406-7b49-4ec6-af51-ba3590a251f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/algorithm/Coordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/algorithm/Coordinator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/model/Balcony.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/Balcony.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/model/Court.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/Court.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/model/Participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/Participant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/model/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/School.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/model/courtedone/CourtedOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/courtedone/CourtedOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/model/courtedone/SchoolCourtedOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/courtedone/SchoolCourtedOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/model/courtedone/StudentCourtedOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/courtedone/StudentCourtedOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/model/suitor/SchoolSuitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/suitor/SchoolSuitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/model/suitor/StudentSuitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/suitor/StudentSuitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/model/suitor/Suitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/model/participant/suitor/Suitor.java" afterDir="false" />
-    </list>
+    <list default="true" id="ea6d2406-7b49-4ec6-af51-ba3590a251f3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +44,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Main arg=1">
+  <component name="RunManager" selected="Application.Main arg=2">
     <configuration name="Main arg=1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Graph-Project-1A" />
@@ -101,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718372043384</updated>
-      <workItem from="1718372045256" duration="4711000" />
+      <workItem from="1718372045256" duration="5017000" />
     </task>
     <servers />
   </component>
