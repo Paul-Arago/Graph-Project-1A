@@ -19,4 +19,5 @@ public interface Participant<S extends Participant,O extends Participant> {
     void disunite(O participant);
     void disunite();
     Integer getCapacity();
+    String getName();
 }

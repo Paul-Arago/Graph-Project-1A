@@ -1,0 +1,10 @@
+,model.School 1,model.School 2,model.School 3,model.School 4
+Step 1,1 2,4 7 10,6 8,3 5 9
+Step 2,1 2 4 9,7 10,6 8,3 5
+Step 3,1 4,7 10,6 8 2 9,3 5
+Step 4,1 4,7 10 2 6,8 9,3 5
+Step 5,1 4 6,7 10,8 9,2 3 5
+Step 6,1 4,7 10 5,8 9,2 3 6
+Step 7,1 4,7 5,8 9 10,2 3
+Step 8,1 4,7 5,8 9,2 3 10
+Step 9,1 4,7 5,8 9,3 10

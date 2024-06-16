@@ -6,6 +6,11 @@ This project was developed using openjdk 22.0.1. To install it, follow the instr
 
 Only basic `Java.util`, `Java.io` and `Java.nio` libraries were used in this project. No additional libraries are required to run this project.
 
+## json-simple
+
+In order to facilitate the generation of the output file, the `json-simple` library was used.
+
+
 ## Installation
 
 To install this project, clone the repository using the following command:

@@ -21,6 +21,11 @@ public class SchoolSuitor implements Suitor {
     }
 
     @Override
+    public String getName() {
+        return school.getName();
+    }
+
+    @Override
     public void setupPreferences(List<CourtedOne> courtedOnes) {
         for (Map.Entry<Student, Integer> entry : school.getPreferences().entrySet()) {
             for (CourtedOne courtedOne : courtedOnes) {

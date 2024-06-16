@@ -3,12 +3,10 @@ package parser;
 import model.School;
 import model.Student;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -30,11 +28,15 @@ public class Parser {
 
         try
         {
-            Path path = Paths.get("resources/Input.csv");
-            BufferedReader br = new BufferedReader(new FileReader(path.toFile()));
+            // Without Maven
+            //Path path = Paths.get("resources/Input.csv");
+            //BufferedReader reader = new BufferedReader(new FileReader(path.toFile()));
+            // With Maven
+            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("Input.csv");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 
             //Create school list with first line of the file
-            if((line = br.readLine()) != null){
+            if((line = reader.readLine()) != null){
                 List<String> schoolsAndCapacities = new ArrayList<>(Arrays.stream(line.split(splitBy)).toList());
                 if(schoolsAndCapacities.size() > 0 && schoolsAndCapacities.get(0).isEmpty()){
                     schoolsAndCapacities.remove(0);
@@ -48,7 +50,7 @@ public class Parser {
             }
 
             //Creation of student and preferences retrieving (for schools AND students)
-            while ((line = br.readLine()) != null)
+            while ((line = reader.readLine()) != null)
             {
                 //Split preferences and add them to school or student
                 String[] splittedLine = line.split(splitBy);

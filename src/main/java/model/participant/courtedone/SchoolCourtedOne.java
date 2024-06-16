@@ -27,6 +27,11 @@ public class SchoolCourtedOne implements CourtedOne {
     }
 
     @Override
+    public String getName() {
+        return school.getName();
+    }
+
+    @Override
     public void setupPreferences(List<Suitor> suitors) {
         for (Entry<Student, Integer> entry : school.getPreferences().entrySet()) {
             for (Suitor suitor : suitors) {
