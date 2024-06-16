@@ -1,16 +1,21 @@
 package algorithm;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import model.Balcony;
 import model.Court;
 import model.participant.courtedone.CourtedOne;
 import model.participant.suitor.Suitor;
+import output.generator.OutputGenerator;
 
 import java.util.List;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Coordinator {
     private Court court;
     private int round;
     private boolean hasConverged;
+    private OutputGenerator outputGenerator;
 
     /**
      * The string representation of all the suitors preferences.
@@ -23,6 +28,7 @@ public class Coordinator {
         this.court = court;
         this.round = 1;
         hasConverged = false;
+        outputGenerator = new OutputGenerator();
     }
 
     public void start() {
@@ -51,6 +57,9 @@ public class Coordinator {
             System.out.println("Removing the courted one of the suitors preferences if the suitor was rejected...");
             updateSuitorsPreferences();
 
+            // Add round to the output
+            generateRoundOutput(round, court.getBalconies());
+
             // Move rejected suitors back to the court.
             System.out.println("Moving all suitors back to the court...");
             moveSuitorsToCourt();
@@ -66,6 +75,10 @@ public class Coordinator {
         }
 
         System.out.println("Process completed.");
+    }
+
+    private void generateRoundOutput(int round, List<Balcony> balconies) {
+        outputGenerator.generateRoundOutput(round, balconies);
     }
 
 

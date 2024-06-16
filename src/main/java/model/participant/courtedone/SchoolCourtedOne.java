@@ -1,5 +1,7 @@
 package model.participant.courtedone;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import model.Balcony;
 import model.School;
 import model.Student;
@@ -12,7 +14,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.HashMap;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class SchoolCourtedOne implements CourtedOne {
+    private int id;
     private School school;
     private Integer capacity;
     private Balcony balcony;
@@ -21,10 +25,15 @@ public class SchoolCourtedOne implements CourtedOne {
 
     public SchoolCourtedOne(School school) {
         this.school = school;
+        this.id = this.hashCode();
         this.capacity = school.getCapacity();
         this.preferences = new HashMap<>();
         this.unitedSuitors = new ArrayList<>();
     }
+    public int getId() {
+        return id;
+    }
+
 
     @Override
     public String getName() {

@@ -1,5 +1,7 @@
 package model.participant.suitor;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import model.School;
 import model.Student;
 import model.participant.courtedone.CourtedOne;
@@ -9,16 +11,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class StudentSuitor implements Suitor {
     private Student student;
+    private int id;
     private Integer capacity;
     private Map<CourtedOne, Integer> preferences;
 
     public StudentSuitor(Student student) {
         this.student = student;
+        id = this.hashCode();
         this.capacity = 1;
         this.preferences = new HashMap<>();
     }
+    public int getId() {
+        return id;
+    }
+
 
     @Override
     public String getName() {
