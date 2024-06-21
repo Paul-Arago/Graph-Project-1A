@@ -139,7 +139,6 @@ public class Coordinator {
         }
     }
 
-
     private void updateSuitorsPreferences() {
         for (Balcony balcony : court.getBalconies()) {
             for (Suitor suitor : balcony.getSuitors()) {

@@ -1,6 +1,7 @@
 package model.participant.suitor;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import model.School;
 import model.Student;
@@ -13,9 +14,14 @@ import java.util.Map;
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class StudentSuitor implements Suitor {
+    @JsonIgnore
     private Student student;
+
     private int id;
+
     private Integer capacity;
+
+    @JsonIgnore
     private Map<CourtedOne, Integer> preferences;
 
     public StudentSuitor(Student student) {
@@ -24,15 +30,35 @@ public class StudentSuitor implements Suitor {
         this.capacity = 1;
         this.preferences = new HashMap<>();
     }
+
+    // For json parsing
+    public List<String> getCurrentSelectedCourtedOnes() {
+        List<String> unitedTo = new ArrayList<>();
+        if (student.getSchool() != null) {
+            unitedTo.add(student.getSchool().getName());
+        }
+        return unitedTo;
+    }
+
+    // For json parsing
+    public Map<String, Integer> getAllPreferences() {
+        Map<String, Integer> allPreferences = new HashMap<>();
+        for (Map.Entry<CourtedOne, Integer> entry : preferences.entrySet()) {
+            allPreferences.put(entry.getKey().getName(), entry.getValue());
+        }
+        return allPreferences;
+    }
+
+    // For json parsing
     public int getId() {
         return id;
     }
-
 
     @Override
     public String getName() {
         return student.getName();
     }
+
     @Override
     public void setupPreferences(List<CourtedOne> courtedOnes) {
         for (Map.Entry<School, Integer> entry : student.getPreferences().entrySet()) {
@@ -89,6 +115,7 @@ public class StudentSuitor implements Suitor {
         return this.preferences;
     }
 
+    @JsonIgnore
     @Override
     public Object getWrappedObject() {
         return student;

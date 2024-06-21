@@ -1,6 +1,7 @@
 package model.participant.courtedone;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import model.Balcony;
 import model.School;
@@ -15,11 +16,15 @@ import java.util.HashMap;
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class StudentCourtedOne implements CourtedOne {
+    @JsonIgnore
     private Student student;
     private int id;
     private Integer capacity;
+    @JsonIgnore
     private Balcony balcony;
+    @JsonIgnore
     private  Map<Suitor, Integer> preferences;
+    @JsonIgnore
     private List<Suitor> unitedSuitors;
 
     public StudentCourtedOne(Student student) {
@@ -29,6 +34,26 @@ public class StudentCourtedOne implements CourtedOne {
         this.preferences = new HashMap<>();
         this.unitedSuitors = new ArrayList<>();
     }
+
+    // For json parsing
+    public List<String> getCurrentSelectedSuitors() {
+        List<String> unitedTo = new ArrayList<>();
+        if (student.getSchool() != null) {
+            unitedTo.add(student.getSchool().getName());
+        }
+        return unitedTo;
+    }
+
+    // For json parsing
+    public Map<String, Integer> getAllPreferences() {
+        Map<String, Integer> allPreferences = new HashMap<>();
+        for (Entry<Suitor, Integer> entry : preferences.entrySet()) {
+            allPreferences.put(entry.getKey().getName(), entry.getValue());
+        }
+        return allPreferences;
+    }
+
+    // For json parsing
     public int getId() {
         return id;
     }
@@ -124,6 +149,7 @@ public class StudentCourtedOne implements CourtedOne {
         student.setSchool(null);
     }
 
+    @JsonIgnore
     @Override
     public Object getWrappedObject() {
         return student;

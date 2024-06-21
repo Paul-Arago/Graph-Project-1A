@@ -55,5 +55,10 @@ public int getId() {
     public void removeAllStudents() {
         students.clear();
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
 

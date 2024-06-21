@@ -15,4 +15,12 @@ public interface CourtedOne extends Participant<CourtedOne, Suitor> {
     void setBalcony(Balcony balcony);
     Balcony getBalcony();
     List<Suitor> getPreferredSuitors(List<Suitor> interestedSuitors);
+
+    /**
+     * This method returns a list of the current selected suitors.
+     * This method is used in order to generate the output file.
+     *
+     * @return List of preferences
+     */
+    List<String> getCurrentSelectedSuitors();
 }

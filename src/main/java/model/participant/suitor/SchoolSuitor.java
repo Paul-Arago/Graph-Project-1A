@@ -1,6 +1,7 @@
 package model.participant.suitor;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import model.School;
 import model.Student;
@@ -13,9 +14,11 @@ import java.util.Map;
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class SchoolSuitor implements Suitor {
+    @JsonIgnore
     private School school;
     private int id;
     private Integer capacity;
+    @JsonIgnore
     private Map<CourtedOne, Integer> preferences;
 
     public SchoolSuitor(School school) {
@@ -24,6 +27,26 @@ public class SchoolSuitor implements Suitor {
         this.capacity = school.getCapacity();
         this.preferences = new HashMap<>();
     }
+
+    // For json parsing
+    public List<String> getCurrentSelectedCourtedOnes() {
+        List<String> unitedTo = new ArrayList<>();
+        for (Student student : school.getStudents()) {
+            unitedTo.add(student.getName());
+        }
+        return unitedTo;
+    }
+
+    // For json parsing
+    public Map<String, Integer> getAllPreferences() {
+        Map<String, Integer> allPreferences = new HashMap<>();
+        for (Map.Entry<CourtedOne, Integer> entry : preferences.entrySet()) {
+            allPreferences.put(entry.getKey().getName(), entry.getValue());
+        }
+        return allPreferences;
+    }
+
+        // For json parsing
     public int getId() {
         return id;
     }
@@ -79,7 +102,8 @@ public class SchoolSuitor implements Suitor {
     public Map<CourtedOne, Integer> getPreferences() {
         return preferences;
     }
-    
+
+    @JsonIgnore
     @Override
     public Object getWrappedObject() {
         return school;

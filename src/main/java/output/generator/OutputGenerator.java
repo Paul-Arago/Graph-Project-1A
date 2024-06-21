@@ -7,7 +7,6 @@ import model.Balcony;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
 
 public class OutputGenerator {
@@ -17,7 +16,7 @@ public class OutputGenerator {
     // Create an ObjectMapper
     ObjectMapper mapper;
 
-    private File outputDirectory;
+    private File outputFile;
 
     private ObjectNode rootObjectNode;
 
@@ -31,18 +30,23 @@ public class OutputGenerator {
         // Create the root object node
         rootObjectNode = factory.objectNode();
 
-        // Get the resource as a URL
-        URL resourceUrl = getClass().getClassLoader().getResource("output.json");
+        // Create the output directory
+        outputFile = new File("../../../output/output.json");
 
         // Convert the URL to a File
-        if (resourceUrl != null) {
-            outputDirectory = new File(resourceUrl.getFile());
-            outputDirectory.mkdirs();
-        } else {
-            throw new RuntimeException("Output directory not found");
+        try {
+            // Create the output file if it does not exist
+            if (outputFile.createNewFile()) {
+                System.out.println("Output file created: " + outputFile.getName());
+            } else {
+                System.out.println("Output file already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error related to the output file occurred.");
+            e.printStackTrace();
         }
-    }
 
+    }
 
     /**
      * Adds the output
@@ -60,19 +64,22 @@ public class OutputGenerator {
 
         for (Balcony balcony : balconies) {
             // Create the balcony object node
-            ObjectNode balconyNode = factory.objectNode();
+            ObjectNode balconyNode = mapper.valueToTree(balcony);
 
-            // Add the balcony to the round
+            // Add the balcony to the round in the output
             roundNode.set(balcony.getCourtedOne().getName() + "'s balcony", balconyNode);
 
             // Create the courted one object node
-            ObjectNode courtedOneNode = mapper.valueToTree(balcony.getCourtedOne());
+            //ObjectNode courtedOneNode = mapper.valueToTree(balcony.getCourtedOne());
+
+            // Add the courted one to the balcony in the output
+            //balconyNode.set("CourtedOne", courtedOneNode);
         }
 
         ObjectMapper mapper = new ObjectMapper();
         try {
             // Write the JsonNode to a file
-            mapper.writeValue(new File(outputDirectory, "output.json"), rootObjectNode);
+            mapper.writeValue(outputFile, rootObjectNode);
         } catch (IOException e) {
             e.printStackTrace();
         }
