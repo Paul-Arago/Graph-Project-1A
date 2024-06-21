@@ -11,15 +11,21 @@ import java.util.List;
 
 public class OutputGenerator {
 
+    // Create a JsonNodeFactory
     JsonNodeFactory factory;
 
     // Create an ObjectMapper
     ObjectMapper mapper;
 
+    // Create the output file
     private File outputFile;
 
+    // Create the root object node
     private ObjectNode rootObjectNode;
 
+    /**
+     * Constructor for the OutputGenerator
+     */
     public  OutputGenerator() {
         // Create a JsonNodeFactory
         factory = JsonNodeFactory.instance;
@@ -68,18 +74,12 @@ public class OutputGenerator {
 
             // Add the balcony to the round in the output
             roundNode.set(balcony.getCourtedOne().getName() + "'s balcony", balconyNode);
-
-            // Create the courted one object node
-            //ObjectNode courtedOneNode = mapper.valueToTree(balcony.getCourtedOne());
-
-            // Add the courted one to the balcony in the output
-            //balconyNode.set("CourtedOne", courtedOneNode);
         }
 
         ObjectMapper mapper = new ObjectMapper();
         try {
             // Write the JsonNode to a file
-            mapper.writeValue(outputFile, rootObjectNode);
+            mapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, rootObjectNode);
         } catch (IOException e) {
             e.printStackTrace();
         }
