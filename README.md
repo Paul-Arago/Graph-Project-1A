@@ -168,11 +168,11 @@ Here is an example of the output file:
       ]
     },
     "model.School 2's balcony": {
-		// ...
+		"...": "..."
     },
-	  // ...
+	  "...": "..."
   },
-	// ...
+	"...": "..."
 }
 ```
 
