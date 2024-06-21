@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea6d2406-7b49-4ec6-af51-ba3590a251f3" name="Changes" comment="The json generation functions">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +170,7 @@
       <workItem from="1718977793785" duration="221000" />
       <workItem from="1718978032370" duration="45000" />
       <workItem from="1718978091152" duration="14596000" />
-      <workItem from="1719000086270" duration="302000" />
+      <workItem from="1719000086270" duration="928000" />
     </task>
     <task id="LOCAL-00001" summary="The json generation functions">
       <option name="closed" value="true" />
