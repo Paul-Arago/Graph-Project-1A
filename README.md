@@ -18,7 +18,7 @@ Once Maven is installed, you can install the project dependencies by navigating 
 mvn clean install
 ```
 
-## Installation
+### Installation
 
 1. To install this project, clone the repository using the following command:
 
