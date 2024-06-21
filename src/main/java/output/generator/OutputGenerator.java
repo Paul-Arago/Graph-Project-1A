@@ -1,13 +1,16 @@
 package output.generator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import model.Balcony;
+import model.participant.suitor.Suitor;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public class OutputGenerator {
 
@@ -70,10 +73,90 @@ public class OutputGenerator {
 
         for (Balcony balcony : balconies) {
             // Create the balcony object node
-            ObjectNode balconyNode = mapper.valueToTree(balcony);
+            ObjectNode balconyNode = mapper.createObjectNode();
 
             // Add the balcony to the round in the output
             roundNode.set(balcony.getCourtedOne().getName() + "'s balcony", balconyNode);
+
+            // Create the courted one object node
+            ObjectNode courtedOneNode = mapper.createObjectNode();
+
+            // Add the courted one to the balcony in the output
+            balconyNode.set("Courted One", courtedOneNode);
+
+            // Add the courted one's name, capacity in the output
+            courtedOneNode.put("Name", balcony.getCourtedOne().getName());
+            courtedOneNode.put("Capacity", balcony.getCourtedOne().getCapacity());
+
+            // Create the suitors array node
+            ArrayNode suitorsNode = mapper.createArrayNode();
+
+            // Add the currently united suitors to courted one in the output
+            courtedOneNode.set("Current suitors", suitorsNode);
+
+            // Add the suitors to the suitors array
+            for (String suitor : balcony.getCourtedOne().getCurrentSelectedSuitors()) {
+                // Add the name of the suitor to the suitors array
+                suitorsNode.add(suitor);
+            }
+
+            // Create the current preferences for the courted one object node
+            ObjectNode currentPreferencesNode = mapper.createObjectNode();
+
+            // Add the current preferences for the courted one in the output
+            courtedOneNode.set("Current preferences", currentPreferencesNode);
+
+            // Add the current preferences for the courted one to the current preferences object
+            for (Map.Entry<String, Integer> preference : balcony.getCourtedOne().getAllPreferences().entrySet()) {
+                // Add the preference to the current preferences object
+                currentPreferencesNode.put(preference.getKey(), preference.getValue());
+            }
+
+            // Create the suitors array node
+            ArrayNode suitorsArrayNode = mapper.createArrayNode();
+
+            // Add the suitors to the balcony in the output
+            balconyNode.set("Suitors", suitorsArrayNode);
+
+            // Add the suitors to the suitors array
+            for (Suitor suitor : balcony.getSuitors()) {
+                // Create the suitor object node
+                ObjectNode suitorNode = mapper.createObjectNode();
+
+                // Add the suitor to the suitors array
+                suitorsArrayNode.add(suitorNode);
+
+                // Add the suitor's name and capacity to the suitor object
+                suitorNode.put("Name", suitor.getName());
+                suitorNode.put("Capacity", suitor.getCapacity());
+
+                // Create the courted ones array node
+                ArrayNode courtedOnesNode = mapper.createArrayNode();
+
+                // Add the currently united courted ones to the suitor array
+                suitorNode.set("Current courted ones", courtedOnesNode);
+
+                // Add the courted ones to the courted ones array
+                for (String courtedOne : suitor.getCurrentSelectedCourtedOnes()) {
+                    // Add the name of the courted one to the courted ones array
+                    courtedOnesNode.add(courtedOne);
+                }
+
+                // Create the current preferences for the suitor object node
+                ObjectNode currentPreferencesSuitorNode = mapper.createObjectNode();
+
+                // Add the current preferences for the suitor in the output
+                suitorNode.set("Current preferences", currentPreferencesSuitorNode);
+
+                // Add the current preferences for the suitor to the current preferences object
+                for (Map.Entry<String, Integer> preference : suitor.getAllPreferences().entrySet()) {
+                    // Add the preference to the current preferences object
+                    currentPreferencesSuitorNode.put(preference.getKey(), preference.getValue());
+                }
+
+
+            }
+
         }
 
         ObjectMapper mapper = new ObjectMapper();

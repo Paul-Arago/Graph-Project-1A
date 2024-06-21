@@ -93,6 +93,90 @@ mvn -f ../../../pom.xml exec:java -Dexec.mainClass="Main" -Dexec.args="1"
 
 Note regardless of whether the user uses an IDE, the root directory must be `java` in order for `parser.Parser` and `OutputGenerator` to work correctly. 
 
+# Algorithm
+
+1. The courted ones and the suitors are placed in the court.
+2. The courted ones are placed on the balconies.
+3. While the courted ones have not converged:
+	1. The suitors move to the preferred balconies (they serenade).
+	2. The courted ones choose the suitors.
+	3. The suitors and courted ones are united.
+	4. The suitors update their preferences.
+	5. The suitors move back to the court.
+
+
+Note that the court is simply where the suitors go back to after the courted ones have decided who they want to be with. Similarly, the balconies are simply where the courted ones and the suitors meet.
+
+# Output
+
+The output of the program is a JSON file that contains the students and schools assignments. The file is saved in the `output` directory and is named `output.json`.
+
+The first layer of the JSON file defines each round of the algorithm.
+The second layer defines each balcony.
+Within each balcony, the courted one is defined, followed by the suitors.
+In the both the CourtedOne and Suitor objects, the attributes are as follows:
+- `name`: the name of the school or student
+- `capacity`: the capacity of the school or student (1)
+- `preferences`: the preferences of the school or student
+- `unitedSuitors`: the suitors that are currently united with the school or student
+
+Here is an example of the output file:
+
+```json
+{
+  "round 1" : {
+    "model.School 1's balcony": {
+      "Courted One": {
+        "Name": "model.School 1",
+        "Capacity": 2,
+        "Current suitors": [
+          "model.Student 1",
+          "model.Student 2"
+        ],
+        "Current preferences": {
+          "model.Student 1": 4,
+          "model.Student 4": 6,
+          "model.Student 5": 5,
+		  "...": "..."
+        }
+      },
+      "Suitors": [
+        {
+          "Name": "model.Student 1",
+          "Capacity": 1,
+          "Current courted ones": [
+            "model.School 1"
+          ],
+          "Current preferences": {
+            "model.School 1": 2,
+            "model.School 2": 10,
+            "model.School 3": 7,
+            "model.School 4": 4
+          }
+        },
+        {
+          "Name": "model.Student 2",
+          "Capacity": 1,
+          "Current courted ones": [
+            "model.School 1"
+          ],
+          "Current preferences": {
+            "model.School 1": 1, 
+			"...": "..."
+          }
+        }
+      ]
+    },
+    "model.School 2's balcony": {
+		// ...
+    },
+	  // ...
+  },
+	// ...
+}
+```
+
+
 # Instructions
 
 - Implement a student admission program using the stable marriage algorithm
@@ -266,36 +350,4 @@ Coordinator --> Suitor
 Coordinator --> CourtedOne
 @enduml
 ```
-
-# Algorithm
-
-## Logic
-
-The seekers is the party that is looking for a match.
-The responders are the party that is being sought after.
-
-At the very beginning all of the seekers are placed in the court.
-
-From here day 1 starts.
-
-The seekers are moved to the balcony based on their preferences.
-
-The responders are choose a seeker based on their preferences.
-
-The seekers are moved back to the court.
-
-From here day 2 starts.
-
-...
-
-
-## Pseudo code
-
-```
-
-
-
-```
-
-
 

@@ -1,855 +1,1532 @@
 {
   "round 1" : {
-    "model.Student 1's balcony" : {
-      "courtedOne" : {
-        "id" : 596512129,
-        "capacity" : 1,
-        "allPreferences" : {
+    "model.School 1's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 1",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 1", "model.Student 2" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 6,
+          "model.Student 5" : 5,
+          "model.Student 2" : 500,
+          "model.Student 3" : 1,
+          "model.Student 8" : 15,
+          "model.Student 9" : 12,
+          "model.Student 10" : 13,
+          "model.Student 6" : 11,
+          "model.Student 7" : 24
+        }
+      },
+      "Suitors" : [
+        {
+        "Name" : "model.Student 1",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
           "model.School 1" : 2,
           "model.School 2" : 10,
           "model.School 3" : 7,
           "model.School 4" : 4
-        },
-        "currentSelectedSuitors" : [ "model.School 1" ],
-        "name" : "model.Student 1"
-      },
-      "suitors" : [ {
-        "id" : 1029991479,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 1" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 6,
-          "model.Student 5" : 5,
-          "model.Student 2" : 500,
-          "model.Student 8" : 15,
-          "model.Student 10" : 13,
-          "model.Student 9" : 12,
-          "model.Student 6" : 11,
-          "model.Student 7" : 24
-        },
-        "name" : "model.School 1"
-      } ]
-    },
-    "model.Student 2's balcony" : {
-      "courtedOne" : {
-        "id" : 824318946,
-        "capacity" : 1,
-        "allPreferences" : {
+        }
+      }, {
+        "Name" : "model.Student 2",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
           "model.School 1" : 1,
           "model.School 2" : 7,
           "model.School 3" : 3,
           "model.School 4" : 9
-        },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 2"
-      },
-      "suitors" : [ ]
-    },
-    "model.Student 3's balcony" : {
-      "courtedOne" : {
-        "id" : 930990596,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 3,
-          "model.School 2" : 5,
-          "model.School 3" : 2,
-          "model.School 4" : 1
-        },
-        "currentSelectedSuitors" : [ "model.School 4" ],
-        "name" : "model.Student 3"
-      },
-      "suitors" : [ {
-        "id" : 1029991479,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 1" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 6,
-          "model.Student 5" : 5,
-          "model.Student 2" : 500,
-          "model.Student 8" : 15,
-          "model.Student 10" : 13,
-          "model.Student 9" : 12,
-          "model.Student 6" : 11,
-          "model.Student 7" : 24
-        },
-        "name" : "model.School 1"
-      }, {
-        "id" : 787604730,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 51,
-          "model.Student 5" : 14,
-          "model.Student 2" : 5,
-          "model.Student 3" : 3,
-          "model.Student 8" : 93,
-          "model.Student 10" : 1,
-          "model.Student 9" : 533,
-          "model.Student 6" : 43,
-          "model.Student 7" : 75
-        },
-        "name" : "model.School 4"
+        }
       } ]
     },
-    "model.Student 4's balcony" : {
-      "courtedOne" : {
-        "id" : 1921595561,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 5,
-          "model.School 2" : 2,
-          "model.School 3" : 10,
-          "model.School 4" : 8
-        },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 4"
-      },
-      "suitors" : [ ]
-    },
-    "model.Student 5's balcony" : {
-      "courtedOne" : {
-        "id" : 565760380,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 4,
-          "model.School 2" : 3,
-          "model.School 3" : 8,
-          "model.School 4" : 2
-        },
-        "currentSelectedSuitors" : [ "model.School 2" ],
-        "name" : "model.Student 5"
-      },
-      "suitors" : [ {
-        "id" : 1104106489,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ],
-        "allPreferences" : {
+    "model.School 2's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 2",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 7", "model.Student 10" ],
+        "Current preferences" : {
           "model.Student 1" : 200,
           "model.Student 4" : 11,
           "model.Student 5" : 2,
           "model.Student 2" : 400,
           "model.Student 3" : 34,
           "model.Student 8" : 123,
-          "model.Student 10" : 4,
           "model.Student 9" : 94,
+          "model.Student 10" : 4,
           "model.Student 6" : 45,
           "model.Student 7" : 3
-        },
-        "name" : "model.School 2"
-      } ]
-    },
-    "model.Student 6's balcony" : {
-      "courtedOne" : {
-        "id" : 6566818,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 7,
-          "model.School 2" : 6,
-          "model.School 3" : 2,
-          "model.School 4" : 10
-        },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 6"
+        }
       },
-      "suitors" : [ ]
-    },
-    "model.Student 7's balcony" : {
-      "courtedOne" : {
-        "id" : 1494279232,
-        "capacity" : 1,
-        "allPreferences" : {
+      "Suitors" : [
+        {
+        "Name" : "model.Student 4",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : {
+          "model.School 1" : 5,
+          "model.School 3" : 10,
+          "model.School 4" : 8
+        }
+      }, {
+        "Name" : "model.Student 7",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
           "model.School 1" : 9,
           "model.School 2" : 2,
           "model.School 3" : 4,
           "model.School 4" : 10
-        },
-        "currentSelectedSuitors" : [ "model.School 2" ],
-        "name" : "model.Student 7"
-      },
-      "suitors" : [ {
-        "id" : 1104106489,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ],
-        "allPreferences" : {
-          "model.Student 1" : 200,
-          "model.Student 4" : 11,
-          "model.Student 5" : 2,
-          "model.Student 2" : 400,
-          "model.Student 3" : 34,
-          "model.Student 8" : 123,
-          "model.Student 10" : 4,
-          "model.Student 9" : 94,
-          "model.Student 6" : 45,
-          "model.Student 7" : 3
-        },
-        "name" : "model.School 2"
-      } ]
-    },
-    "model.Student 8's balcony" : {
-      "courtedOne" : {
-        "id" : 1650967483,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 7,
-          "model.School 2" : 8,
-          "model.School 3" : 5,
-          "model.School 4" : 6
-        },
-        "currentSelectedSuitors" : [ "model.School 3" ],
-        "name" : "model.Student 8"
-      },
-      "suitors" : [ {
-        "id" : 94438417,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 5,
-          "model.Student 5" : 67,
-          "model.Student 2" : 10,
-          "model.Student 3" : 273,
-          "model.Student 8" : 3,
-          "model.Student 10" : 43,
-          "model.Student 9" : 1,
-          "model.Student 6" : 11,
-          "model.Student 7" : 234
-        },
-        "name" : "model.School 3"
-      } ]
-    },
-    "model.Student 9's balcony" : {
-      "courtedOne" : {
-        "id" : 87285178,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 8,
-          "model.School 2" : 99,
-          "model.School 3" : 9,
-          "model.School 4" : 7
-        },
-        "currentSelectedSuitors" : [ "model.School 3" ],
-        "name" : "model.Student 9"
-      },
-      "suitors" : [ {
-        "id" : 94438417,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 5,
-          "model.Student 5" : 67,
-          "model.Student 2" : 10,
-          "model.Student 3" : 273,
-          "model.Student 8" : 3,
-          "model.Student 10" : 43,
-          "model.Student 9" : 1,
-          "model.Student 6" : 11,
-          "model.Student 7" : 234
-        },
-        "name" : "model.School 3"
-      } ]
-    },
-    "model.Student 10's balcony" : {
-      "courtedOne" : {
-        "id" : 610998173,
-        "capacity" : 1,
-        "allPreferences" : {
+        }
+      }, {
+        "Name" : "model.Student 10",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
           "model.School 1" : 23,
           "model.School 2" : 5,
           "model.School 3" : 6,
           "model.School 4" : 9
-        },
-        "currentSelectedSuitors" : [ "model.School 4" ],
-        "name" : "model.Student 10"
+        }
+      } ]
+    },
+    "model.School 3's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 3",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 8", "model.Student 6" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 5,
+          "model.Student 5" : 67,
+          "model.Student 2" : 10,
+          "model.Student 3" : 273,
+          "model.Student 8" : 3,
+          "model.Student 9" : 1,
+          "model.Student 10" : 43,
+          "model.Student 6" : 11,
+          "model.Student 7" : 234
+        }
       },
-      "suitors" : [ {
-        "id" : 787604730,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ],
-        "allPreferences" : {
+      "Suitors" : [ {
+        "Name" : "model.Student 6",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 2" : 6,
+          "model.School 3" : 2,
+          "model.School 4" : 10
+        }
+      }, {
+        "Name" : "model.Student 8",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 2" : 8,
+          "model.School 3" : 5,
+          "model.School 4" : 6
+        }
+      } ]
+    },
+    "model.School 4's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 4",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 3", "model.Student 5" ],
+        "Current preferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 51,
           "model.Student 5" : 14,
           "model.Student 2" : 5,
           "model.Student 3" : 3,
           "model.Student 8" : 93,
-          "model.Student 10" : 1,
           "model.Student 9" : 533,
+          "model.Student 10" : 1,
           "model.Student 6" : 43,
           "model.Student 7" : 75
-        },
-        "name" : "model.School 4"
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 3",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 3,
+          "model.School 2" : 5,
+          "model.School 3" : 2,
+          "model.School 4" : 1
+        }
+      }, {
+        "Name" : "model.Student 5",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 4,
+          "model.School 2" : 3,
+          "model.School 3" : 8,
+          "model.School 4" : 2
+        }
+      }, {
+        "Name" : "model.Student 9",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : {
+          "model.School 1" : 8,
+          "model.School 2" : 99,
+          "model.School 3" : 9
+        }
       } ]
     }
   },
   "round 2" : {
-    "model.Student 1's balcony" : {
-      "courtedOne" : {
-        "id" : 596512129,
-        "capacity" : 1,
-        "allPreferences" : {
+    "model.School 1's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 1",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 1", "model.Student 4" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 6,
+          "model.Student 5" : 5,
+          "model.Student 2" : 500,
+          "model.Student 3" : 1,
+          "model.Student 8" : 15,
+          "model.Student 9" : 12,
+          "model.Student 10" : 13,
+          "model.Student 6" : 11,
+          "model.Student 7" : 24
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 1",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
           "model.School 1" : 2,
           "model.School 2" : 10,
           "model.School 3" : 7,
           "model.School 4" : 4
-        },
-        "currentSelectedSuitors" : [ "model.School 1" ],
-        "name" : "model.Student 1"
-      },
-      "suitors" : [ {
-        "id" : 1029991479,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 1" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 6,
-          "model.Student 2" : 500,
-          "model.Student 8" : 15,
-          "model.Student 10" : 13,
-          "model.Student 9" : 12,
-          "model.Student 6" : 11,
-          "model.Student 7" : 24
-        },
-        "name" : "model.School 1"
-      } ]
-    },
-    "model.Student 2's balcony" : {
-      "courtedOne" : {
-        "id" : 824318946,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 1,
+        }
+      }, {
+        "Name" : "model.Student 2",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : {
           "model.School 2" : 7,
           "model.School 3" : 3,
           "model.School 4" : 9
-        },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 2"
-      },
-      "suitors" : [ ]
-    },
-    "model.Student 3's balcony" : {
-      "courtedOne" : {
-        "id" : 930990596,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 3,
-          "model.School 2" : 5,
-          "model.School 3" : 2,
-          "model.School 4" : 1
-        },
-        "currentSelectedSuitors" : [ "model.School 4" ],
-        "name" : "model.Student 3"
-      },
-      "suitors" : [ {
-        "id" : 787604730,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 51,
-          "model.Student 5" : 14,
-          "model.Student 2" : 5,
-          "model.Student 3" : 3,
-          "model.Student 8" : 93,
-          "model.Student 10" : 1,
-          "model.Student 9" : 533,
-          "model.Student 6" : 43,
-          "model.Student 7" : 75
-        },
-        "name" : "model.School 4"
-      } ]
-    },
-    "model.Student 4's balcony" : {
-      "courtedOne" : {
-        "id" : 1921595561,
-        "capacity" : 1,
-        "allPreferences" : {
+        }
+      }, {
+        "Name" : "model.Student 4",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
           "model.School 1" : 5,
-          "model.School 2" : 2,
           "model.School 3" : 10,
           "model.School 4" : 8
-        },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 4"
-      },
-      "suitors" : [ ]
-    },
-    "model.Student 5's balcony" : {
-      "courtedOne" : {
-        "id" : 565760380,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 4,
-          "model.School 2" : 3,
-          "model.School 3" : 8,
-          "model.School 4" : 2
-        },
-        "currentSelectedSuitors" : [ "model.School 2" ],
-        "name" : "model.Student 5"
-      },
-      "suitors" : [ {
-        "id" : 1029991479,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 1" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 6,
-          "model.Student 2" : 500,
-          "model.Student 8" : 15,
-          "model.Student 10" : 13,
-          "model.Student 9" : 12,
-          "model.Student 6" : 11,
-          "model.Student 7" : 24
-        },
-        "name" : "model.School 1"
+        }
       }, {
-        "id" : 1104106489,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ],
-        "allPreferences" : {
+        "Name" : "model.Student 9",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : {
+          "model.School 2" : 99,
+          "model.School 3" : 9
+        }
+      } ]
+    },
+    "model.School 2's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 2",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 7", "model.Student 10" ],
+        "Current preferences" : {
           "model.Student 1" : 200,
           "model.Student 4" : 11,
           "model.Student 5" : 2,
           "model.Student 2" : 400,
           "model.Student 3" : 34,
           "model.Student 8" : 123,
-          "model.Student 10" : 4,
           "model.Student 9" : 94,
+          "model.Student 10" : 4,
           "model.Student 6" : 45,
           "model.Student 7" : 3
-        },
-        "name" : "model.School 2"
-      } ]
-    },
-    "model.Student 6's balcony" : {
-      "courtedOne" : {
-        "id" : 6566818,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 7,
-          "model.School 2" : 6,
-          "model.School 3" : 2,
-          "model.School 4" : 10
-        },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 6"
+        }
       },
-      "suitors" : [ ]
-    },
-    "model.Student 7's balcony" : {
-      "courtedOne" : {
-        "id" : 1494279232,
-        "capacity" : 1,
-        "allPreferences" : {
+      "Suitors" : [ {
+        "Name" : "model.Student 7",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
           "model.School 1" : 9,
           "model.School 2" : 2,
           "model.School 3" : 4,
           "model.School 4" : 10
-        },
-        "currentSelectedSuitors" : [ "model.School 2" ],
-        "name" : "model.Student 7"
-      },
-      "suitors" : [ {
-        "id" : 1104106489,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ],
-        "allPreferences" : {
-          "model.Student 1" : 200,
-          "model.Student 4" : 11,
-          "model.Student 5" : 2,
-          "model.Student 2" : 400,
-          "model.Student 3" : 34,
-          "model.Student 8" : 123,
-          "model.Student 10" : 4,
-          "model.Student 9" : 94,
-          "model.Student 6" : 45,
-          "model.Student 7" : 3
-        },
-        "name" : "model.School 2"
-      } ]
-    },
-    "model.Student 8's balcony" : {
-      "courtedOne" : {
-        "id" : 1650967483,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 7,
-          "model.School 2" : 8,
-          "model.School 3" : 5,
-          "model.School 4" : 6
-        },
-        "currentSelectedSuitors" : [ "model.School 3" ],
-        "name" : "model.Student 8"
-      },
-      "suitors" : [ {
-        "id" : 94438417,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 5,
-          "model.Student 5" : 67,
-          "model.Student 2" : 10,
-          "model.Student 3" : 273,
-          "model.Student 8" : 3,
-          "model.Student 10" : 43,
-          "model.Student 9" : 1,
-          "model.Student 6" : 11,
-          "model.Student 7" : 234
-        },
-        "name" : "model.School 3"
-      } ]
-    },
-    "model.Student 9's balcony" : {
-      "courtedOne" : {
-        "id" : 87285178,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 8,
-          "model.School 2" : 99,
-          "model.School 3" : 9,
-          "model.School 4" : 7
-        },
-        "currentSelectedSuitors" : [ "model.School 3" ],
-        "name" : "model.Student 9"
-      },
-      "suitors" : [ {
-        "id" : 94438417,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 5,
-          "model.Student 5" : 67,
-          "model.Student 2" : 10,
-          "model.Student 3" : 273,
-          "model.Student 8" : 3,
-          "model.Student 10" : 43,
-          "model.Student 9" : 1,
-          "model.Student 6" : 11,
-          "model.Student 7" : 234
-        },
-        "name" : "model.School 3"
-      } ]
-    },
-    "model.Student 10's balcony" : {
-      "courtedOne" : {
-        "id" : 610998173,
-        "capacity" : 1,
-        "allPreferences" : {
+        }
+      }, {
+        "Name" : "model.Student 10",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
           "model.School 1" : 23,
           "model.School 2" : 5,
           "model.School 3" : 6,
           "model.School 4" : 9
-        },
-        "currentSelectedSuitors" : [ "model.School 4" ],
-        "name" : "model.Student 10"
+        }
+      } ]
+    },
+    "model.School 3's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 3",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 8", "model.Student 6" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 5,
+          "model.Student 5" : 67,
+          "model.Student 2" : 10,
+          "model.Student 3" : 273,
+          "model.Student 8" : 3,
+          "model.Student 9" : 1,
+          "model.Student 10" : 43,
+          "model.Student 6" : 11,
+          "model.Student 7" : 234
+        }
       },
-      "suitors" : [ {
-        "id" : 787604730,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ],
-        "allPreferences" : {
+      "Suitors" : [ {
+        "Name" : "model.Student 6",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 2" : 6,
+          "model.School 3" : 2,
+          "model.School 4" : 10
+        }
+      }, {
+        "Name" : "model.Student 8",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 2" : 8,
+          "model.School 3" : 5,
+          "model.School 4" : 6
+        }
+      } ]
+    },
+    "model.School 4's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 4",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 3", "model.Student 5" ],
+        "Current preferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 51,
           "model.Student 5" : 14,
           "model.Student 2" : 5,
           "model.Student 3" : 3,
           "model.Student 8" : 93,
-          "model.Student 10" : 1,
           "model.Student 9" : 533,
+          "model.Student 10" : 1,
           "model.Student 6" : 43,
           "model.Student 7" : 75
-        },
-        "name" : "model.School 4"
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 3",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 3,
+          "model.School 2" : 5,
+          "model.School 3" : 2,
+          "model.School 4" : 1
+        }
+      }, {
+        "Name" : "model.Student 5",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 4,
+          "model.School 2" : 3,
+          "model.School 3" : 8,
+          "model.School 4" : 2
+        }
       } ]
     }
   },
   "round 3" : {
-    "model.Student 1's balcony" : {
-      "courtedOne" : {
-        "id" : 596512129,
-        "capacity" : 1,
-        "allPreferences" : {
+    "model.School 1's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 1",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 1", "model.Student 4" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 6,
+          "model.Student 5" : 5,
+          "model.Student 2" : 500,
+          "model.Student 3" : 1,
+          "model.Student 8" : 15,
+          "model.Student 9" : 12,
+          "model.Student 10" : 13,
+          "model.Student 6" : 11,
+          "model.Student 7" : 24
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 1",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
           "model.School 1" : 2,
           "model.School 2" : 10,
           "model.School 3" : 7,
           "model.School 4" : 4
-        },
-        "currentSelectedSuitors" : [ "model.School 1" ],
-        "name" : "model.Student 1"
-      },
-      "suitors" : [ {
-        "id" : 1029991479,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 1", "model.Student 4" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 6,
-          "model.Student 2" : 500,
-          "model.Student 8" : 15,
-          "model.Student 10" : 13,
-          "model.Student 9" : 12,
-          "model.Student 6" : 11,
-          "model.Student 7" : 24
-        },
-        "name" : "model.School 1"
-      } ]
-    },
-    "model.Student 2's balcony" : {
-      "courtedOne" : {
-        "id" : 824318946,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 1,
-          "model.School 2" : 7,
-          "model.School 3" : 3,
-          "model.School 4" : 9
-        },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 2"
-      },
-      "suitors" : [ ]
-    },
-    "model.Student 3's balcony" : {
-      "courtedOne" : {
-        "id" : 930990596,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 3,
-          "model.School 2" : 5,
-          "model.School 3" : 2,
-          "model.School 4" : 1
-        },
-        "currentSelectedSuitors" : [ "model.School 4" ],
-        "name" : "model.Student 3"
-      },
-      "suitors" : [ {
-        "id" : 787604730,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 51,
-          "model.Student 5" : 14,
-          "model.Student 2" : 5,
-          "model.Student 3" : 3,
-          "model.Student 8" : 93,
-          "model.Student 10" : 1,
-          "model.Student 9" : 533,
-          "model.Student 6" : 43,
-          "model.Student 7" : 75
-        },
-        "name" : "model.School 4"
-      } ]
-    },
-    "model.Student 4's balcony" : {
-      "courtedOne" : {
-        "id" : 1921595561,
-        "capacity" : 1,
-        "allPreferences" : {
+        }
+      }, {
+        "Name" : "model.Student 4",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
           "model.School 1" : 5,
-          "model.School 2" : 2,
           "model.School 3" : 10,
           "model.School 4" : 8
-        },
-        "currentSelectedSuitors" : [ "model.School 1" ],
-        "name" : "model.Student 4"
-      },
-      "suitors" : [ {
-        "id" : 1029991479,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 1", "model.Student 4" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 6,
-          "model.Student 2" : 500,
-          "model.Student 8" : 15,
-          "model.Student 10" : 13,
-          "model.Student 9" : 12,
-          "model.Student 6" : 11,
-          "model.Student 7" : 24
-        },
-        "name" : "model.School 1"
+        }
       } ]
     },
-    "model.Student 5's balcony" : {
-      "courtedOne" : {
-        "id" : 565760380,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 4,
-          "model.School 2" : 3,
-          "model.School 3" : 8,
-          "model.School 4" : 2
-        },
-        "currentSelectedSuitors" : [ "model.School 2" ],
-        "name" : "model.Student 5"
-      },
-      "suitors" : [ {
-        "id" : 1104106489,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ],
-        "allPreferences" : {
+    "model.School 2's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 2",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 7", "model.Student 10" ],
+        "Current preferences" : {
           "model.Student 1" : 200,
           "model.Student 4" : 11,
           "model.Student 5" : 2,
           "model.Student 2" : 400,
           "model.Student 3" : 34,
           "model.Student 8" : 123,
-          "model.Student 10" : 4,
           "model.Student 9" : 94,
+          "model.Student 10" : 4,
           "model.Student 6" : 45,
           "model.Student 7" : 3
-        },
-        "name" : "model.School 2"
-      } ]
-    },
-    "model.Student 6's balcony" : {
-      "courtedOne" : {
-        "id" : 6566818,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 7,
-          "model.School 2" : 6,
-          "model.School 3" : 2,
-          "model.School 4" : 10
-        },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 6"
+        }
       },
-      "suitors" : [ ]
-    },
-    "model.Student 7's balcony" : {
-      "courtedOne" : {
-        "id" : 1494279232,
-        "capacity" : 1,
-        "allPreferences" : {
+      "Suitors" : [ {
+        "Name" : "model.Student 7",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
           "model.School 1" : 9,
           "model.School 2" : 2,
           "model.School 3" : 4,
           "model.School 4" : 10
-        },
-        "currentSelectedSuitors" : [ "model.School 2" ],
-        "name" : "model.Student 7"
-      },
-      "suitors" : [ {
-        "id" : 1104106489,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ],
-        "allPreferences" : {
-          "model.Student 1" : 200,
-          "model.Student 4" : 11,
-          "model.Student 5" : 2,
-          "model.Student 2" : 400,
-          "model.Student 3" : 34,
-          "model.Student 8" : 123,
-          "model.Student 10" : 4,
-          "model.Student 9" : 94,
-          "model.Student 6" : 45,
-          "model.Student 7" : 3
-        },
-        "name" : "model.School 2"
-      } ]
-    },
-    "model.Student 8's balcony" : {
-      "courtedOne" : {
-        "id" : 1650967483,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 7,
-          "model.School 2" : 8,
-          "model.School 3" : 5,
-          "model.School 4" : 6
-        },
-        "currentSelectedSuitors" : [ "model.School 3" ],
-        "name" : "model.Student 8"
-      },
-      "suitors" : [ {
-        "id" : 94438417,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 5,
-          "model.Student 5" : 67,
-          "model.Student 2" : 10,
-          "model.Student 3" : 273,
-          "model.Student 8" : 3,
-          "model.Student 10" : 43,
-          "model.Student 9" : 1,
-          "model.Student 6" : 11,
-          "model.Student 7" : 234
-        },
-        "name" : "model.School 3"
-      } ]
-    },
-    "model.Student 9's balcony" : {
-      "courtedOne" : {
-        "id" : 87285178,
-        "capacity" : 1,
-        "allPreferences" : {
-          "model.School 1" : 8,
-          "model.School 2" : 99,
-          "model.School 3" : 9,
-          "model.School 4" : 7
-        },
-        "currentSelectedSuitors" : [ "model.School 3" ],
-        "name" : "model.Student 9"
-      },
-      "suitors" : [ {
-        "id" : 94438417,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ],
-        "allPreferences" : {
-          "model.Student 1" : 4,
-          "model.Student 4" : 5,
-          "model.Student 5" : 67,
-          "model.Student 2" : 10,
-          "model.Student 3" : 273,
-          "model.Student 8" : 3,
-          "model.Student 10" : 43,
-          "model.Student 9" : 1,
-          "model.Student 6" : 11,
-          "model.Student 7" : 234
-        },
-        "name" : "model.School 3"
-      } ]
-    },
-    "model.Student 10's balcony" : {
-      "courtedOne" : {
-        "id" : 610998173,
-        "capacity" : 1,
-        "allPreferences" : {
+        }
+      }, {
+        "Name" : "model.Student 10",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
           "model.School 1" : 23,
           "model.School 2" : 5,
           "model.School 3" : 6,
           "model.School 4" : 9
-        },
-        "currentSelectedSuitors" : [ "model.School 4" ],
-        "name" : "model.Student 10"
+        }
+      } ]
+    },
+    "model.School 3's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 3",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 9", "model.Student 8" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 5,
+          "model.Student 5" : 67,
+          "model.Student 2" : 10,
+          "model.Student 3" : 273,
+          "model.Student 8" : 3,
+          "model.Student 9" : 1,
+          "model.Student 10" : 43,
+          "model.Student 6" : 11,
+          "model.Student 7" : 234
+        }
       },
-      "suitors" : [ {
-        "id" : 787604730,
-        "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ],
-        "allPreferences" : {
+      "Suitors" : [ {
+        "Name" : "model.Student 2",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : {
+          "model.School 2" : 7,
+          "model.School 4" : 9
+        }
+      }, {
+        "Name" : "model.Student 6",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 2" : 6,
+          "model.School 4" : 10
+        }
+      }, {
+        "Name" : "model.Student 8",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 2" : 8,
+          "model.School 3" : 5,
+          "model.School 4" : 6
+        }
+      }, {
+        "Name" : "model.Student 9",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 2" : 99,
+          "model.School 3" : 9
+        }
+      } ]
+    },
+    "model.School 4's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 4",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 3", "model.Student 5" ],
+        "Current preferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 51,
           "model.Student 5" : 14,
           "model.Student 2" : 5,
           "model.Student 3" : 3,
           "model.Student 8" : 93,
-          "model.Student 10" : 1,
           "model.Student 9" : 533,
+          "model.Student 10" : 1,
           "model.Student 6" : 43,
           "model.Student 7" : 75
-        },
-        "name" : "model.School 4"
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 3",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 3,
+          "model.School 2" : 5,
+          "model.School 3" : 2,
+          "model.School 4" : 1
+        }
+      }, {
+        "Name" : "model.Student 5",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 4,
+          "model.School 2" : 3,
+          "model.School 3" : 8,
+          "model.School 4" : 2
+        }
+      } ]
+    }
+  },
+  "round 4" : {
+    "model.School 1's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 1",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 1", "model.Student 4" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 6,
+          "model.Student 5" : 5,
+          "model.Student 2" : 500,
+          "model.Student 3" : 1,
+          "model.Student 8" : 15,
+          "model.Student 9" : 12,
+          "model.Student 10" : 13,
+          "model.Student 6" : 11,
+          "model.Student 7" : 24
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 1",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
+          "model.School 1" : 2,
+          "model.School 2" : 10,
+          "model.School 3" : 7,
+          "model.School 4" : 4
+        }
+      }, {
+        "Name" : "model.Student 4",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
+          "model.School 1" : 5,
+          "model.School 3" : 10,
+          "model.School 4" : 8
+        }
+      } ]
+    },
+    "model.School 2's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 2",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 7", "model.Student 10" ],
+        "Current preferences" : {
+          "model.Student 1" : 200,
+          "model.Student 4" : 11,
+          "model.Student 5" : 2,
+          "model.Student 2" : 400,
+          "model.Student 3" : 34,
+          "model.Student 8" : 123,
+          "model.Student 9" : 94,
+          "model.Student 10" : 4,
+          "model.Student 6" : 45,
+          "model.Student 7" : 3
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 2",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : {
+          "model.School 4" : 9
+        }
+      }, {
+        "Name" : "model.Student 6",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 4" : 10
+        }
+      }, {
+        "Name" : "model.Student 7",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
+          "model.School 1" : 9,
+          "model.School 2" : 2,
+          "model.School 3" : 4,
+          "model.School 4" : 10
+        }
+      }, {
+        "Name" : "model.Student 10",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
+          "model.School 1" : 23,
+          "model.School 2" : 5,
+          "model.School 3" : 6,
+          "model.School 4" : 9
+        }
+      } ]
+    },
+    "model.School 3's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 3",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 9", "model.Student 8" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 5,
+          "model.Student 5" : 67,
+          "model.Student 2" : 10,
+          "model.Student 3" : 273,
+          "model.Student 8" : 3,
+          "model.Student 9" : 1,
+          "model.Student 10" : 43,
+          "model.Student 6" : 11,
+          "model.Student 7" : 234
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 8",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 2" : 8,
+          "model.School 3" : 5,
+          "model.School 4" : 6
+        }
+      }, {
+        "Name" : "model.Student 9",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 2" : 99,
+          "model.School 3" : 9
+        }
+      } ]
+    },
+    "model.School 4's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 4",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 3", "model.Student 5" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 51,
+          "model.Student 5" : 14,
+          "model.Student 2" : 5,
+          "model.Student 3" : 3,
+          "model.Student 8" : 93,
+          "model.Student 9" : 533,
+          "model.Student 10" : 1,
+          "model.Student 6" : 43,
+          "model.Student 7" : 75
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 3",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 3,
+          "model.School 2" : 5,
+          "model.School 3" : 2,
+          "model.School 4" : 1
+        }
+      }, {
+        "Name" : "model.Student 5",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 4,
+          "model.School 2" : 3,
+          "model.School 3" : 8,
+          "model.School 4" : 2
+        }
+      } ]
+    }
+  },
+  "round 5" : {
+    "model.School 1's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 1",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 1", "model.Student 4" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 6,
+          "model.Student 5" : 5,
+          "model.Student 2" : 500,
+          "model.Student 3" : 1,
+          "model.Student 8" : 15,
+          "model.Student 9" : 12,
+          "model.Student 10" : 13,
+          "model.Student 6" : 11,
+          "model.Student 7" : 24
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 1",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
+          "model.School 1" : 2,
+          "model.School 2" : 10,
+          "model.School 3" : 7,
+          "model.School 4" : 4
+        }
+      }, {
+        "Name" : "model.Student 4",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
+          "model.School 1" : 5,
+          "model.School 3" : 10,
+          "model.School 4" : 8
+        }
+      }, {
+        "Name" : "model.Student 6",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : {
+          "model.School 4" : 10
+        }
+      } ]
+    },
+    "model.School 2's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 2",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 7", "model.Student 10" ],
+        "Current preferences" : {
+          "model.Student 1" : 200,
+          "model.Student 4" : 11,
+          "model.Student 5" : 2,
+          "model.Student 2" : 400,
+          "model.Student 3" : 34,
+          "model.Student 8" : 123,
+          "model.Student 9" : 94,
+          "model.Student 10" : 4,
+          "model.Student 6" : 45,
+          "model.Student 7" : 3
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 7",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
+          "model.School 1" : 9,
+          "model.School 2" : 2,
+          "model.School 3" : 4,
+          "model.School 4" : 10
+        }
+      }, {
+        "Name" : "model.Student 10",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
+          "model.School 1" : 23,
+          "model.School 2" : 5,
+          "model.School 3" : 6,
+          "model.School 4" : 9
+        }
+      } ]
+    },
+    "model.School 3's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 3",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 9", "model.Student 8" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 5,
+          "model.Student 5" : 67,
+          "model.Student 2" : 10,
+          "model.Student 3" : 273,
+          "model.Student 8" : 3,
+          "model.Student 9" : 1,
+          "model.Student 10" : 43,
+          "model.Student 6" : 11,
+          "model.Student 7" : 234
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 8",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 2" : 8,
+          "model.School 3" : 5,
+          "model.School 4" : 6
+        }
+      }, {
+        "Name" : "model.Student 9",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 2" : 99,
+          "model.School 3" : 9
+        }
+      } ]
+    },
+    "model.School 4's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 4",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 3", "model.Student 2" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 51,
+          "model.Student 5" : 14,
+          "model.Student 2" : 5,
+          "model.Student 3" : 3,
+          "model.Student 8" : 93,
+          "model.Student 9" : 533,
+          "model.Student 10" : 1,
+          "model.Student 6" : 43,
+          "model.Student 7" : 75
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 2",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 4" : 9
+        }
+      }, {
+        "Name" : "model.Student 3",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 3,
+          "model.School 2" : 5,
+          "model.School 3" : 2,
+          "model.School 4" : 1
+        }
+      }, {
+        "Name" : "model.Student 5",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : {
+          "model.School 1" : 4,
+          "model.School 2" : 3,
+          "model.School 3" : 8
+        }
+      } ]
+    }
+  },
+  "round 6" : {
+    "model.School 1's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 1",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 1", "model.Student 4" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 6,
+          "model.Student 5" : 5,
+          "model.Student 2" : 500,
+          "model.Student 3" : 1,
+          "model.Student 8" : 15,
+          "model.Student 9" : 12,
+          "model.Student 10" : 13,
+          "model.Student 6" : 11,
+          "model.Student 7" : 24
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 1",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
+          "model.School 1" : 2,
+          "model.School 2" : 10,
+          "model.School 3" : 7,
+          "model.School 4" : 4
+        }
+      }, {
+        "Name" : "model.Student 4",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
+          "model.School 1" : 5,
+          "model.School 3" : 10,
+          "model.School 4" : 8
+        }
+      } ]
+    },
+    "model.School 2's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 2",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 5", "model.Student 7" ],
+        "Current preferences" : {
+          "model.Student 1" : 200,
+          "model.Student 4" : 11,
+          "model.Student 5" : 2,
+          "model.Student 2" : 400,
+          "model.Student 3" : 34,
+          "model.Student 8" : 123,
+          "model.Student 9" : 94,
+          "model.Student 10" : 4,
+          "model.Student 6" : 45,
+          "model.Student 7" : 3
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 5",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
+          "model.School 1" : 4,
+          "model.School 2" : 3,
+          "model.School 3" : 8
+        }
+      }, {
+        "Name" : "model.Student 7",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
+          "model.School 1" : 9,
+          "model.School 2" : 2,
+          "model.School 3" : 4,
+          "model.School 4" : 10
+        }
+      }, {
+        "Name" : "model.Student 10",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : {
+          "model.School 1" : 23,
+          "model.School 3" : 6,
+          "model.School 4" : 9
+        }
+      } ]
+    },
+    "model.School 3's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 3",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 9", "model.Student 8" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 5,
+          "model.Student 5" : 67,
+          "model.Student 2" : 10,
+          "model.Student 3" : 273,
+          "model.Student 8" : 3,
+          "model.Student 9" : 1,
+          "model.Student 10" : 43,
+          "model.Student 6" : 11,
+          "model.Student 7" : 234
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 8",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 2" : 8,
+          "model.School 3" : 5,
+          "model.School 4" : 6
+        }
+      }, {
+        "Name" : "model.Student 9",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 2" : 99,
+          "model.School 3" : 9
+        }
+      } ]
+    },
+    "model.School 4's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 4",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 3", "model.Student 2" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 51,
+          "model.Student 5" : 14,
+          "model.Student 2" : 5,
+          "model.Student 3" : 3,
+          "model.Student 8" : 93,
+          "model.Student 9" : 533,
+          "model.Student 10" : 1,
+          "model.Student 6" : 43,
+          "model.Student 7" : 75
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 2",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 4" : 9
+        }
+      }, {
+        "Name" : "model.Student 3",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 3,
+          "model.School 2" : 5,
+          "model.School 3" : 2,
+          "model.School 4" : 1
+        }
+      }, {
+        "Name" : "model.Student 6",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : { }
+      } ]
+    }
+  },
+  "round 7" : {
+    "model.School 1's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 1",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 1", "model.Student 4" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 6,
+          "model.Student 5" : 5,
+          "model.Student 2" : 500,
+          "model.Student 3" : 1,
+          "model.Student 8" : 15,
+          "model.Student 9" : 12,
+          "model.Student 10" : 13,
+          "model.Student 6" : 11,
+          "model.Student 7" : 24
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 1",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
+          "model.School 1" : 2,
+          "model.School 2" : 10,
+          "model.School 3" : 7,
+          "model.School 4" : 4
+        }
+      }, {
+        "Name" : "model.Student 4",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
+          "model.School 1" : 5,
+          "model.School 3" : 10,
+          "model.School 4" : 8
+        }
+      } ]
+    },
+    "model.School 2's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 2",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 5", "model.Student 7" ],
+        "Current preferences" : {
+          "model.Student 1" : 200,
+          "model.Student 4" : 11,
+          "model.Student 5" : 2,
+          "model.Student 2" : 400,
+          "model.Student 3" : 34,
+          "model.Student 8" : 123,
+          "model.Student 9" : 94,
+          "model.Student 10" : 4,
+          "model.Student 6" : 45,
+          "model.Student 7" : 3
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 5",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
+          "model.School 1" : 4,
+          "model.School 2" : 3,
+          "model.School 3" : 8
+        }
+      }, {
+        "Name" : "model.Student 7",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
+          "model.School 1" : 9,
+          "model.School 2" : 2,
+          "model.School 3" : 4,
+          "model.School 4" : 10
+        }
+      } ]
+    },
+    "model.School 3's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 3",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 9", "model.Student 8" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 5,
+          "model.Student 5" : 67,
+          "model.Student 2" : 10,
+          "model.Student 3" : 273,
+          "model.Student 8" : 3,
+          "model.Student 9" : 1,
+          "model.Student 10" : 43,
+          "model.Student 6" : 11,
+          "model.Student 7" : 234
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 8",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 2" : 8,
+          "model.School 3" : 5,
+          "model.School 4" : 6
+        }
+      }, {
+        "Name" : "model.Student 9",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 2" : 99,
+          "model.School 3" : 9
+        }
+      }, {
+        "Name" : "model.Student 10",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : {
+          "model.School 1" : 23,
+          "model.School 4" : 9
+        }
+      } ]
+    },
+    "model.School 4's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 4",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 3", "model.Student 2" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 51,
+          "model.Student 5" : 14,
+          "model.Student 2" : 5,
+          "model.Student 3" : 3,
+          "model.Student 8" : 93,
+          "model.Student 9" : 533,
+          "model.Student 10" : 1,
+          "model.Student 6" : 43,
+          "model.Student 7" : 75
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 2",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 4" : 9
+        }
+      }, {
+        "Name" : "model.Student 3",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 3,
+          "model.School 2" : 5,
+          "model.School 3" : 2,
+          "model.School 4" : 1
+        }
+      } ]
+    }
+  },
+  "round 8" : {
+    "model.School 1's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 1",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 1", "model.Student 4" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 6,
+          "model.Student 5" : 5,
+          "model.Student 2" : 500,
+          "model.Student 3" : 1,
+          "model.Student 8" : 15,
+          "model.Student 9" : 12,
+          "model.Student 10" : 13,
+          "model.Student 6" : 11,
+          "model.Student 7" : 24
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 1",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
+          "model.School 1" : 2,
+          "model.School 2" : 10,
+          "model.School 3" : 7,
+          "model.School 4" : 4
+        }
+      }, {
+        "Name" : "model.Student 4",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
+          "model.School 1" : 5,
+          "model.School 3" : 10,
+          "model.School 4" : 8
+        }
+      } ]
+    },
+    "model.School 2's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 2",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 5", "model.Student 7" ],
+        "Current preferences" : {
+          "model.Student 1" : 200,
+          "model.Student 4" : 11,
+          "model.Student 5" : 2,
+          "model.Student 2" : 400,
+          "model.Student 3" : 34,
+          "model.Student 8" : 123,
+          "model.Student 9" : 94,
+          "model.Student 10" : 4,
+          "model.Student 6" : 45,
+          "model.Student 7" : 3
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 5",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
+          "model.School 1" : 4,
+          "model.School 2" : 3,
+          "model.School 3" : 8
+        }
+      }, {
+        "Name" : "model.Student 7",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
+          "model.School 1" : 9,
+          "model.School 2" : 2,
+          "model.School 3" : 4,
+          "model.School 4" : 10
+        }
+      } ]
+    },
+    "model.School 3's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 3",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 9", "model.Student 8" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 5,
+          "model.Student 5" : 67,
+          "model.Student 2" : 10,
+          "model.Student 3" : 273,
+          "model.Student 8" : 3,
+          "model.Student 9" : 1,
+          "model.Student 10" : 43,
+          "model.Student 6" : 11,
+          "model.Student 7" : 234
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 8",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 2" : 8,
+          "model.School 3" : 5,
+          "model.School 4" : 6
+        }
+      }, {
+        "Name" : "model.Student 9",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 2" : 99,
+          "model.School 3" : 9
+        }
+      } ]
+    },
+    "model.School 4's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 4",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 10", "model.Student 3" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 51,
+          "model.Student 5" : 14,
+          "model.Student 2" : 5,
+          "model.Student 3" : 3,
+          "model.Student 8" : 93,
+          "model.Student 9" : 533,
+          "model.Student 10" : 1,
+          "model.Student 6" : 43,
+          "model.Student 7" : 75
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 2",
+        "Capacity" : 1,
+        "Current courted ones" : [ ],
+        "Current preferences" : { }
+      }, {
+        "Name" : "model.Student 3",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 3,
+          "model.School 2" : 5,
+          "model.School 3" : 2,
+          "model.School 4" : 1
+        }
+      }, {
+        "Name" : "model.Student 10",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 23,
+          "model.School 4" : 9
+        }
+      } ]
+    }
+  },
+  "round 9" : {
+    "model.School 1's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 1",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 1", "model.Student 4" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 6,
+          "model.Student 5" : 5,
+          "model.Student 2" : 500,
+          "model.Student 3" : 1,
+          "model.Student 8" : 15,
+          "model.Student 9" : 12,
+          "model.Student 10" : 13,
+          "model.Student 6" : 11,
+          "model.Student 7" : 24
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 1",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
+          "model.School 1" : 2,
+          "model.School 2" : 10,
+          "model.School 3" : 7,
+          "model.School 4" : 4
+        }
+      }, {
+        "Name" : "model.Student 4",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 1" ],
+        "Current preferences" : {
+          "model.School 1" : 5,
+          "model.School 3" : 10,
+          "model.School 4" : 8
+        }
+      } ]
+    },
+    "model.School 2's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 2",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 5", "model.Student 7" ],
+        "Current preferences" : {
+          "model.Student 1" : 200,
+          "model.Student 4" : 11,
+          "model.Student 5" : 2,
+          "model.Student 2" : 400,
+          "model.Student 3" : 34,
+          "model.Student 8" : 123,
+          "model.Student 9" : 94,
+          "model.Student 10" : 4,
+          "model.Student 6" : 45,
+          "model.Student 7" : 3
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 5",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
+          "model.School 1" : 4,
+          "model.School 2" : 3,
+          "model.School 3" : 8
+        }
+      }, {
+        "Name" : "model.Student 7",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 2" ],
+        "Current preferences" : {
+          "model.School 1" : 9,
+          "model.School 2" : 2,
+          "model.School 3" : 4,
+          "model.School 4" : 10
+        }
+      } ]
+    },
+    "model.School 3's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 3",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 9", "model.Student 8" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 5,
+          "model.Student 5" : 67,
+          "model.Student 2" : 10,
+          "model.Student 3" : 273,
+          "model.Student 8" : 3,
+          "model.Student 9" : 1,
+          "model.Student 10" : 43,
+          "model.Student 6" : 11,
+          "model.Student 7" : 234
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 8",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 1" : 7,
+          "model.School 2" : 8,
+          "model.School 3" : 5,
+          "model.School 4" : 6
+        }
+      }, {
+        "Name" : "model.Student 9",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 3" ],
+        "Current preferences" : {
+          "model.School 2" : 99,
+          "model.School 3" : 9
+        }
+      } ]
+    },
+    "model.School 4's balcony" : {
+      "Courted One" : {
+        "Name" : "model.School 4",
+        "Capacity" : 2,
+        "Current suitors" : [ "model.Student 10", "model.Student 3" ],
+        "Current preferences" : {
+          "model.Student 1" : 4,
+          "model.Student 4" : 51,
+          "model.Student 5" : 14,
+          "model.Student 2" : 5,
+          "model.Student 3" : 3,
+          "model.Student 8" : 93,
+          "model.Student 9" : 533,
+          "model.Student 10" : 1,
+          "model.Student 6" : 43,
+          "model.Student 7" : 75
+        }
+      },
+      "Suitors" : [ {
+        "Name" : "model.Student 3",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 3,
+          "model.School 2" : 5,
+          "model.School 3" : 2,
+          "model.School 4" : 1
+        }
+      }, {
+        "Name" : "model.Student 10",
+        "Capacity" : 1,
+        "Current courted ones" : [ "model.School 4" ],
+        "Current preferences" : {
+          "model.School 1" : 23,
+          "model.School 4" : 9
+        }
       } ]
     }
   }
