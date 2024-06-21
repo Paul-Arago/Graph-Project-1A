@@ -4,19 +4,38 @@
 
 This project was developed using openjdk 22.0.1. To install it, follow the instructions on the [OpenJDK website](https://www.oracle.com/java/technologies/downloads/).
 
-Only basic `Java.util`, `Java.io` and `Java.nio` libraries were used in this project. No additional libraries are required to run this project.
+## Dependencies
 
-## json-simple
+The project uses Maven for dependency management. The following dependencies were used:
 
-In order to facilitate the generation of the output file, the `json-simple` library was used.
+- Jackson Databind: Used to generate the output file.
 
+To install these dependencies, Maven will need to be installed on your machine. If it's not already installed, you can download it from the [official Maven website](https://maven.apache.org/download.cgi).
+
+Once Maven is installed, you can install the project dependencies by navigating to the project directory in your terminal and running the following command:
+
+```bash
+mvn clean install
+```
 
 ## Installation
 
-To install this project, clone the repository using the following command:
+1. To install this project, clone the repository using the following command:
 
 ```bash
 git clone https://github.com/Paul-Arago/Graph-Project-1A.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd Graph-Project-1A
+```
+
+3. Install the dependencies (from the project directory) using the following command:
+
+```bash
+mvn clean install
 ```
 
 ## Configuration
@@ -37,25 +56,36 @@ The following image helps to better understand the format of the file:
 
 ## Usage  
 
-The `biddingChoice` is either `1` or `2`. If `1` is chosen, the students will be pursuing the schools. On the other hand, if `2` is chosen, the schools will be pursuing the students.
+The choice of who does the bidding is decided either through the command line (if no argument is passed) or by passing an argument to the `Main` class when running the program.
 
-The choice of who does the bidding is decided either through the command line or by passing an argument to the `Main` class when running the program.
+The `biddingChoice` argument is either `1` or `2`. If `1` is chosen, the students will be pursuing the schools. On the other hand, if `2` is chosen, the schools will be pursuing the students.
 
-To run the program, with the bidding choice decided through the command line, use the following command:
+
+To run the program, with the bidding choice decided through the command line, navigate to `\Graph-Project-1A\src\main\java`:
 
 ```bash
-java Main [biddingChoice]
+cd src/main/java
+```
+
+Then run the program using the following command:
+
+```bash
+mvn exec:java -Dexec.mainClass="Main" -Dexec.args="[biddingChoice]"
+```
+
+or
+
+```bash
+mvn exec:java -Dexec.mainClass="Main"
 ```
 
 example:
 
 ```bash
-java Main 1
+mvn exec:java -Dexec.mainClass="Main" -Dexec.args="1"
 ```
 
-If a bidding choice is not provided, the program will prompt the user to enter a choice.
-
-Note that wether or not the user uses an IDE, the root directory must be `src` in order for the `parser.Parser` class to find the resources file.
+Note regardless of whether the user uses an IDE, the root directory must be `java` in order for `parser.Parser` and `OutputGenerator` to work correctly. 
 
 # Instructions
 
