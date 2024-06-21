@@ -2,7 +2,15 @@
 
 ## Prerequisites
 
-This project was developed using openjdk 22.0.1. To install it, follow the instructions on the [OpenJDK website](https://www.oracle.com/java/technologies/downloads/).
+**Note that the project was developed using IntelliJ IDEA, so it is recommended to use this IDE to run the project as it will automatically install the necessary dependencies.**
+
+This project was developed using openjdk 21.0.3. To install it, follow the instructions on the [OpenJDK website](https://www.oracle.com/java/technologies/downloads/).
+
+Use the following command to install OpenJDK on Ubuntu:
+
+```bash
+sudo apt install openjdk-21-jdk
+```
 
 ## Dependencies
 
@@ -68,19 +76,19 @@ cd src/main/java
 Then run the program using the following command:
 
 ```bash
-mvn exec:java -Dexec.mainClass="Main" -Dexec.args="[biddingChoice]"
+mvn -f ../../../pom.xml exec:java -Dexec.mainClass="Main" -Dexec.args="[biddingChoice]"
 ```
 
 or
 
 ```bash
-mvn exec:java -Dexec.mainClass="Main"
+mvn -f ../../../pom.xml exec:java -Dexec.mainClass="Main"
 ```
 
 example:
 
 ```bash
-mvn exec:java -Dexec.mainClass="Main" -Dexec.args="1"
+mvn -f ../../../pom.xml exec:java -Dexec.mainClass="Main" -Dexec.args="1"
 ```
 
 Note regardless of whether the user uses an IDE, the root directory must be `java` in order for `parser.Parser` and `OutputGenerator` to work correctly. 
