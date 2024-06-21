@@ -10,15 +10,13 @@ The project uses Maven for dependency management. The following dependencies wer
 
 - Jackson Databind: Used to generate the output file.
 
-To install these dependencies, Maven will need to be installed on your machine. If it's not already installed, you can download it from the [official Maven website](https://maven.apache.org/download.cgi).
-
-Once Maven is installed, you can install the project dependencies by navigating to the project directory in your terminal and running the following command:
+To install these dependencies, Maven will need to be installed on your machine. If it's not already installed, you can download it from the [official Maven website](https://maven.apache.org/download.cgi), or by using the following command:
 
 ```bash
-mvn clean install
+sudo apt install maven
 ```
 
-### Installation
+### Installing the dependencies
 
 1. To install this project, clone the repository using the following command:
 

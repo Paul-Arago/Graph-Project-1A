@@ -4,19 +4,19 @@
       "courtedOne" : {
         "id" : 1867750575,
         "capacity" : 1,
+        "name" : "model.Student 1",
         "allPreferences" : {
           "model.School 1" : 2,
           "model.School 2" : 10,
           "model.School 3" : 7,
           "model.School 4" : 4
         },
-        "currentSelectedSuitors" : [ "model.School 1" ],
-        "name" : "model.Student 1"
+        "currentSelectedSuitors" : [ "model.School 1" ]
       },
       "suitors" : [ {
         "id" : 1896277646,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 1" ],
+        "name" : "model.School 1",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 6,
@@ -28,21 +28,21 @@
           "model.Student 6" : 11,
           "model.Student 7" : 24
         },
-        "name" : "model.School 1"
+        "currentSelectedCourtedOnes" : [ "model.Student 1" ]
       } ]
     },
     "model.Student 2's balcony" : {
       "courtedOne" : {
         "id" : 2046562095,
         "capacity" : 1,
+        "name" : "model.Student 2",
         "allPreferences" : {
           "model.School 1" : 1,
           "model.School 2" : 7,
           "model.School 3" : 3,
           "model.School 4" : 9
         },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 2"
+        "currentSelectedSuitors" : [ ]
       },
       "suitors" : [ ]
     },
@@ -50,19 +50,19 @@
       "courtedOne" : {
         "id" : 1342443276,
         "capacity" : 1,
+        "name" : "model.Student 3",
         "allPreferences" : {
           "model.School 1" : 3,
           "model.School 2" : 5,
           "model.School 3" : 2,
           "model.School 4" : 1
         },
-        "currentSelectedSuitors" : [ "model.School 4" ],
-        "name" : "model.Student 3"
+        "currentSelectedSuitors" : [ "model.School 4" ]
       },
       "suitors" : [ {
         "id" : 1896277646,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 1" ],
+        "name" : "model.School 1",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 6,
@@ -74,11 +74,11 @@
           "model.Student 6" : 11,
           "model.Student 7" : 24
         },
-        "name" : "model.School 1"
+        "currentSelectedCourtedOnes" : [ "model.Student 1" ]
       }, {
         "id" : 1996181658,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ],
+        "name" : "model.School 4",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 51,
@@ -91,21 +91,21 @@
           "model.Student 6" : 43,
           "model.Student 7" : 75
         },
-        "name" : "model.School 4"
+        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ]
       } ]
     },
     "model.Student 4's balcony" : {
       "courtedOne" : {
         "id" : 769287236,
         "capacity" : 1,
+        "name" : "model.Student 4",
         "allPreferences" : {
           "model.School 1" : 5,
           "model.School 2" : 2,
           "model.School 3" : 10,
           "model.School 4" : 8
         },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 4"
+        "currentSelectedSuitors" : [ ]
       },
       "suitors" : [ ]
     },
@@ -113,19 +113,19 @@
       "courtedOne" : {
         "id" : 1587487668,
         "capacity" : 1,
+        "name" : "model.Student 5",
         "allPreferences" : {
           "model.School 1" : 4,
           "model.School 2" : 3,
           "model.School 3" : 8,
           "model.School 4" : 2
         },
-        "currentSelectedSuitors" : [ "model.School 2" ],
-        "name" : "model.Student 5"
+        "currentSelectedSuitors" : [ "model.School 2" ]
       },
       "suitors" : [ {
         "id" : 2128227771,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ],
+        "name" : "model.School 2",
         "allPreferences" : {
           "model.Student 1" : 200,
           "model.Student 4" : 11,
@@ -138,21 +138,21 @@
           "model.Student 6" : 45,
           "model.Student 7" : 3
         },
-        "name" : "model.School 2"
+        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ]
       } ]
     },
     "model.Student 6's balcony" : {
       "courtedOne" : {
         "id" : 1199823423,
         "capacity" : 1,
+        "name" : "model.Student 6",
         "allPreferences" : {
           "model.School 1" : 7,
           "model.School 2" : 6,
           "model.School 3" : 2,
           "model.School 4" : 10
         },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 6"
+        "currentSelectedSuitors" : [ ]
       },
       "suitors" : [ ]
     },
@@ -160,19 +160,19 @@
       "courtedOne" : {
         "id" : 932172204,
         "capacity" : 1,
+        "name" : "model.Student 7",
         "allPreferences" : {
           "model.School 1" : 9,
           "model.School 2" : 2,
           "model.School 3" : 4,
           "model.School 4" : 10
         },
-        "currentSelectedSuitors" : [ "model.School 2" ],
-        "name" : "model.Student 7"
+        "currentSelectedSuitors" : [ "model.School 2" ]
       },
       "suitors" : [ {
         "id" : 2128227771,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ],
+        "name" : "model.School 2",
         "allPreferences" : {
           "model.Student 1" : 200,
           "model.Student 4" : 11,
@@ -185,26 +185,26 @@
           "model.Student 6" : 45,
           "model.Student 7" : 3
         },
-        "name" : "model.School 2"
+        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ]
       } ]
     },
     "model.Student 8's balcony" : {
       "courtedOne" : {
         "id" : 1225358173,
         "capacity" : 1,
+        "name" : "model.Student 8",
         "allPreferences" : {
           "model.School 1" : 7,
           "model.School 2" : 8,
           "model.School 3" : 5,
           "model.School 4" : 6
         },
-        "currentSelectedSuitors" : [ "model.School 3" ],
-        "name" : "model.Student 8"
+        "currentSelectedSuitors" : [ "model.School 3" ]
       },
       "suitors" : [ {
         "id" : 1702297201,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ],
+        "name" : "model.School 3",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 5,
@@ -217,26 +217,26 @@
           "model.Student 6" : 11,
           "model.Student 7" : 234
         },
-        "name" : "model.School 3"
+        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ]
       } ]
     },
     "model.Student 9's balcony" : {
       "courtedOne" : {
         "id" : 1848402763,
         "capacity" : 1,
+        "name" : "model.Student 9",
         "allPreferences" : {
           "model.School 1" : 8,
           "model.School 2" : 99,
           "model.School 3" : 9,
           "model.School 4" : 7
         },
-        "currentSelectedSuitors" : [ "model.School 3" ],
-        "name" : "model.Student 9"
+        "currentSelectedSuitors" : [ "model.School 3" ]
       },
       "suitors" : [ {
         "id" : 1702297201,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ],
+        "name" : "model.School 3",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 5,
@@ -249,26 +249,26 @@
           "model.Student 6" : 11,
           "model.Student 7" : 234
         },
-        "name" : "model.School 3"
+        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ]
       } ]
     },
     "model.Student 10's balcony" : {
       "courtedOne" : {
         "id" : 933699219,
         "capacity" : 1,
+        "name" : "model.Student 10",
         "allPreferences" : {
           "model.School 1" : 23,
           "model.School 2" : 5,
           "model.School 3" : 6,
           "model.School 4" : 9
         },
-        "currentSelectedSuitors" : [ "model.School 4" ],
-        "name" : "model.Student 10"
+        "currentSelectedSuitors" : [ "model.School 4" ]
       },
       "suitors" : [ {
         "id" : 1996181658,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ],
+        "name" : "model.School 4",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 51,
@@ -281,7 +281,7 @@
           "model.Student 6" : 43,
           "model.Student 7" : 75
         },
-        "name" : "model.School 4"
+        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ]
       } ]
     }
   },
@@ -290,19 +290,19 @@
       "courtedOne" : {
         "id" : 1867750575,
         "capacity" : 1,
+        "name" : "model.Student 1",
         "allPreferences" : {
           "model.School 1" : 2,
           "model.School 2" : 10,
           "model.School 3" : 7,
           "model.School 4" : 4
         },
-        "currentSelectedSuitors" : [ "model.School 1" ],
-        "name" : "model.Student 1"
+        "currentSelectedSuitors" : [ "model.School 1" ]
       },
       "suitors" : [ {
         "id" : 1896277646,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 1" ],
+        "name" : "model.School 1",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 6,
@@ -313,21 +313,21 @@
           "model.Student 6" : 11,
           "model.Student 7" : 24
         },
-        "name" : "model.School 1"
+        "currentSelectedCourtedOnes" : [ "model.Student 1" ]
       } ]
     },
     "model.Student 2's balcony" : {
       "courtedOne" : {
         "id" : 2046562095,
         "capacity" : 1,
+        "name" : "model.Student 2",
         "allPreferences" : {
           "model.School 1" : 1,
           "model.School 2" : 7,
           "model.School 3" : 3,
           "model.School 4" : 9
         },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 2"
+        "currentSelectedSuitors" : [ ]
       },
       "suitors" : [ ]
     },
@@ -335,19 +335,19 @@
       "courtedOne" : {
         "id" : 1342443276,
         "capacity" : 1,
+        "name" : "model.Student 3",
         "allPreferences" : {
           "model.School 1" : 3,
           "model.School 2" : 5,
           "model.School 3" : 2,
           "model.School 4" : 1
         },
-        "currentSelectedSuitors" : [ "model.School 4" ],
-        "name" : "model.Student 3"
+        "currentSelectedSuitors" : [ "model.School 4" ]
       },
       "suitors" : [ {
         "id" : 1996181658,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ],
+        "name" : "model.School 4",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 51,
@@ -360,21 +360,21 @@
           "model.Student 6" : 43,
           "model.Student 7" : 75
         },
-        "name" : "model.School 4"
+        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ]
       } ]
     },
     "model.Student 4's balcony" : {
       "courtedOne" : {
         "id" : 769287236,
         "capacity" : 1,
+        "name" : "model.Student 4",
         "allPreferences" : {
           "model.School 1" : 5,
           "model.School 2" : 2,
           "model.School 3" : 10,
           "model.School 4" : 8
         },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 4"
+        "currentSelectedSuitors" : [ ]
       },
       "suitors" : [ ]
     },
@@ -382,19 +382,19 @@
       "courtedOne" : {
         "id" : 1587487668,
         "capacity" : 1,
+        "name" : "model.Student 5",
         "allPreferences" : {
           "model.School 1" : 4,
           "model.School 2" : 3,
           "model.School 3" : 8,
           "model.School 4" : 2
         },
-        "currentSelectedSuitors" : [ "model.School 2" ],
-        "name" : "model.Student 5"
+        "currentSelectedSuitors" : [ "model.School 2" ]
       },
       "suitors" : [ {
         "id" : 1896277646,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 1" ],
+        "name" : "model.School 1",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 6,
@@ -405,11 +405,11 @@
           "model.Student 6" : 11,
           "model.Student 7" : 24
         },
-        "name" : "model.School 1"
+        "currentSelectedCourtedOnes" : [ "model.Student 1" ]
       }, {
         "id" : 2128227771,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ],
+        "name" : "model.School 2",
         "allPreferences" : {
           "model.Student 1" : 200,
           "model.Student 4" : 11,
@@ -422,21 +422,21 @@
           "model.Student 6" : 45,
           "model.Student 7" : 3
         },
-        "name" : "model.School 2"
+        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ]
       } ]
     },
     "model.Student 6's balcony" : {
       "courtedOne" : {
         "id" : 1199823423,
         "capacity" : 1,
+        "name" : "model.Student 6",
         "allPreferences" : {
           "model.School 1" : 7,
           "model.School 2" : 6,
           "model.School 3" : 2,
           "model.School 4" : 10
         },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 6"
+        "currentSelectedSuitors" : [ ]
       },
       "suitors" : [ ]
     },
@@ -444,19 +444,19 @@
       "courtedOne" : {
         "id" : 932172204,
         "capacity" : 1,
+        "name" : "model.Student 7",
         "allPreferences" : {
           "model.School 1" : 9,
           "model.School 2" : 2,
           "model.School 3" : 4,
           "model.School 4" : 10
         },
-        "currentSelectedSuitors" : [ "model.School 2" ],
-        "name" : "model.Student 7"
+        "currentSelectedSuitors" : [ "model.School 2" ]
       },
       "suitors" : [ {
         "id" : 2128227771,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ],
+        "name" : "model.School 2",
         "allPreferences" : {
           "model.Student 1" : 200,
           "model.Student 4" : 11,
@@ -469,26 +469,26 @@
           "model.Student 6" : 45,
           "model.Student 7" : 3
         },
-        "name" : "model.School 2"
+        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ]
       } ]
     },
     "model.Student 8's balcony" : {
       "courtedOne" : {
         "id" : 1225358173,
         "capacity" : 1,
+        "name" : "model.Student 8",
         "allPreferences" : {
           "model.School 1" : 7,
           "model.School 2" : 8,
           "model.School 3" : 5,
           "model.School 4" : 6
         },
-        "currentSelectedSuitors" : [ "model.School 3" ],
-        "name" : "model.Student 8"
+        "currentSelectedSuitors" : [ "model.School 3" ]
       },
       "suitors" : [ {
         "id" : 1702297201,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ],
+        "name" : "model.School 3",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 5,
@@ -501,26 +501,26 @@
           "model.Student 6" : 11,
           "model.Student 7" : 234
         },
-        "name" : "model.School 3"
+        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ]
       } ]
     },
     "model.Student 9's balcony" : {
       "courtedOne" : {
         "id" : 1848402763,
         "capacity" : 1,
+        "name" : "model.Student 9",
         "allPreferences" : {
           "model.School 1" : 8,
           "model.School 2" : 99,
           "model.School 3" : 9,
           "model.School 4" : 7
         },
-        "currentSelectedSuitors" : [ "model.School 3" ],
-        "name" : "model.Student 9"
+        "currentSelectedSuitors" : [ "model.School 3" ]
       },
       "suitors" : [ {
         "id" : 1702297201,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ],
+        "name" : "model.School 3",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 5,
@@ -533,26 +533,26 @@
           "model.Student 6" : 11,
           "model.Student 7" : 234
         },
-        "name" : "model.School 3"
+        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ]
       } ]
     },
     "model.Student 10's balcony" : {
       "courtedOne" : {
         "id" : 933699219,
         "capacity" : 1,
+        "name" : "model.Student 10",
         "allPreferences" : {
           "model.School 1" : 23,
           "model.School 2" : 5,
           "model.School 3" : 6,
           "model.School 4" : 9
         },
-        "currentSelectedSuitors" : [ "model.School 4" ],
-        "name" : "model.Student 10"
+        "currentSelectedSuitors" : [ "model.School 4" ]
       },
       "suitors" : [ {
         "id" : 1996181658,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ],
+        "name" : "model.School 4",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 51,
@@ -565,7 +565,7 @@
           "model.Student 6" : 43,
           "model.Student 7" : 75
         },
-        "name" : "model.School 4"
+        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ]
       } ]
     }
   },
@@ -574,19 +574,19 @@
       "courtedOne" : {
         "id" : 1867750575,
         "capacity" : 1,
+        "name" : "model.Student 1",
         "allPreferences" : {
           "model.School 1" : 2,
           "model.School 2" : 10,
           "model.School 3" : 7,
           "model.School 4" : 4
         },
-        "currentSelectedSuitors" : [ "model.School 1" ],
-        "name" : "model.Student 1"
+        "currentSelectedSuitors" : [ "model.School 1" ]
       },
       "suitors" : [ {
         "id" : 1896277646,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 1", "model.Student 4" ],
+        "name" : "model.School 1",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 6,
@@ -597,21 +597,21 @@
           "model.Student 6" : 11,
           "model.Student 7" : 24
         },
-        "name" : "model.School 1"
+        "currentSelectedCourtedOnes" : [ "model.Student 1", "model.Student 4" ]
       } ]
     },
     "model.Student 2's balcony" : {
       "courtedOne" : {
         "id" : 2046562095,
         "capacity" : 1,
+        "name" : "model.Student 2",
         "allPreferences" : {
           "model.School 1" : 1,
           "model.School 2" : 7,
           "model.School 3" : 3,
           "model.School 4" : 9
         },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 2"
+        "currentSelectedSuitors" : [ ]
       },
       "suitors" : [ ]
     },
@@ -619,19 +619,19 @@
       "courtedOne" : {
         "id" : 1342443276,
         "capacity" : 1,
+        "name" : "model.Student 3",
         "allPreferences" : {
           "model.School 1" : 3,
           "model.School 2" : 5,
           "model.School 3" : 2,
           "model.School 4" : 1
         },
-        "currentSelectedSuitors" : [ "model.School 4" ],
-        "name" : "model.Student 3"
+        "currentSelectedSuitors" : [ "model.School 4" ]
       },
       "suitors" : [ {
         "id" : 1996181658,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ],
+        "name" : "model.School 4",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 51,
@@ -644,26 +644,26 @@
           "model.Student 6" : 43,
           "model.Student 7" : 75
         },
-        "name" : "model.School 4"
+        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ]
       } ]
     },
     "model.Student 4's balcony" : {
       "courtedOne" : {
         "id" : 769287236,
         "capacity" : 1,
+        "name" : "model.Student 4",
         "allPreferences" : {
           "model.School 1" : 5,
           "model.School 2" : 2,
           "model.School 3" : 10,
           "model.School 4" : 8
         },
-        "currentSelectedSuitors" : [ "model.School 1" ],
-        "name" : "model.Student 4"
+        "currentSelectedSuitors" : [ "model.School 1" ]
       },
       "suitors" : [ {
         "id" : 1896277646,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 1", "model.Student 4" ],
+        "name" : "model.School 1",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 6,
@@ -674,26 +674,26 @@
           "model.Student 6" : 11,
           "model.Student 7" : 24
         },
-        "name" : "model.School 1"
+        "currentSelectedCourtedOnes" : [ "model.Student 1", "model.Student 4" ]
       } ]
     },
     "model.Student 5's balcony" : {
       "courtedOne" : {
         "id" : 1587487668,
         "capacity" : 1,
+        "name" : "model.Student 5",
         "allPreferences" : {
           "model.School 1" : 4,
           "model.School 2" : 3,
           "model.School 3" : 8,
           "model.School 4" : 2
         },
-        "currentSelectedSuitors" : [ "model.School 2" ],
-        "name" : "model.Student 5"
+        "currentSelectedSuitors" : [ "model.School 2" ]
       },
       "suitors" : [ {
         "id" : 2128227771,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ],
+        "name" : "model.School 2",
         "allPreferences" : {
           "model.Student 1" : 200,
           "model.Student 4" : 11,
@@ -706,21 +706,21 @@
           "model.Student 6" : 45,
           "model.Student 7" : 3
         },
-        "name" : "model.School 2"
+        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ]
       } ]
     },
     "model.Student 6's balcony" : {
       "courtedOne" : {
         "id" : 1199823423,
         "capacity" : 1,
+        "name" : "model.Student 6",
         "allPreferences" : {
           "model.School 1" : 7,
           "model.School 2" : 6,
           "model.School 3" : 2,
           "model.School 4" : 10
         },
-        "currentSelectedSuitors" : [ ],
-        "name" : "model.Student 6"
+        "currentSelectedSuitors" : [ ]
       },
       "suitors" : [ ]
     },
@@ -728,19 +728,19 @@
       "courtedOne" : {
         "id" : 932172204,
         "capacity" : 1,
+        "name" : "model.Student 7",
         "allPreferences" : {
           "model.School 1" : 9,
           "model.School 2" : 2,
           "model.School 3" : 4,
           "model.School 4" : 10
         },
-        "currentSelectedSuitors" : [ "model.School 2" ],
-        "name" : "model.Student 7"
+        "currentSelectedSuitors" : [ "model.School 2" ]
       },
       "suitors" : [ {
         "id" : 2128227771,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ],
+        "name" : "model.School 2",
         "allPreferences" : {
           "model.Student 1" : 200,
           "model.Student 4" : 11,
@@ -753,26 +753,26 @@
           "model.Student 6" : 45,
           "model.Student 7" : 3
         },
-        "name" : "model.School 2"
+        "currentSelectedCourtedOnes" : [ "model.Student 5", "model.Student 7" ]
       } ]
     },
     "model.Student 8's balcony" : {
       "courtedOne" : {
         "id" : 1225358173,
         "capacity" : 1,
+        "name" : "model.Student 8",
         "allPreferences" : {
           "model.School 1" : 7,
           "model.School 2" : 8,
           "model.School 3" : 5,
           "model.School 4" : 6
         },
-        "currentSelectedSuitors" : [ "model.School 3" ],
-        "name" : "model.Student 8"
+        "currentSelectedSuitors" : [ "model.School 3" ]
       },
       "suitors" : [ {
         "id" : 1702297201,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ],
+        "name" : "model.School 3",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 5,
@@ -785,26 +785,26 @@
           "model.Student 6" : 11,
           "model.Student 7" : 234
         },
-        "name" : "model.School 3"
+        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ]
       } ]
     },
     "model.Student 9's balcony" : {
       "courtedOne" : {
         "id" : 1848402763,
         "capacity" : 1,
+        "name" : "model.Student 9",
         "allPreferences" : {
           "model.School 1" : 8,
           "model.School 2" : 99,
           "model.School 3" : 9,
           "model.School 4" : 7
         },
-        "currentSelectedSuitors" : [ "model.School 3" ],
-        "name" : "model.Student 9"
+        "currentSelectedSuitors" : [ "model.School 3" ]
       },
       "suitors" : [ {
         "id" : 1702297201,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ],
+        "name" : "model.School 3",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 5,
@@ -817,26 +817,26 @@
           "model.Student 6" : 11,
           "model.Student 7" : 234
         },
-        "name" : "model.School 3"
+        "currentSelectedCourtedOnes" : [ "model.Student 8", "model.Student 9" ]
       } ]
     },
     "model.Student 10's balcony" : {
       "courtedOne" : {
         "id" : 933699219,
         "capacity" : 1,
+        "name" : "model.Student 10",
         "allPreferences" : {
           "model.School 1" : 23,
           "model.School 2" : 5,
           "model.School 3" : 6,
           "model.School 4" : 9
         },
-        "currentSelectedSuitors" : [ "model.School 4" ],
-        "name" : "model.Student 10"
+        "currentSelectedSuitors" : [ "model.School 4" ]
       },
       "suitors" : [ {
         "id" : 1996181658,
         "capacity" : 2,
-        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ],
+        "name" : "model.School 4",
         "allPreferences" : {
           "model.Student 1" : 4,
           "model.Student 4" : 51,
@@ -849,7 +849,7 @@
           "model.Student 6" : 43,
           "model.Student 7" : 75
         },
-        "name" : "model.School 4"
+        "currentSelectedCourtedOnes" : [ "model.Student 3", "model.Student 10" ]
       } ]
     }
   }
