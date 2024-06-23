@@ -13,7 +13,6 @@ import parser.ParsingException;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -22,10 +21,8 @@ public class Main {
         // Variable to store the user's choice for bidding
         String biddingChoice;
 
-        /**
-         * If one argument is passed, the bidding will be done automatically.
-         * Otherwise, the user will be asked to choose who is bidding.
-         */
+        // If one argument is passed, the bidding will be done automatically.
+        // Otherwise, the user will be asked to choose who is bidding.
         if (args.length == 1 && argumentIsValid(args[0])) {
             System.out.println("The argument passed is: " + args[0]);
             biddingChoice = args[0];
@@ -57,10 +54,8 @@ public class Main {
             List<CourtedOne> courtedOnes = new ArrayList<>();
             Court court;
             
-            /**
-             * If the user chose 1, the suitors will be the students and the courted ones will be the schools.
-             * Otherwise, the suitors will be the schools and the courted ones will be the students.
-             */
+            // If the user chose 1, the suitors will be the students and the courted ones will be the schools.
+            // Otherwise, the suitors will be the schools and the courted ones will be the students.
             if (biddingChoice.equals("1")) {
                 courtedOnes = getCourtedOneListBySchool(schools);
                 suitors = getSuitorsListByStudent(students);
@@ -82,7 +77,7 @@ public class Main {
             // Create a model.Court
             court = new Court(suitors, courtedOnes);
             
-            // Create a algorithm.Coordinator
+            // Creates an algorithm.Coordinator
             Coordinator coordinator = new Coordinator(court);
 
             // Start the algorithm
@@ -99,11 +94,6 @@ public class Main {
         }
 
 
-    }
-
-    private static void getResults(List<Suitor> suitors,List<CourtedOne> courtedOnes) {
-        for (Suitor suitor : suitors) {
-        }
     }
     
     private static void getResultsSchoolsStudents(List<School> schools, List<Student> students) {
@@ -128,21 +118,6 @@ public class Main {
                 System.out.println("  - " + student.getSchool().getName());
             } else {
                 System.out.println("  - ");
-            }
-        }
-    }
-    
-
-
-    private static void showCourtedOnes(List<CourtedOne> courtedOnes) {
-    }
-
-    private static void showSuitors(List<Suitor> suitors) {
-        for(Suitor suitor : suitors){
-            System.out.println(suitor);
-            for(Map.Entry<CourtedOne, Integer> entry : suitor.getPreferences().entrySet()){
-                System.out.print("  - ");
-                System.out.println(entry.getKey());
             }
         }
     }
@@ -177,29 +152,6 @@ public class Main {
             courtedOnes.add(new SchoolCourtedOne(school));
         }
         return courtedOnes;
-    }
-
-    private static void showStudents(List<Student> students){
-        for(Student student : students){
-            System.out.println(student);
-        
-            for(Map.Entry<School, Integer> entry : student.getPreferences().entrySet()){
-                System.out.print("  - ");
-                System.out.println(entry.getKey());
-            }
-        }
-    }
-
-
-    private static void showSchools(List<School> schools){
-
-        for(School school : schools){
-            System.out.println(school);
-            for(Map.Entry<Student, Integer> entry : school.getPreferences().entrySet()){
-                System.out.print("  - ");
-                System.out.println(entry.getKey());
-            }
-        }
     }
 
     private static boolean argumentIsValid(String argument) {

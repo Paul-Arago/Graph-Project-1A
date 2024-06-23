@@ -18,8 +18,7 @@
           "model.Student 7" : 24
         }
       },
-      "Suitors" : [
-        {
+      "Suitors" : [ {
         "Name" : "model.Student 1",
         "Capacity" : 1,
         "Current courted ones" : [ "model.School 1" ],
@@ -59,8 +58,7 @@
           "model.Student 7" : 3
         }
       },
-      "Suitors" : [
-        {
+      "Suitors" : [ {
         "Name" : "model.Student 4",
         "Capacity" : 1,
         "Current courted ones" : [ ],
