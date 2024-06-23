@@ -9,6 +9,109 @@ In this report, the term `suitor` will be used to refer to the group of entities
 
 The project was conducted in Java and can be accessed on GitHub at the following [link](https://github.com/Paul-Arago/Graph-Project-1A).
 
+## Getting Started
+
+The following parts are copied from the README present on the GitHub repo.
+
+### Prerequisites
+
+**Note that the project was developed using IntelliJ IDEA, so it is recommended to use this IDE to run the project as it will automatically install the necessary dependencies.**
+
+This project was developed using openjdk 21.0.3. To install it, follow the instructions on the [OpenJDK website](https://www.oracle.com/java/technologies/downloads/).
+
+Use the following command to install OpenJDK on Ubuntu:
+
+```bash
+sudo apt install openjdk-21-jdk
+```
+
+### Dependencies
+
+The project uses Maven for dependency management. The following dependencies were used:
+
+- Jackson Databind: Used to generate the output file.
+
+To install these dependencies, Maven will need to be installed on your machine. If it's not already installed, you can download it from the [official Maven website](https://maven.apache.org/download.cgi), or by using the following command:
+
+```bash
+sudo apt install maven
+```
+
+#### **WARNING**
+
+The project uses the "Jackson Databind" library to create JSON output file. If this library is causing any issues, you can correct any bugs by commenting these lines if the file Coordinator.java : 61, 31, 18, 80-82.
+
+
+#### Installing the dependencies
+
+1. To install this project, clone the repository using the following command:
+
+```bash
+git clone https://github.com/Paul-Arago/Graph-Project-1A.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd Graph-Project-1A
+```
+
+3. Install the dependencies (from the project directory) using the following command:
+
+```bash
+mvn clean install
+```
+
+### Configuration
+
+This project uses a csv file to store the students and schools preferences. The highest the preference, the more the student or school wants to be with the other and vice versa. The resources file in defined in the `parser.Parser` class, by default it is set to `model/resources.csv`.
+
+The CSV file must be formatted as follows:
+
+```csv
+,School1;capacitySchool1,School2;capacitySchool2, ...
+Student1,preferenceSchool1ForStudent1;preferenceStudent1ForSchool1,preferenceSchool2ForStudent1;preferenceStudent1ForSchool2, ...
+Student2,preferenceSchool1ForStudent2;preferenceStudent2ForSchool1,preferenceSchool2ForStudent2;preferenceStudent2ForSchool2, ...
+```
+
+The following image helps to better understand the format of the file:
+
+![CSV file format](resources/csv_format.png)
+
+### Usage
+
+The choice of who does the bidding is decided either through the command line (if no argument is passed) or by passing an argument to the `Main` class when running the program.
+
+The `biddingChoice` argument is either `1` or `2`. If `1` is chosen, the students will be pursuing the schools. On the other hand, if `2` is chosen, the schools will be pursuing the students.
+
+
+To run the program, with the bidding choice decided through the command line, navigate to `\Graph-Project-1A\src\main\java`:
+
+```bash
+cd src/main/java
+```
+
+Then run the program using the following command:
+
+```bash
+mvn -f ../../../pom.xml exec:java -Dexec.mainClass="Main" -Dexec.args="[biddingChoice]"
+```
+
+or
+
+```bash
+mvn -f ../../../pom.xml exec:java -Dexec.mainClass="Main"
+```
+
+example:
+
+```bash
+mvn -f ../../../pom.xml exec:java -Dexec.mainClass="Main" -Dexec.args="1"
+```
+
+Note regardless of whether the user uses an IDE, the root directory must be `java` in order for `parser.Parser` and `OutputGenerator` to work correctly.
+
+
 ## Algorithm
 
 The algorithm implemented in this project is inspired by the Stable Marriage Algorithm, but has been adapted to allow for multiple matches between suitors and courted ones.  
@@ -45,21 +148,127 @@ Here is the structure of the algorithm:
 
 ## Implementation
 
-
-
 ### Preferences
 
 The preferences are stored within a CSV file.
 
+Here is the format :
+
+![plot](./resources/csv_format.png)
+
 ### Classes
+
+#### Coordinator
+
+Class that processes all the stable marriage algorithm.
+
+#### CourtedOne
+
+Every class that implements this interface will be the courted one in the algorithm
+(see SchoolCourtedOne, StudentCourtedOne).
+
+#### Suitor
+
+Every class that implements this interface will be the suitor in the algorithm.
+(see SchoolSuitor, StudentSuitor).
+
+#### Court
+
+A court has a list of Balconies, a list of Suitors and a list of CourtedOnes.
+
+#### Balcony
+
+A balcony has a CourtedOne object and a list of Suitor objects.
+
+#### School
+
+A school has a list of Students, and a HashMap composed of Student objects has the keys, and integers representing the preferences as the value.
+
+#### Student
+
+A student has a School, and a HashMap composed of School objects has the keys, and integers representing the preferences as the value.
+
 
 ### Results
 
 #### Output
 
+The output of the program is a JSON file that contains the students and schools assignments. The file is saved in the `output` directory and is named `output.json`.
+
+The first layer of the JSON file defines each round of the algorithm.
+The second layer defines each balcony.
+Within each balcony, the courted one is defined, followed by the suitors.
+In the both the CourtedOne and Suitor objects, the attributes are as follows:
+- `name`: the name of the school or student
+- `capacity`: the capacity of the school or student (1)
+- `preferences`: the preferences of the school or student
+- `unitedSuitors`: the suitors that are currently united with the school or student
+
+Here is an example of the output file:
+
+```json
+{
+  "round 1" : {
+    "model.School 1's balcony": {
+      "Courted One": {
+        "Name": "model.School 1",
+        "Capacity": 2,
+        "Current suitors": [
+          "model.Student 1",
+          "model.Student 2"
+        ],
+        "Current preferences": {
+          "model.Student 1": 4,
+          "model.Student 4": 6,
+          "model.Student 5": 5,
+		  "...": "..."
+        }
+      },
+      "Suitors": [
+        {
+          "Name": "model.Student 1",
+          "Capacity": 1,
+          "Current courted ones": [
+            "model.School 1"
+          ],
+          "Current preferences": {
+            "model.School 1": 2,
+            "model.School 2": 10,
+            "model.School 3": 7,
+            "model.School 4": 4
+          }
+        },
+        {
+          "Name": "model.Student 2",
+          "Capacity": 1,
+          "Current courted ones": [
+            "model.School 1"
+          ],
+          "Current preferences": {
+            "model.School 1": 1, 
+			"...": "..."
+          }
+        }
+      ]
+    },
+    "model.School 2's balcony": {
+		"...": "..."
+    },
+	  "...": "..."
+  },
+	"...": "..."
+}
+```
+
 #### Complexity
+
+The complexity of the Stable Marriage algorithm is O(n²). That is because in the worst case scenario, each suitor would end up proposing to every courted one.
+
+In our case though, some constant-time overhead will likely be introduced due to method calls of the classes present in the program.
 
 ## Conclusion 
 
-### What we learned
-                                           
+In this project, we successfully implemented a stable marriage algorithm made for school admissions, adapting the classic Gale-Shapley algorithm to accommodate scenarios where multiple students can be matched to each school. The implementation required adjustments to the termination condition and the algorithm's structure to ensure stability and efficiency in the matching process.
+
+Using Java for this project made its structure more complex due to the fact that classes such as `CourtedOne` `Suitor` `Coordinator`, ... If we had to do restart the program from scratch, we would choose a more straight forward language like python.
+             
